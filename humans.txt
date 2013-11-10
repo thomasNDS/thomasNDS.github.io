@@ -1,0 +1,5 @@
+Personnal website of Thomas Nunes 2013
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery, Orbit, Reveal, fundation
+  Software:  Git
