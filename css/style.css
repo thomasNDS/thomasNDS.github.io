@@ -8,6 +8,7 @@
     box-shadow: 0px 0px 15px 0px #656565;
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=15);
     background-color: #001444;
+    -webkit-transform: translateZ(0);
 }
 .top-bar-section{
     background-color: #001444;    

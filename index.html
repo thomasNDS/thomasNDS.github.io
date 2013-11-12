@@ -9,9 +9,11 @@
 
         <link rel="stylesheet" href="css/lib/normalize.css" />
         <link rel="stylesheet" href="css/lib/foundation.min.css" />
-        <link rel="stylesheet" href="css/style.css" />
-
-        <script src="js/lib/vendor/custom.modernizr.js"></script>
+        <link rel="stylesheet" href="css/lib/isotope.css" />
+        <link rel="stylesheet" href="css/style.css" />  
+        <script src="js/lib/vendor/jquery.js"></script>
+        <!--        <script src="js/lib/vendor/custom.modernizr.js"></script>-->
+        <script src="js/lib/isotope.min.js"></script>
     </head>
     <body>
         <!-- Header and Nav -->
@@ -32,7 +34,7 @@
                 <!-- Right Nav Section -->
                 <ul class="right" style="white-space: nowrap;" >
                     <li >
-                        <a target="_blank" href="http://thomasnds.github.io/" > <img width="35" height="35" src="img/github.png" alt="github profile"/>
+                        <a target="_blank" href="https://github.com/thomasNDS" > <img width="35" height="35" src="img/github.png" alt="github profile"/>
                             <span class="reseauxSociaux">Github</span>
                         </a>
                     </li>
@@ -52,9 +54,259 @@
         </nav>
 
         <!-- End Header and Nav -->
-
         <!-- Main Grid Section -->
-        <div style="padding-top: 65px; white-space: normal;"></div>
+        <!--        <div style="padding-top: 165px; white-space: normal;"></div>-->
+
+        <br><br><br><br>
+
+        <section id="content" class="variable-sizes">
+            <div style="display: block">
+                <section id="options" class="clearfix" >
+                    <div id="filters" class="option-set clearfix" data-option-key="filter" >
+                        <a href="#filter" data-option-value="*" class="selected">All</a>
+                        <a href="#filter" data-option-value=".environnement">environnement</a>
+                        <a href="#filter" data-option-value=".programmation">programmation</a>
+                    </div>
+                    <div id="sort-by" class="option-set clearfix" data-option-key="sortBy">
+                        <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
+                        <a href="#sortBy=symbol" data-option-value="symbol">Alphabétique</a>
+                        <a href="#sortBy=number" data-option-value="number">Niveau</a>
+                    </div>
+                    <br>
+
+                </section> <!-- #options -->
+            </div>
+            <div id="container" class="clickable clearfix" style="display: block">
+
+                <div class="element programmation width2 height2" data-symbol="Python" >
+                    <p class="number">15</p>
+                    <h3 class="symbol">Python</h3>
+                    <h2 class="name">Python</h2>
+                </div>
+
+                <div class="element programmation  width2 height2 " data-symbol="Java" >
+                    <p class="number">52</p>
+                    <h3 class="symbol">Java/J2E</h3>
+                    <h2 class="name">Java nt metalloid   " data-symbol="Javnt metalloid   " data-symbol="Javnt metalloid   " data-symbol="Javnt metalloid   " data-symbol="Jav</h2>
+                </div>
+
+                <div class="element  environnement   " data-symbol="Eclipse" >
+                    <p class="number">19</p>
+                    <h3 class="symbol">Eclipse</h3>
+                    <h2 class="name">Bismuth</h2>
+                </div>
+
+                <div class="element environnement height2 " data-symbol="Netbeans" >
+                    <p class="number">17</p>
+                    <h3 class="symbol">Netbeans</h3>
+                    <h2 class="name">Netbeans</h2>
+                </div>
+
+                <div class="element environnement height2 " data-symbol="Git" >
+                    <p class="number">4</p>
+                    <h3 class="symbol">Git</h3>
+                    <h2 class="name">Git</h2>
+                </div>
+
+                <div class="element environnement " data-symbol="Mercurial">
+                    <p class="number">7</p>
+                    <h3 class="symbol">Mercurial</h3>
+                    <h2 class="name">Mercurial</h2>
+                </div>
+
+                <div class="element  programmation" data-symbol="Perl" >
+                    <p class="number">6</p>
+                    <h3 class="symbol">Perl</h3>
+                    <h2 class="name">Perl</h2>
+                </div>
+
+                <div class="element programmation " data-symbol="Ocaml">
+                    <p class="number">8</p>
+                    <h3 class="symbol">Ocaml</h3>
+                    <h2 class="name">Ocaml</h2>
+                </div>
+
+                <div class="element programmation width2" data-symbol="Javascript" >
+                    <p class="number">26</p>
+                    <h3 class="symbol">Javascript</h3>
+                    <h2 class="name">Javascript</h2>
+                </div>
+
+                <div class="element programmation height2" data-symbol="HTML5" >
+                    <p class="number">11</p>
+                    <h3 class="symbol">HTML5</h3>
+                    <h2 class="name">HTML5</h2>
+                </div>
+
+                <div class="element  programmation" data-symbol="SQL" >
+                    <p class="number">18</p>
+                    <h3 class="symbol">SQL</h3>
+                    <h2 class="name">SQL</h2>
+                </div>
+
+                <div class="element  " data-symbol="ADA" >
+                    <p class="number">32</p>
+                    <h3 class="symbol">ADA</h3>
+                    <h2 class="name">ADA</h2>
+                </div>
+
+                <div class="element programmation height2 width2" data-symbol="C/C++" >
+                    <p class="number">7</p>
+                    <h3 class="symbol">C/C++</h3>
+                    <h2 class="name">C/C++</h2>
+                </div>
+
+                <div class="element  " data-symbol="PHP" >
+                    <p class="number">93</p>
+                    <h3 class="symbol">PHP</h3>
+                    <h2 class="name">PHP</h2>
+                </div>
+
+                <div class="element environnement width2" data-symbol="Linux" >
+                    <p class="number">22</p>
+                    <h3 class="symbol">Linux</h3>
+                    <h2 class="name">Linux</h2>
+                </div>
+                <div class="element environnement height2" data-symbol="Windows" >
+                    <p class="number">7</p>
+                    <h3 class="symbol">Windows</h3>
+                    <h2 class="name">Windows</h2>
+                </div>
+            </div>
+            <script>
+                $(function() {
+
+                    var $container = $('#container');
+
+                    // add randomish size classes
+                    $container.find('.element').each(function() {
+                        var $this = $(this),
+                                number = parseInt($this.find('.number').text(), 10);
+                        if (number % 3 === 0) {
+                            $this.css('background-color', 'chocolate');
+                        }
+                        if (number % 4 === 0) {
+                            $this.css('background-color', 'lightblue');
+                        }
+                        if (number % 5 === 0) {
+                            $this.css('background-color', 'coral');
+                        }
+                        if (number % 6 === 0) {
+                            $this.css('background-color', 'lightgreen');
+                        }
+                        if (number % 7 === 0) {
+                            $this.css('background-color', 'cyan');
+                        }
+                        if (number % 8 === 0) {
+                            $this.css('background-color', 'pink');
+                        }
+                        if (number % 9 === 0) {
+                            $this.css('background-color', 'teal');
+                        }
+                        if (number % 11 === 0) {
+                            $this.css('background-color', 'crimson');
+                        }
+                        if (number % 13 === 0) {
+                            $this.css('background-color', 'orangered');
+                        }
+                        if (number % 17 === 0) {
+                            $this.css('background-color', 'plum');
+                        }
+                        if (number % 19 === 0) {
+                            $this.css('background-color', 'lightcyan');
+                        }
+                        if (number % 19 === 0) {
+                            $this.css('background-color', 'lightseagreen');
+                        }
+                    });
+
+                    $container.isotope({
+                        itemSelector: '.element',
+                        masonry: {
+                            columnWidth: 120
+                        },
+                        getSortData: {
+                            symbol: function($elem) {
+                                return $elem.attr('data-symbol');
+                            },
+                            category: function($elem) {
+                                return $elem.attr('data-category');
+                            },
+                            number: function($elem) {
+                                return parseInt($elem.find('.number').text(), 10);
+                            },
+                            weight: function($elem) {
+                                return parseFloat($elem.find('.weight').text().replace(/[\(\)]/g, ''));
+                            },
+                            name: function($elem) {
+                                return $elem.find('.name').text();
+                            }
+                        }
+                    });
+
+                    var $optionSets = $('#options .option-set'),
+                            $optionLinks = $optionSets.find('a');
+
+                    $optionLinks.click(function() {
+                        var $this = $(this);
+                        // don't proceed if already selected
+                        if ($this.hasClass('selected')) {
+                            return false;
+                        }
+                        var $optionSet = $this.parents('.option-set');
+                        $optionSet.find('.selected').removeClass('selected');
+                        $this.addClass('selected');
+
+                        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+                        var options = {},
+                                key = $optionSet.attr('data-option-key'),
+                                value = $this.attr('data-option-value');
+                        // parse 'false' as false boolean
+                        value = value === 'false' ? false : value;
+                        options[ key ] = value;
+                        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+                            // changes in layout modes need extra logic
+                            changeLayoutMode($this, options)
+                        } else {
+                            // otherwise, apply new options
+                            $container.isotope(options);
+                        }
+                        return false;
+                    });
+
+                    // change size of clicked element
+                    $container.delegate('.element', 'click', function() {
+                        $(this).toggleClass('large');
+                        $container.isotope('reLayout');
+                    });
+
+                    var $sortBy = $('#sort-by');
+                    $('#shuffle a').click(function() {
+                        $container.isotope('shuffle');
+                        $sortBy.find('.selected').removeClass('selected');
+                        $sortBy.find('[data-option-value="random"]').addClass('selected');
+                        return false;
+                    });
+
+
+                });
+            </script>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="row">
 
             <div class="large-3 columns">
@@ -152,26 +404,16 @@
                 <hr />
                 <div class="row">
                     <div class="large-6 columns">
-                        <p>Crée avec Fundation, Isotope, </p>
-                        <p>Crée avec Fundation, Isotope, </p>
-                    </div>
-                    <div class="large-6 columns">
-                        <ul class="inline-list right">
-                            <li><a href="#">Section 1</a></li>
-                            <li><a href="#">Section 2</a></li>
-                            <li><a href="#">Section 3</a></li>
-                            <li><a href="#">Section 4</a></li>
-                        </ul>
+                        <p>Crée avec Fundation, Isotope 
+                            <br>Technologies Jquerry, HTML5, CSS3 </p>
                     </div>
                 </div>
             </div>
         </footer>
-        <script>
-            document.write('<script src=' + ('__proto__' in {} ? 'js/lib/vendor/zepto' : 'js/lib/vendor/jquery') + '.js><\/script>')
-        </script>
+        <script src="js/lib/vendor/zepto.js"></script>
         <script src="js/lib/foundation.min.js"></script>
         <script>
-            $(document).foundation();
+                $(document).foundation();
         </script>
     </body>
 </html>
