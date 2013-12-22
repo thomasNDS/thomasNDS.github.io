@@ -1,4 +1,18 @@
-thomasNDS.github.io
-===================
+Personal website of Thomas Nunes
+================================
 
-personal site
+http://thomasNDS.github.io
+
+technologies
+============
+
+- HTML5
+- Jquery
+- Isotope
+- foundation
+- Google drive form
+
+License
+============
+
+MIT
