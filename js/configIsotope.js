@@ -1,20 +1,6 @@
 
 
 $(function() {
-    $("#exps").hide();
-    $("#skills").hide();
-    $("#expFilter").click(function() {
-        $("#exps").hide();
-        $("#skills").show();
-    });
-    $("#skillFilter").click(function() {
-        $("#exps").show();
-        $("#skills").hide();
-    });
-        $("#allFilter").click(function() {
-        $("#exps").hide();
-        $("#skills").hide();
-    });
 
     var $container = $('#container');
     // add randomish size classes
@@ -92,7 +78,8 @@ $(function() {
         var $optionSet = $this.parents('.option-set');
         $optionSet.find('.selected').removeClass('selected');
         $this.addClass('selected');
-        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        // make option object dynamically, i.e. 
+       { filter: '.filter-class' }
         var options = {},
                 key = $optionSet.attr('data-option-key'),
                 value = $this.attr('data-option-value');
@@ -119,5 +106,20 @@ $(function() {
         $sortBy.find('.selected').removeClass('selected');
         $sortBy.find('[data-option-value="random"]').addClass('selected');
         return false;
+    });
+    
+    $("#exps").hide();
+    $("#skills").hide();
+    $("#expFilter").click(function() {
+        $("#exps").hide();
+        $("#skills").show();
+    });
+    $("#skillFilter").click(function() {
+        $("#exps").show();
+        $("#skills").hide();
+    });
+        $("#allFilter").click(function() {
+        $("#exps").hide();
+        $("#skills").hide();
     });
 });
