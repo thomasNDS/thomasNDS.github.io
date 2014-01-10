@@ -8,11 +8,9 @@
         <link rel="stylesheet" href="css/lib/foundation.min.css">
         <link rel="stylesheet" href="css/lib/isotope.css">
         <link rel="stylesheet" href="css/style.css">  
+
         <script src="js/lib/vendor/jquery.js"></script>
         <script src="js/lib/isotope.min.js"></script>
-        <meta class="foundation-mq-small">
-        <meta class="foundation-mq-medium">
-        <meta class="foundation-mq-large">
     </head>
     <body style="">
         <!-- Header and Nav -->
@@ -60,9 +58,9 @@
                         <div style="display: block">
                             <section id="options" class="clearfix">
                                 <div id="filters" class="option-set clearfix headFilter" data-option-key="filter">
+                                    <span> <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp" >Tout</a></span>
                                     <span><a class="filterHead" id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a></span>
                                     <span><a class="filterHead" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a></span>
-                                    <span> <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp" >Tout</a></span>
                                 </div>
                                 <div id="exps"  class=" option-set clearfix" data-option-key="filter">
                                     <a href="#filter" data-option-value=".environnement">environnement</a>
@@ -229,7 +227,7 @@
             <div class="large-2 columns">
                 <div class="panel">
                     <p>
-                        <img src="img/200x200" alt="simpleimage">
+                        <!--<img src="img/200x200" alt="simpleimage">-->
                     </p>
                 </div>
             </div>
@@ -245,21 +243,21 @@
             <div class="large-4 columns">
                 <div class="panel">
                     <p>
-                        <img src="img/400x300" alt="simpleimage">
+                        <!--<img src="img/400x300" alt="simpleimage">-->
                     </p>
                 </div>
             </div>
             <div class="large-4 columns">
                 <div class="panel">
                     <p>
-                        <img src="img/400x300" alt="simpleimage">
+                        <!--<img src="img/400x300" alt="simpleimage">-->
                     </p>
                 </div>
             </div>
             <div class="large-4 columns">
                 <div class="panel">
                     <p>
-                        <img src="img/400x300" alt="simpleimage">
+                        <!--<img src="img/400x300" alt="simpleimage">-->
                     </p>
                 </div>
             </div>
@@ -289,40 +287,58 @@
         <div id="ContactForm">
             <div class="row">
                 <h1> Contact </h1>
-
                 <!--google form-->
                 <form class="large columns" action="https://docs.google.com/spreadsheet/formResponse?formkey=dGRpME5UQ1I4dTJHSlBwNFZ1RDZIVFE6MA&embedded=true&ifq" method="POST" id="ss-form">
                     <br>
                     <div class="errorbox-good">
-                        <div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">Votre Email:
-                                </label>
-                                <label class="ss-q-help" for="entry_2"></label>
-                                <input type="text" name="entry.2.single" value="" class="ss-q-short" id="entry_2"></div></div></div><br> <div class="errorbox-good">
-                        <div class="ss-item  ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_5">Votre message:
-                                </label>
-                                <label class="ss-q-help" for="entry_5"></label>
-                                <textarea name="entry.5.single" rows="8" cols="75" class="ss-q-long" id="entry_5"></textarea></div></div></div><br>
+                        <div class="row ss-item  ss-text">
+                            <div class="ss-form-entry">
+                                <div class="small-12 columns">
+                                    <label  class="left ss-q-title" for="entry_2">E-mail:</label>
+                                    <label class="ss-q-help" for="entry_2"></label>
+                                </div>
+                                <div class="small-12 columns">
+                                    <input placeholder="Votre e-mail" type="text" name="entry.2.single" value="" class="form-control ss-q-short" id="entry_2">
+                                </div>
+                            </div>
+                        </div>
+                        <br> 
+                        <div class="errorbox-good">
+                        </div>
+                        <div class="row ss-item  ss-paragraph-text">
+                            <div class="ss-form-entry">
+                                <div class="small-12 columns">
+                                    <label class="left ss-q-title" for="entry_5">Message:</label>
+                                    <label class="ss-q-help" for="entry_5"></label>
+                                </div>
+                                <div class="small-12 columns">
+                                    <textarea placeholder="Votre message" name="entry.5.single" rows="8" cols="75" class="ss-q-long" id="entry_5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <input type="hidden" name="pageNumber" value="0">
                     <input type="hidden" name="backupCache" value="">
-                    <div class="ss-item ss-navigate">
-                        <div class="ss-form-entry" style="text-align: right">
-                            <input class="myButton" type="submit" name="submit" value="Submit">
-                        </div></div>
+                    <div class="ss-item ss-navigate large">
+                        <br/>
+                        <div class="ss-form-entry center" >
+                            <input class="myButton" type="submit" name="submit" value="Envoyer">
+                        </div>
+                    </div>
                 </form>
                 <p style="font-size:"> &nbsp;</p>
             </div> 
         </div>
+
         <!--ENd google form-->
         <!-- End Grid Section -->
 
         <!-- Footer -->
-        <footer class="row">
-            <div class="large columns" style="text-align: right">
-                <hr>
-                <div>
-                    <p>Crée avec Fundation, Isotope  
-                        <br>Technologies Jquerry, HTML5, CSS3 </p>
-                </div>
+        <footer>
+            <div>
+                <p>Crée avec Fundation, Isotope  
+                    <br>Technologies Jquerry, HTML5, CSS3 </p>
             </div>
         </footer>
         <script src="js/lib/vendor/zepto.js"></script>
