@@ -287,3 +287,12 @@ hr {
     margin: 0;
     margin-bottom: 10px;
 }
+.scrollup {
+  width: 40px;
+  height: 40px;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+}
