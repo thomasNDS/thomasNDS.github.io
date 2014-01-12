@@ -17,11 +17,11 @@
 
 .isotope,
 .isotope .isotope-item {
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -ms-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .isotope {
@@ -85,36 +85,33 @@ body {
     position: relative;
     background: #888;
     color: #222;
+    -webkit-filter: grayscale(40%);
+    filter: grayscale(0.4);
 }
 
-.element.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
-.element.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
-.element.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
-.element.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
-.element.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
-.element.programmation { background: #0FF; background: hsl( 180, 100%, 50%); }
-.element.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
-.element.other.nonmetal  { background: #00F; background: hsl( 252, 100%, 50%); }
-.element.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
-.element.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
+.element:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0);
+}
+
+.element.programmation  { background: #27AE60;  }
+.element.environnement  { background: #2980B9;  }
+.element.dev            { background: #E74C3C;  }
+.element.other            { background: #C0392B;  }
+.element.formation            { background: #7F8C8D;  }
 
 .element * {
     position: absolute;
     margin: 0;
+    padding: 5px;
 }
 
 .element .symbol {
-    left: 8%;
-    top: 1em;
+    display: inline-block;
+    text-align: center;
     font-size: 1.1em;
     color: #FFF;
     text-align:center;
-}
-
-
-
-.element.fake .symbol {
-    color: #000;
 }
 
 .element .name {
@@ -151,8 +148,6 @@ body {
 }
 
 .variable-sizes .element.height2 { height: 230px; }
-
-
 
 .element.large,
 .variable-sizes .element.large,

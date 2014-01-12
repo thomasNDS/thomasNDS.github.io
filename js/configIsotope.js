@@ -7,42 +7,42 @@ $(function() {
     $container.find('.element').each(function() {
         var $this = $(this),
                 number = parseInt($this.find('.number').text(), 10);
-        if (number % 3 === 0) {
-            $this.css('background-color', 'chocolate');
-        }
-        if (number % 4 === 0) {
-            $this.css('background-color', 'lightblue');
-        }
-        if (number % 5 === 0) {
-            $this.css('background-color', 'coral');
-        }
-        if (number % 6 === 0) {
-            $this.css('background-color', 'lightgreen');
-        }
-        if (number % 7 === 0) {
-            $this.css('background-color', 'cyan');
-        }
-        if (number % 8 === 0) {
-            $this.css('background-color', 'pink');
-        }
-        if (number % 9 === 0) {
-            $this.css('background-color', 'teal');
-        }
-        if (number % 11 === 0) {
-            $this.css('background-color', 'crimson');
-        }
-        if (number % 13 === 0) {
-            $this.css('background-color', 'orangered');
-        }
-        if (number % 17 === 0) {
-            $this.css('background-color', 'plum');
-        }
-        if (number % 19 === 0) {
-            $this.css('background-color', 'lightcyan');
-        }
-        if (number % 19 === 0) {
-            $this.css('background-color', 'lightseagreen');
-        }
+//        if (number % 3 === 0) {
+//            $this.css('background-color', 'chocolate');
+//        }
+//        if (number % 4 === 0) {
+//            $this.css('background-color', 'lightblue');
+//        }
+//        if (number % 5 === 0) {
+//            $this.css('background-color', 'coral');
+//        }
+//        if (number % 6 === 0) {
+//            $this.css('background-color', 'lightgreen');
+//        }
+//        if (number % 7 === 0) {
+//            $this.css('background-color', 'cyan');
+//        }
+//        if (number % 8 === 0) {
+//            $this.css('background-color', 'pink');
+//        }
+//        if (number % 9 === 0) {
+//            $this.css('background-color', 'teal');
+//        }
+//        if (number % 11 === 0) {
+//            $this.css('background-color', 'crimson');
+//        }
+//        if (number % 13 === 0) {
+//            $this.css('background-color', 'orangered');
+//        }
+//        if (number % 17 === 0) {
+//            $this.css('background-color', 'plum');
+//        }
+//        if (number % 19 === 0) {
+//            $this.css('background-color', 'lightcyan');
+//        }
+//        if (number % 19 === 0) {
+//            $this.css('background-color', 'lightseagreen');
+//        }
     });
     $container.isotope({
         itemSelector: '.element',
