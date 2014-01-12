@@ -264,12 +264,26 @@ form {
 }
 
 footer{
-    text-align: right; 
-    background: #001444; 
+    text-align: center;  
     width: 100%;
-    color: #eee;
-    padding: 10px;
-    padding-top: 10px;
-
+    color: #888;
+    padding: 15px;
+    padding-top: 25px;
+    background: #1b1b1b;
+}
+footer h1{
+    color: #999;
+    font-size: 1.8em;
 }
 
+hr {
+    background-color: #333;
+    color: #d4d4d4;
+    height: 1px;
+    border: 0px;
+    clear: both;
+    width: 60%;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 10px;
+}
