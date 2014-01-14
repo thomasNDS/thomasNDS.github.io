@@ -71,39 +71,50 @@ body {
 
 #container {
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     left:2%;
 }
 
 .element {
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     width: 110px;
     height: 110px;
     margin: 5px;
     float: left;
     position: relative;
     background: #888;
-    color: #222;
+    color: #DDD;
     -webkit-filter: grayscale(40%);
     filter: grayscale(0.4);
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    transition: all .6s ease;
 }
 
+.element.large{
+    -moz-box-shadow: 0px 9px 0px #333, 0px 9px 9px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px #333, 0px 9px 9px rgba(0,0,0,.7);
+    margin-bottom: 15px;
+}
 .element:hover {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0);
 }
 
 .element.programmation  { background: #27AE60;  }
-.element.environnement  { background: #2980B9;  }
-.element.dev            { background: #E74C3C;  }
-.element.other            { background: #C0392B;  }
-.element.formation            { background: #7F8C8D;  }
+.element.environnement  { background: #ADCF4F;  }
+.element.dev            { background: #2980B9;  }
+.element.other            { background: #8E44AD;  }
+.element.formation            { background: #C0392B;  }
 
 .element * {
     position: absolute;
     margin: 0;
-    padding: 5px;
+    padding: 9px;
+    color: #EEE;
 }
 
 .element .symbol {
@@ -143,7 +154,7 @@ body {
 
 .variable-sizes .element.width2 { 
     width: 230px;
-    font-size: 1.0em;
+    font-size: 1.4em;
     display: block;
 }
 
@@ -152,21 +163,20 @@ body {
 .element.large,
 .variable-sizes .element.large,
 .variable-sizes .element.large.width2.height2 {
-    font-size: 1.0em;
     width: 350px;
     height: 350px;
     z-index: 100;
+    font-size: 1.2em;
 }
-
+.element.large.symbol{
+    font-size: 1.6em;
+}
 .clickable .element:hover {
     cursor: pointer;
 }
 
 .clickable .element:hover h3 {
-    text-shadow:
-        0 0 10px white,
-        0 0 10px white
-        ;
+text-shadow: 1px 1px 2px #999
 }
 
 .clickable .element:hover h2 {
@@ -179,6 +189,7 @@ body {
     display: block;
     padding-bottom: 1.0em;
     /* margin: 100px; */
+    text-align: center;
 }
 
 #options h3 {
@@ -191,7 +202,7 @@ body {
 }
 
 #options div>a {
-    display: inline-block;
+ /*   display: inline-block;
     margin: -2px;
     margin-top: 6px;
     padding: 5px;
@@ -204,9 +215,9 @@ body {
     background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
     background-image:      -o-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
     background-image:         linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    border-left: 1px;
+    border-left: 1px;*/
 }
-
+/*
 #options div>a:hover {
     background-color: #1e728c;
 }
@@ -232,7 +243,7 @@ body {
     background-color: #001444;
     text-shadow: none;
     color: white;
-}
+}*/
 
 /* Combination filter options*/
 

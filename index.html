@@ -46,41 +46,74 @@
                         </a>
                     </li>
                 </ul>
-            </section></nav>
+            </section></nav>            <br><br><br><br>
         <!-- End Header and Nav -->
         <!-- Main Grid Section -->
+
+        <section id="options" class="clearfix">
+
+            <div id="sort-by-X" class="actions">
+                <span class=" select-sort ">Trié par:</span>
+                <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
+                    <li>
+                        <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
+                    </li>
+                    <li>
+                        <a href="#sortBy=symbol" data-option-value="symbol">Alphabétique</a>
+                    </li>
+                    <li>
+                        <a href="#sortBy=number" data-option-value="number">Niveau</a>
+                    </li>
+                </ul>
+            </div> 
+            <div id="options-content">
+                <ul id="filters" class="option-set clearfix headFilter" data-option-key="filter" style="text-align: center">
+                    <li id="menu-1" class="part4 active">
+                        <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp, .formation" >Tout</a>
+                    </li>
+                    <li id="menu-2" class="part4">
+                        <a class="filterHead " id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a>
+                    </li>
+                    <li id="menu-3" class="part4">
+                        <a class="filterHead" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a>
+                    </li>
+                    <li id="menu-4" class="part4">
+                        <a class="filterHead" id="formationFilter" href="#filter" data-option-value=".formation">Formations</a>
+                    </li>
+                </ul>     
+                <ul id="skills"  class="list-inline option-set clearfix" data-option-key="filter">
+                    <li class="menuPart-1 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
+                    </li>
+                    <li class="menuPart-2 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".dev">developpement</a>
+                    </li>
+                    <li class="menuPart-3 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".other">autres</a>
+                    </li>
+                </ul>
+
+                <ul id="exps"  class="list-inline option-set clearfix" data-option-key="filter">
+                    <li class="menuPart-1 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".programmation, .environnement" class="selected">Tout</a>
+                    </li>
+                    <li class="menuPart-2 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".environnement">environnement</a>
+                    </li>
+                    <li class="menuPart-3 part4 li-toolbar">
+                        <a href="#filter" data-option-value=".programmation">programmation</a>
+                    </li>
+                </ul>
+                <br>
+            </div> 
+        </section> <!-- #options -->
         <div style="max-width: 98%">
-            <br><br><br><br>
+
             <div class="row">
                 <!--<h1>Compétences</h1>-->
                 <div class="large">
                     <section id="content" class="variable-sizes">
                         <div style="display: block">
-                            <section id="options" class="clearfix">
-
-                                <div id="filters" class="option-set clearfix headFilter" data-option-key="filter">
-                                    <span> <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp" >Tout</a></span>
-                                    <span><a class="filterHead" id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a></span>
-                                    <span><a class="filterHead" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a></span>
-                                </div>
-                                <div id="exps"  class=" option-set clearfix" data-option-key="filter">
-                                    <a href="#filter" data-option-value=".programmation, .environnement" class="selected">Tout</a>
-                                    <a href="#filter" data-option-value=".environnement">environnement</a>
-                                    <a href="#filter" data-option-value=".programmation">programmation</a>
-                                </div>
-                                <div id="skills"  class=" option-set clearfix" data-option-key="filter">
-                                    <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
-                                    <a href="#filter" data-option-value=".dev">developpement</a>
-                                    <a href="#filter" data-option-value=".other">autres</a>
-                                </div>
-                                <div id="sort-by" class="option-set clearfix" data-option-key="sortBy">
-                                    <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
-                                    <a href="#sortBy=symbol" data-option-value="symbol">Alphabétique</a>
-                                    <a href="#sortBy=number" data-option-value="number">Niveau</a>
-                                </div>
-                                <br>
-
-                            </section> <!-- #options -->
                         </div>
                         <div id="container" class="clickable clearfix isotope" >
 
@@ -188,6 +221,11 @@
                                 <p class="number">-111</p>
                                 <h3 class="symbol">Développeur OpenERP</h3>
                                 <h2 class="name">Openerp</h2>
+                            </div>
+                            <div class="element formation width2 height2 isotope-item" data-symbol="OpenERP" >
+                                <p class="number">-1111</p>
+                                <h3 class="symbol">Polytech Grenoble</h3>
+                                <h2 class="name">Popo</h2>
                             </div>
                         </div>
                         <script src="./js/configIsotope.js"></script>

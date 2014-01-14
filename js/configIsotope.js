@@ -7,42 +7,6 @@ $(function() {
     $container.find('.element').each(function() {
         var $this = $(this),
                 number = parseInt($this.find('.number').text(), 10);
-//        if (number % 3 === 0) {
-//            $this.css('background-color', 'chocolate');
-//        }
-//        if (number % 4 === 0) {
-//            $this.css('background-color', 'lightblue');
-//        }
-//        if (number % 5 === 0) {
-//            $this.css('background-color', 'coral');
-//        }
-//        if (number % 6 === 0) {
-//            $this.css('background-color', 'lightgreen');
-//        }
-//        if (number % 7 === 0) {
-//            $this.css('background-color', 'cyan');
-//        }
-//        if (number % 8 === 0) {
-//            $this.css('background-color', 'pink');
-//        }
-//        if (number % 9 === 0) {
-//            $this.css('background-color', 'teal');
-//        }
-//        if (number % 11 === 0) {
-//            $this.css('background-color', 'crimson');
-//        }
-//        if (number % 13 === 0) {
-//            $this.css('background-color', 'orangered');
-//        }
-//        if (number % 17 === 0) {
-//            $this.css('background-color', 'plum');
-//        }
-//        if (number % 19 === 0) {
-//            $this.css('background-color', 'lightcyan');
-//        }
-//        if (number % 19 === 0) {
-//            $this.css('background-color', 'lightseagreen');
-//        }
     });
     $container.isotope({
         itemSelector: '.element',
@@ -79,7 +43,9 @@ $(function() {
         $optionSet.find('.selected').removeClass('selected');
         $this.addClass('selected');
         // make option object dynamically, i.e. 
-       { filter: '.filter-class' }
+        {
+            filter: '.filter-class';
+        }
         var options = {},
                 key = $optionSet.attr('data-option-key'),
                 value = $this.attr('data-option-value');
@@ -88,7 +54,7 @@ $(function() {
         options[ key ] = value;
         if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
             // changes in layout modes need extra logic
-            changeLayoutMode($this, options)
+            changeLayoutMode($this, options);
         } else {
             // otherwise, apply new options
             $container.isotope(options);
@@ -107,19 +73,60 @@ $(function() {
         $sortBy.find('[data-option-value="random"]').addClass('selected');
         return false;
     });
-    
+    previousId = "#menu-1";
+    previousMenu = ".menuPart-1";
     $("#exps").hide();
     $("#skills").hide();
+
     $("#expFilter").click(function() {
+        $(previousMenu).removeClass("active");
+        previousMenu = ".menuPart-1";
+        $(previousMenu).addClass("active");
+
+        $(previousId).removeClass("active");
+        $("#menu-3").addClass("active");
+        previousId = "#menu-3";
         $("#exps").hide();
         $("#skills").show();
     });
     $("#skillFilter").click(function() {
+        $(previousMenu).removeClass("active");
+        previousMenu = ".menuPart-1";
+        $(previousMenu).addClass("active");
+
+        $(previousId).removeClass("active");
+        $("#menu-2").addClass("active");
+        previousId = "#menu-2";
         $("#exps").show();
         $("#skills").hide();
     });
-        $("#allFilter").click(function() {
+    $("#allFilter").click(function() {
+        $(previousId).removeClass("active");
+        $("#menu-1").addClass("active");
+        previousId = "#menu-1";
         $("#exps").hide();
         $("#skills").hide();
+    });
+    $("#formationFilter").click(function() {
+        $(previousId).removeClass("active");
+        $("#menu-4").addClass("active");
+        previousId = "#menu-4";
+        $("#exps").hide();
+        $("#skills").hide();
+    });
+    $(".menuPart-1>a").click(function() {
+        $(previousMenu).removeClass("active");
+        $(".menuPart-1").addClass("active");
+        previousMenu = ".menuPart-1";
+    });
+    $(".menuPart-2>a").click(function() {
+        $(previousMenu).removeClass("active");
+        $(".menuPart-2").addClass("active");
+        previousMenu = ".menuPart-2";
+    });
+    $(".menuPart-3>a").click(function() {
+        $(previousMenu).removeClass("active");
+        $(".menuPart-3").addClass("active");
+        previousMenu = ".menuPart-3";
     });
 });
