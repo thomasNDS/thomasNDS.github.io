@@ -8,11 +8,11 @@
         <link rel="stylesheet" href="css/lib/normalize.css">
         <link rel="stylesheet" href="css/lib/foundation.min.css">
         <link rel="stylesheet" href="css/lib/isotope.css">
-        <link rel="stylesheet" href="css/lib/jquery-slider.css">  
+        <!--<link rel="stylesheet" href="css/lib/jquery-slider.css">-->  
         <link rel="stylesheet" href="css/style.css">  
 
         <script src="js/lib/vendor/jquery.js"></script>
-        <script src="js/lib/jquerySlider.js"></script>
+        <!--<script src="js/lib/jquerySlider.js"></script>-->
         <script src="js/lib/isotope.min.js"></script>
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
     </head>
@@ -31,7 +31,7 @@
 
             <section class="top-bar-section">
                 <!-- Right Nav Section -->
-                <ul  class="right just-a-menu" >
+                <ul  class="right" >
                     <li>
                         <a target="_blank" href="https://github.com/thomasNDS"> <img width="35" height="35" src="./img/github.png" alt="github profile">
                             <span class="reseauxSociaux">Github</span>
@@ -57,7 +57,7 @@
 
             <div id="sort-by-X" class="actions">
                 <span class=" select-sort ">Trié par:</span>
-                <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
+                <ul id="sort-by" class="clearfix" data-option-key="sortBy">
                     <li>
                         <a href="#sortBy=original-order" data-option-value="original-order" class="list-sort selected">Original</a>
                     </li>
@@ -70,18 +70,18 @@
                 </ul>
             </div> 
             <div id="options-content">
-                <ul id="filters" class="option-set clearfix headFilter" data-option-key="filter" style="text-align: center">
+                <ul id="filters" class=" clearfix" data-option-key="filter" style="text-align: center">
                     <li id="menu-1" class="part4 active">
-                        <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp, .formation" >Tout</a>
+                        <a class=" selected" id="allFilter" href="#filter" data-option-value=".skill, .exp, .formation" >Tout</a>
                     </li>
                     <li id="menu-2" class="part4">
-                        <a class="filterHead " id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a>
+                        <a class=" " id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a>
                     </li>
                     <li id="menu-3" class="part4" >
-                        <a class="filterHead" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a>
+                        <a class="" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a>
                     </li>
                     <li id="menu-4" class="part4">
-                        <a class="filterHead" id="formationFilter" href="#filter" data-option-value=".formation">Formations</a>
+                        <a class="" id="formationFilter" href="#filter" data-option-value=".formation">Formations</a>
                     </li>
                 </ul> 
                 <ul id="skills"  class="list-inline option-set clearfix" data-option-key="filter">
@@ -95,7 +95,7 @@
                         <a href="#filter" data-option-value=".other">Autres</a>
                     </li>
                 </ul>
-                <ul id="exps"  class="list-inline option-set clearfix" data-option-key="filter">
+                <ul id="exps"  class="list-inline clearfix" data-option-key="filter">
                     <li class="menuPart-1 part4 li-toolbar">
                         <a href="#filter" data-option-value=".programmation, .environnement" class="selected">Tout</a>
                     </li>

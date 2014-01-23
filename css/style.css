@@ -458,7 +458,6 @@ ul#sort-by{
     border: 1px solid #ccc;
 }
 .actions:hover ul#sort-by, ul#sort-by:hover{
-    margin-top: 1;
     margin: 0px;
     display: block;
     text-align: center;
