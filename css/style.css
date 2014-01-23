@@ -191,6 +191,7 @@ form {
     background: 0;
 }
 .list-inline{
+    margin-top: 1px;
     list-style-type: none;
     /*    float: left !important;*/
     display: block;
@@ -224,6 +225,7 @@ form {
 }
 .part4 {
     min-width: 180px;
+    /* margin-top: 10px; */
     display: inline-block;
     position: relative;
     zoom: 1;
@@ -384,19 +386,58 @@ ul#sort-by{
     border: 1px solid #ccc;
 }
 .actions:hover ul#sort-by, ul#sort-by:hover{
+    margin-top: 1;
     margin: 0px;
     display: block;
     text-align: center;
-
     /* z-index: 50; */
+    margin-top: 1px;
 }
+/* ============petit triangle=============*/
+#sort-by::after { 
+    border: solid #ccc; 
+    border-width: 1px 1px 0 0; 
+    top: 34px;
+    content: ' '; 
+    display: block; 
+    height: 10px;
+    left: 32px;
+    position: absolute; 
+    width: 10px; 
+    z-index: 99; 
+    -webkit-transform: rotate(-45deg); 
+    -webkit-transform-origin: 50% 50%; 
+    background: rgb(249, 249, 255);
+}
+.part4.active::after { 
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:0px; /*should be set to -border-width x 2 */
+    left:80px;
+    width:0;
+    height:0;
+    border-color: transparent transparent rgba(30,0,0,0.35) transparent; /*border color should be same as div div background color*/
+    border-style: solid;
+    border-width: 6px;
+}
+.li-toolbar.active::after { 
+    content:'';
+    display:block;
+    position:absolute;
+    top: -1px;
+    left:110px;
+    border-color: #D26900 transparent  transparent  transparent; /*border color should be same as div div background color*/
+    border-width: 5px;
+}
+
+/*=====toolsbar =============================*/
 .li-toolbar{
     min-width: 240px;
-    margin-top: px;
     background: #FAFAFA;
-    padding: 5px;
+    padding: 7px;
     font-size: 1.1em;
-    box-shadow: 0 -3px 0 0 rgba(50,0,0,0.20), 0 -3px 0 0 #FAFAFA;
+    box-shadow: 0 -3px 0 0 rgba(30,0,0,0.35), 0 -3px 0 0 #FAFAFA;
 }
 .li-toolbar:first-child{
     -webkit-border-radius: 0 0 0 5px; 
@@ -407,22 +448,25 @@ ul#sort-by{
     border-radius: 0px 0px 5px 0px;
 }
 .li-toolbar:hover:not(.active){
-    box-shadow: 0 -3px 0 0  #CFAC94;
+    box-shadow: 0 -3px 0 0  #CFA78B;
     background: #FAFAFA;
     text-decoration:underline
 }
 .li-toolbar:hover:not(.active) *{
-    color: #387391;
+    color: #948D7D;
 }
 .active.li-toolbar{
-    box-shadow: 0 -3px 0 0  #D26900;
-    background: #F1EFFF;
+    box-shadow: 0 -3px 0 0 #D26900, 0 -3px 0 0 #FAFAFA;
+    background: #F7F3ED;
     color: #000;
 }
 .active.li-toolbar *{
-    color: #111;
+    /* color: #111; */
     font-weight: 700;
 }
 .list-sort.selected{
     color: #555;
+}
+.part4:hover:not(.active){
+    text-decoration: underline;
 }
