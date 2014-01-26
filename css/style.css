@@ -95,11 +95,6 @@
 @media only screen and (max-width: 768px) {
     .reseauxSociaux{
         display: inline;
-    
-        /* background: #001333; */
-}
-    .top-bar-section ul {
-        /* background-color: #001333; */
     }
     .name h1 a{
         font-size: 18px;
@@ -226,7 +221,6 @@ form {
     }
     .part4 {
         min-width: 180px;
-        /* margin-top: 10px; */
         display: inline-block;
         position: relative;
         zoom: 1;
@@ -289,43 +283,6 @@ form {
         -o-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
     }
-    /* ============petit triangle=============*/
-    #sort-by::after { 
-        border: solid #ccc; 
-        border-width: 1px 1px 0 0; 
-        top: 34px;
-        content: ' '; 
-        display: block; 
-        height: 10px;
-        left: 32px;
-        position: absolute; 
-        width: 10px; 
-        z-index: 99; 
-        -webkit-transform: rotate(-45deg); 
-        -webkit-transform-origin: 50% 50%; 
-        background: rgb(249, 249, 255);
-    }
-    .part4.active::after { 
-        content:'';
-        display:block;
-        position:absolute;
-        bottom:0px; /*should be set to -border-width x 2 */
-        left:80px;
-        width:0;
-        height:0;
-        border-color: transparent transparent rgba(30,0,0,0.35) transparent; /*border color should be same as div div background color*/
-        border-style: solid;
-        border-width: 6px;
-    }
-    .li-toolbar.active::after { 
-        content:'';
-        display:block;
-        position:absolute;
-        top: -1px;
-        left:110px;
-        border-color: #D26900 transparent  transparent  transparent; /*border color should be same as div div background color*/
-        border-width: 5px;
-    }
 
     /*=====toolsbar =============================*/
     .li-toolbar{
@@ -362,6 +319,43 @@ form {
     .list-sort.selected{
         color: #555;
     }
+}
+/* ============petit triangle=============*/
+#sort-by::after { 
+    border: solid #ccc; 
+    border-width: 1px 1px 0 0; 
+    top: 34px;
+    content: ' '; 
+    display: block; 
+    height: 10px;
+    left: 32px;
+    position: absolute; 
+    width: 10px; 
+    z-index: 99; 
+    -webkit-transform: rotate(-45deg); 
+    -webkit-transform-origin: 50% 50%; 
+    background: rgb(249, 249, 255);
+}
+.part4.active::after { 
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:0px; /*should be set to -border-width x 2 */
+    left:80px;
+    width:0;
+    height:0;
+    border-color: transparent transparent rgba(30,0,0,0.35) transparent; /*border color should be same as div div background color*/
+    border-style: solid;
+    border-width: 6px;
+}
+.li-toolbar.active::after { 
+    content:'';
+    display:block;
+    position:absolute;
+    top: -1px;
+    left:110px;
+    border-color: #D26900 transparent  transparent  transparent; /*border color should be same as div div background color*/
+    border-width: 5px;
 }
 footer{
     text-align: center;  
