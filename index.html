@@ -8,8 +8,9 @@
         <link rel="stylesheet" href="css/lib/normalize.css">
         <link rel="stylesheet" href="css/lib/foundation.min.css">
         <link rel="stylesheet" href="css/lib/isotope.css">
-        <link rel="stylesheet" href="css/lib/jquery-slider.css">  
+        <link rel="stylesheet" href="css/font-awesome.min.css">  
         <link rel="stylesheet" href="css/style.css">  
+        <link rel="stylesheet" href="css/lib/jquery-slider.css">  
 
         <script src="js/lib/vendor/jquery.js"></script>
         <script src="js/lib/jquerySlider.js"></script>
@@ -50,13 +51,13 @@
                 </ul>
             </section></nav>            <br><br><br><br>
         <!-- End Header and Nav -->
-<!--        <a id="existing-content-menu" href="#existing-content-menu">Existing content</a> -->
-        
+        <!--        <a id="existing-content-menu" href="#existing-content-menu">Existing content</a> -->
+
         <!-- Main Grid Section -->
         <section id="options" class="clearfix">
 
             <div id="sort-by-X" class="actions">
-                <span class=" select-sort ">Trié par:</span>
+                <span id="selector-display" class=" select-sort "><i class="iconelist fa fa-sort-amount-desc"></i> <span class="no-on-tablets">Trié par:</span></span>
                 <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
                     <li>
                         <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
@@ -89,10 +90,10 @@
                         <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
                     </li>
                     <li class="menuPart-2 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".dev">developpement</a>
+                        <a href="#filter" data-option-value=".dev">Developpement</a>
                     </li>
                     <li class="menuPart-3 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".other">autres</a>
+                        <a href="#filter" data-option-value=".other">Autres</a>
                     </li>
                 </ul>
 
@@ -101,10 +102,10 @@
                         <a href="#filter" data-option-value=".programmation, .environnement" class="selected">Tout</a>
                     </li>
                     <li class="menuPart-2 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".environnement">environnement</a>
+                        <a href="#filter" data-option-value=".environnement">Environnement</a>
                     </li>
                     <li class="menuPart-3 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".programmation">programmation</a>
+                        <a href="#filter" data-option-value=".programmation">Programmation</a>
                     </li>
                 </ul>
                 <br>
