@@ -265,6 +265,7 @@ form {
     }
     .part4:hover:not(.active){
         text-decoration: underline;
+        text-decoration-color: #4B70A8;
     }
 
     .part4 a{
@@ -303,7 +304,8 @@ form {
     .li-toolbar:hover:not(.active){
         box-shadow: 0 -3px 0 0  #9FA8BE;
         background: #FAFAFA;
-        text-decoration:underline
+        text-decoration:underline;
+        text-decoration-color: #4B70A8;
     }
     .part4:hover:not(.active) *{
         color: #4B70A8;
@@ -312,9 +314,6 @@ form {
         box-shadow: 0 -3px 0 0 #6397E4, 0 -3px 0 0 #FAFAFA;
         background: #EDEDF7;
         color: #000;
-    }
-    .active.part4 *{
-        /* font-weight: 700; */
     }
     .list-sort.selected{
         color: #555;
@@ -332,8 +331,11 @@ form {
     position: absolute; 
     width: 10px; 
     z-index: 99; 
-    -webkit-transform: rotate(-45deg); 
-    -webkit-transform-origin: 50% 50%; 
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     background: rgb(249, 249, 255);
 }
 @media only screen and (min-width: 810px) {
@@ -462,7 +464,6 @@ ul#sort-by{
     text-align: center;
     margin-top: 1px;
 }
-
 
 #sort-by a{
     color: #555;
