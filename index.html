@@ -54,9 +54,12 @@
 
         <!-- Main Grid Section -->
         <section id="options" class="clearfix">
-
-            <div id="sort-by-X" class="actions">
-                <span id="selector-display" class=" select-sort "><i class="iconelist fa fa-sort-amount-desc" ></i> <span class="no-on-tablets">Trié par:</span></span>
+            <div id="sort-by-X" class="">
+                <span id="selector-display" class="actions select-sort">
+                    <i class="iconelist fa fa-sort-amount-desc" ></i> 
+                    <span class="no-on-tablets">Trié par:
+                    </span>
+                </span>
                 <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
                     <li>
                         <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
@@ -84,36 +87,45 @@
                         <a class="filterHead" id="formationFilter" href="#filter" data-option-value=".formation">Formations</a>
                     </li>
                 </ul> 
-                <ul id="skills"  class="list-inline option-set clearfix" data-option-key="filter">
-                    <li class="menuPart-1 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
-                    </li>
-                    <li class="menuPart-2 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".dev">Developpement</a>
-                    </li>
-                    <li class="menuPart-3 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".other">Autres</a>
-                    </li>
-                </ul>
-
-                <ul id="exps"  class="list-inline option-set clearfix" data-option-key="filter">
-                    <li class="menuPart-1 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".programmation, .environnement" class="selected">Tout</a>
-                    </li>
-                    <li class="menuPart-2 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".environnement">Environnement</a>
-                    </li>
-                    <li class="menuPart-3 part4 li-toolbar">
-                        <a href="#filter" data-option-value=".programmation">Programmation</a>
-                    </li>
-                </ul>
+                <div id="skills">
+                    <div class="subtitle only-tablet">
+                        <p>FILTRES</p>
+                        <hr class="hr-bar "/>
+                    </div>
+                    <ul  class="list-inline option-set clearfix" data-option-key="filter">
+                        <li class="menuPart-1 part4 li-toolbar">
+                            <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
+                        </li>
+                        <li class="menuPart-2 part4 li-toolbar">
+                            <a href="#filter" data-option-value=".dev">Developpement</a>
+                        </li>
+                        <li class="menuPart-3 part4 li-toolbar">
+                            <a href="#filter" data-option-value=".other">Autres</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="exps">
+                    <div class="subtitle only-tablet">
+                        <p>FILTRES</p>
+                        <hr class="hr-bar "/>
+                    </div>
+                    <ul  class="list-inline option-set clearfix" data-option-key="filter">
+                        <li class="menuPart-1 part4 li-toolbar">
+                            <a href="#content-display" data-option-value=".programmation, .environnement" class="selected">Tout</a>
+                        </li>
+                        <li class="menuPart-2 part4 li-toolbar">
+                            <a href="#content-display" data-option-value=".environnement">Environnement</a>
+                        </li>
+                        <li class="menuPart-3 part4 li-toolbar">
+                            <a href="#footer" data-option-value=".programmation">Programmation</a>
+                        </li>
+                    </ul>
+                </div>
                 <br>
             </div> 
         </section> <!-- #options -->
-        <div style="max-width: 98%">
-
+        <div id="content-display" style="max-width: 98%">
             <div class="row">
-                <!--<h1>Compétences</h1>-->
                 <div class="large">
                     <section id="content" class="variable-sizes">
                         <div style="display: block">
@@ -287,7 +299,7 @@
         <!-- End Grid Section -->
 
         <!-- Footer -->
-        <footer>
+        <footer id="footer">
             <a href="#" class="scrollup"><img src="img/backtotop.png" alt="TOP"/></a>
             <div class="row">
                 <div class="large">

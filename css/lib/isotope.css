@@ -1,7 +1,6 @@
 /* Start: Recommended Isotope styles */
 
 /**** Isotope Filtering ****/
-
 .isotope-item {
     z-index: 2;
 }
@@ -98,7 +97,9 @@ body {
     -moz-box-shadow: 0px 9px 0px #333, 0px 9px 9px rgba(0,0,0,.7);
     box-shadow: 0px 9px 0px #333, 0px 9px 9px rgba(0,0,0,.7);
     margin-bottom: 15px;
+    max-width: 100%;
 }
+
 .element:hover {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0);
@@ -158,15 +159,33 @@ body {
     display: block;
 }
 
-.variable-sizes .element.height2 { height: 230px; }
+.variable-sizes .element.height2 { 
+    height: 230px;
+}
 
 .element.large,
 .variable-sizes .element.large,
 .variable-sizes .element.large.width2.height2 {
+    max-width: 95%;
     width: 350px;
     height: 350px;
     z-index: 100;
     font-size: 1.2em;
+}
+/*Adapt elements to mobile*/
+@media only screen and (max-width: 568px) {
+    .element{
+        width: 60px;
+        height: 60px;
+        font-size: 0.5em;
+    }
+    .variable-sizes .element.width2:not(.large) { 
+        width: 130px;
+        font-size: 0.9em;
+    }
+    .variable-sizes .element.height2:not(.large){
+        height: 130px; 
+    }
 }
 .element.large.symbol{
     font-size: 1.6em;
@@ -174,9 +193,8 @@ body {
 .clickable .element:hover {
     cursor: pointer;
 }
-
 .clickable .element:hover h3 {
-text-shadow: 1px 1px 2px #999
+    text-shadow: 1px 1px 2px #999
 }
 
 .clickable .element:hover h2 {
@@ -200,50 +218,6 @@ text-shadow: 1px 1px 2px #999
 #options h4 { 
     font-weight: bold;
 }
-
-#options div>a {
- /*   display: inline-block;
-    margin: -2px;
-    margin-top: 6px;
-    padding: 5px;
-    background-color: #DDD;
-    color: #222;
-    font-weight: bold;
-    text-shadow: 0 1px hsla( 0, 0%, 100%, 0.5 );
-    background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    background-image:    -moz-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    background-image:      -o-linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    background-image:         linear-gradient( top, hsla( 0, 0%, 100%, 0.15 ), hsla( 0, 0%, 100%, 0.0 ) );
-    border-left: 1px;*/
-}
-/*
-#options div>a:hover {
-    background-color: #1e728c;
-}
-
-#options div>a:active {
-    background-color: #39D;
-    -webkit-box-shadow: inset 0 2px 8px hsla( 0, 0%, 0%, 0.6 );
-    -moz-box-shadow: inset 0 2px 8px hsla( 0, 0%, 0%, 0.6 );
-    -o-box-shadow: inset 0 2px 8px hsla( 0, 0%, 0%, 0.6 );
-    box-shadow: inset 0 2px 8px hsla( 0, 0%, 0%, 0.6 );
-}
-
-#options div>a:first-child {
-    border-radius: 7px 0 0 7px;
-    border-left: none;
-}
-
-#options div>a:last-child {
-    border-radius: 0 7px 7px 0;
-}
-
-#options div>a.selected {
-    background-color: #001444;
-    text-shadow: none;
-    color: white;
-}*/
 
 /* Combination filter options*/
 

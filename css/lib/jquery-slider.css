@@ -2,6 +2,9 @@
     font-size: 1.0em;   
 }
 /*sort menu retract*/
+.only-tablet{
+    display: none;
+}
 @media only screen and (max-width: 1100px) {
     .no-on-tablets{
         display: none;
@@ -17,8 +20,9 @@
         width: 150px;
     }
     ul#sort-by{
-       width: 150px;
-       font-size: 1.2em;
+        width: 150px;
+        font-size: 1.2em;  
+        z-index: 50;
     }
 }
 @media only screen and (max-width: 940px) {
@@ -29,5 +33,59 @@
 @media only screen and (max-width: 812px) {
     #options-content{
         width: 90%
+    }
+}
+@media only screen and (max-width: 816px) {
+    .only-tablet{
+        display: block;
+    }
+    #options{
+        margin-bottom: 150px;
+    }
+    .part4{
+        min-width: 20%;
+    }
+    .part4 a{
+        width: 50%;
+        display: inline-block;
+        color: #555;
+        font-size: 1.1em;
+        padding: 4px 10px 4px 10px;
+    }
+    .li-toolbar a{
+        color: #888;
+    }
+    .part4:hover:not(.active) *{
+        color: #4B70A8;
+    }
+    .part4:hover:not(.active){
+        text-decoration: underline;
+        text-decoration-color: #4B70A8;
+    }
+    .active a , selected{
+        color: #FFF;
+        background: #6397E4;
+    }
+    #options.extended{
+        margin-bottom: 300px;
+    }
+    #skills,#exps{
+        margin-top: 0px;
+        padding-top: 5px;
+    }
+    .subtitle{
+        display: inline-block;
+        width: 80%;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+    .subtitle>p{
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .hr-bar{
+        margin-top: 0;
+        width: 100%;
+        margin-bottom: 15px;
     }
 }

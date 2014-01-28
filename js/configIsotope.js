@@ -11,7 +11,7 @@ $(function() {
     $container.isotope({
         itemSelector: '.element',
         masonry: {
-            columnWidth: 120
+            columnWidth: 10
         },
         getSortData: {
             symbol: function($elem) {
@@ -82,12 +82,12 @@ $(function() {
         $(previousMenu).removeClass("active");
         previousMenu = ".menuPart-1";
         $(previousMenu).addClass("active");
-
         $(previousId).removeClass("active");
         $("#menu-3").addClass("active");
         previousId = "#menu-3";
         $("#exps").hide();
         $("#skills").show();
+        $('#options').addClass('extended');
     });
     $("#skillFilter").click(function() {
         $(previousMenu).removeClass("active");
@@ -99,6 +99,7 @@ $(function() {
         previousId = "#menu-2";
         $("#exps").show();
         $("#skills").hide();
+        $('#options').addClass('extended');
     });
     $("#allFilter").click(function() {
         $(previousId).removeClass("active");
@@ -106,6 +107,7 @@ $(function() {
         previousId = "#menu-1";
         $("#exps").hide();
         $("#skills").hide();
+        $('#options').removeClass('extended');
     });
     $("#formationFilter").click(function() {
         $(previousId).removeClass("active");
@@ -113,6 +115,7 @@ $(function() {
         previousId = "#menu-4";
         $("#exps").hide();
         $("#skills").hide();
+        $('#options').removeClass('extended');
     });
     $(".menuPart-1>a").click(function() {
         $(previousMenu).removeClass("active");
