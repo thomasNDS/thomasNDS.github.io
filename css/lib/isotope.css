@@ -84,13 +84,16 @@ body {
     position: relative;
     background: #888;
     color: #DDD;
-    -webkit-filter: grayscale(40%);
-    filter: grayscale(0.4);
+    -webkit-filter: grayscale(30%);
+    filter: grayscale(0.3);
     -webkit-transition: all 0.6s ease-in-out;
     -moz-transition: all 0.6s ease-in-out;
     -ms-transition: all 0.6s ease-in-out;
     -o-transition: all 0.6s ease-in-out;
     transition: all 0.6s ease-in-out;
+    overflow:                   hidden;
+    word-wrap: break-word;
+    font-size: 0.9em;
 }
 
 .element.large{
@@ -101,8 +104,8 @@ body {
 }
 
 .element:hover {
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0);
+    -webkit-filter: grayscale(10%);
+    filter: grayscale(0.1);
 }
 
 .element.programmation  { background: #27AE60;  }
@@ -173,9 +176,8 @@ body {
     height: 230px;
 }
 
-.element.large,
-.variable-sizes .element.large,
-.variable-sizes .element.large.width2.height2 {
+
+.variable-sizes .element.large{
     max-width: 95%;
     width: 350px;
     height: 350px;
@@ -325,6 +327,21 @@ body {
 .element.width2.height2:not(.large):hover:after{
     width: 80px;
     height: 80px;
-        line-height: 80px;
-        left: 32%;
+    line-height: 80px;
+    left: 32%;
+}
+.element a{
+    color: #FFF;
+    text-decoration: underline;
+}
+.element a:hover{
+    color: #ddd;
+}
+.element * {
+    font-size: 0.98em;
+}
+.element h4{
+    color: #D3D3D3;
+    font-size: 1.1em;
+    line-height: 1em;
 }
