@@ -198,12 +198,28 @@ body {
     .variable-sizes .element.height2:not(.large){
         height: 130px; 
     }
+    .element:not(.large):hover:after {
+        left: 14px !important; 
+        /*top: 0px !important;*/
+                width: 32px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+    }
+    .element.width2:not(.large):hover:after{
+        left: 39% !important;
+    }
+    .element.width2.height2:not(.large):hover:after{
+        left: 23% !important;
+                width: 70px !important;
+        height: 70px !important;
+        line-height: 70px !important;
+    }
 }
 .element.large.symbol{
     font-size: 1.6em;
 }
 .clickable .element:hover {
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .clickable .element:hover h3 {
     text-shadow: 1px 1px 2px #999
@@ -218,7 +234,6 @@ body {
 #options {
     display: block;
     padding-bottom: 1.0em;
-    /* margin: 80px; */
     text-align: center;
 }
 
@@ -341,7 +356,7 @@ body {
     font-size: 0.98em;
 }
 .element h4{
-    color: #D3D3D3;
+    color: #FFFFFF;
     font-size: 1.1em;
     line-height: 1em;
 }
