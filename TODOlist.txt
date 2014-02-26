@@ -2,7 +2,7 @@
 ==============
 - contenu somaire
 - contenu détaillé
-
+- lock sur contacts
 *my work:
 ==============
 - affichage innovant: file chrnologique? fleche sur cotés?
