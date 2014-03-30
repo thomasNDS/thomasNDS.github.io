@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Personnal website of thomas Nunes. thomasNDS" />
+        <meta name="author" content="Thomas Nunes <http://thomasNDS.github.io> All Rights Reserved" />
+        <title>Thomas Nunes page</title>
+        <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />   
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/kickstart.js"></script>  
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    </head>
+    <body style="">
+        <h1>Thomas Nunes</h1>
+<hr />
+
+
+        <div id="ContactForm">
+            <div class="row">
+                <h1> Contact </h1>
+                <!--google form-->
+                <form class="" action="https://docs.google.com/spreadsheet/formResponse?formkey=dGRpME5UQ1I4dTJHSlBwNFZ1RDZIVFE6MA&amp;embedded=true&amp;ifq" method="POST" id="ss-form">
+                    <label  class="left ss-q-title" for="entry_2">E-mail:</label>
+                    <label class="ss-q-help" for="entry_2"></label>
+                    <div class="small-12 columns">
+                        <input placeholder="Votre e-mail" type="text" name="entry.2.single" value="" class="form-control ss-q-short" id="entry_2">
+                    </div>
+                    <div class="">
+                        <div class="ss-form-entry">
+                            <label class="left ss-q-title" for="entry_5">Message:</label>
+                            <label class="ss-q-help" for="entry_5"></label>
+                            <div class="small-12 columns">
+                                <textarea placeholder="Votre message" name="entry.5.single" rows="8" cols="75" class="ss-q-long" id="entry_5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="pageNumber" value="0">
+                    <input type="hidden" name="backupCache" value="">
+                    <div class="">
+                        <br/>
+                        <div class="" >
+                            <input class="" type="submit" name="submit" value="Envoyer">
+                        </div>
+                    </div>
+                </form>
+            </div> 
+        </div>
+
+        <!--ENd google form-->
+        <!-- End Grid Section -->
+
+        <!-- Footer -->
+        <footer id="footer">
+            <a href="#" class="scrollup"><img src="img/backtotop.png" alt="TOP"/></a>
+            <div class="row">
+                <div class="large">
+                    <h1>Thomas Nunes</h1>
+                    <br/>     Technologies Jquerry, HTML5, CSS3 </p>
+                    <hr/><br/>
+                    Licence MIT - héberger avec Github
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                if ($(window).width() > 590) {
+                    $(window).scroll(function() {
+                        if ($(this).scrollTop() > 100) {
+                            $('.scrollup').fadeIn();
+                        } else {
+                            $('.scrollup').fadeOut();
+                        }
+                    });
+
+                    $('.scrollup').click(function() {
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, 600);
+                        return false;
+                    });
+                }
+            });
+        </script>
+
+
+    </body></html>
