@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <!--        ThomasNDS.github.io
+                Thomas Nunes tout droits réservés 2014-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="Personnal website of thomas Nunes. thomasNDS" />
         <meta name="author" content="Thomas Nunes <http://thomasNDS.github.io> All Rights Reserved" />
         <title>Thomas Nunes page</title>
+
         <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />   
+        <link rel="stylesheet" type="text/css" href="css/general.css" media="all" />   
+
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/kickstart.js"></script>  
+        <script type="text/javascript" src="js/kickstart.js"></script>
+        <script type="text/javascript" src="js/stellar.js"></script>
+        <!--<script type="text/javascript" src="js/starscroll.js"></script>-->
+
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <script>
+		$(function(){
+			$.stellar({
+				horizontalScrolling: false,
+				verticalOffset: 40
+			});
+		});
+		</script>
     </head>
     <body style="">
         <h1>Thomas Nunes</h1>
-<hr />
+        <hr />
 
-
+        <div id="main" data-stellar-background-ratio="0.1">
+            presentation
+            aze
+        </div>
         <div id="ContactForm">
             <div class="row">
                 <h1> Contact </h1>
@@ -48,43 +66,34 @@
                 </form>
             </div> 
         </div>
-
         <!--ENd google form-->
-        <!-- End Grid Section -->
-
         <!-- Footer -->
         <footer id="footer">
-            <a href="#" class="scrollup"><img src="img/backtotop.png" alt="TOP"/></a>
+
             <div class="row">
                 <div class="large">
                     <h1>Thomas Nunes</h1>
-                    <br/>     Technologies Jquerry, HTML5, CSS3 </p>
-                    <hr/><br/>
+                    <p>     Technologies Jquerry, HTML5, CSS3 </p>
+                    <hr/>
                     Licence MIT - héberger avec Github
                 </div>
             </div>
         </footer>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                if ($(window).width() > 590) {
-                    $(window).scroll(function() {
-                        if ($(this).scrollTop() > 100) {
-                            $('.scrollup').fadeIn();
-                        } else {
-                            $('.scrollup').fadeOut();
-                        }
-                    });
-
-                    $('.scrollup').click(function() {
-                        $("html, body").animate({
-                            scrollTop: 0
-                        }, 600);
-                        return false;
-                    });
-                }
-            });
+        <!--/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jquery-starscroll'; // required: replace example with your forum shortname
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();-->
+        <script>
+           $('#main').stellar();
+//            $('#starfield').starscroll(16, 3, 50, 5, 2, [225, 225, 225], true, false);
         </script>
+       
 
 
     </body></html>
