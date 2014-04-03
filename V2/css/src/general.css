@@ -1,0 +1,39 @@
+/*To set the footer in the bottom of the page*/
+body,html{
+    height:100%;
+}
+#main{
+    min-height:100%;
+}
+.footer{
+    margin-top:40px;
+}
+
+/*footer correction*/
+.footer-copyright {
+    margin-top: 20px;
+}
+
+/*BADGES*/
+.footer-nav .nav-item >.badge-default{
+    color: #434a54;
+}
+
+/*Contact form*/
+#contactForm {
+    background: #1291d1 url(../../img/trianglepattern.png) repeat;
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
+    text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
+    color: #FFF;
+    min-height: 100%;
+    padding: 40px;
+}
+.sendContainer{
+    text-align: center;
+}
+.sendContact{
+padding: 10px 40px 10px 40px;
+}
+#contactForm h1{
+    text-align: center;
+}
