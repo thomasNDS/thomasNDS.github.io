@@ -6,7 +6,7 @@ body,html{
     min-height:100%;
 }
 .footer{
-    margin-top:40px;
+    /*margin-top:40px;*/
 }
 
 /*footer correction*/
@@ -26,14 +26,33 @@ body,html{
     text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
     color: #FFF;
     min-height: 100%;
-    padding: 40px;
+    padding: 35px;
 }
 .sendContainer{
     text-align: center;
 }
 .sendContact{
-padding: 10px 40px 10px 40px;
+    padding: 10px 40px 10px 40px;
 }
 #contactForm h1{
     text-align: center;
+}
+
+
+/*test*/
+#stellar{
+    height: 1050px;
+    min-height: 0px;
+    overflow: hidden;
+    /*background: url(../../img/stellar.jpg);*/
+}
+
+.fade{
+    -webkit-transition: all 1s ease-out;
+    opacity: 0; 
+}
+
+.on-show {
+    opacity: 1;
+    display: block;
 }

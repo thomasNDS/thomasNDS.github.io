@@ -21,15 +21,28 @@
         <script type="text/javascript" src="js/libs/icheck.min.js"></script>
         <script type="text/javascript" src="js/libs/respond.min.js"></script>
         <script type="text/javascript" src="js/libs/stellar.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-easing.js"></script>
 
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
         <script>
             $(function() {
                 $.stellar({
                     horizontalScrolling: false,
-                    verticalOffset: 40
+                    verticalOffset: 40,
+                    responsive: true,
+                    showElement: function($elem) {
+                        $elem.addClass("on-show");
+//                        $elem.show();
+                    },
+                    hideElement: function($elem) {
+//                        $elem.hide();
+                        $elem.removeClass("on-show");
+                    },
                 });
             });
+            $('#contactForm').stellar();
+            $('#stellar').stellar();
+
         </script>
     </head>
     <body style="">
@@ -37,26 +50,26 @@
             <div id="main" class="">
                 <h1>Thomas Nunes</h1>
                 <hr />
-
+                <div id="stellar" data-stellar-background-ratio="0.5"></div>
                 <div id="main" data-stellar-background-ratio="0.1">
                     Presentation 
                 </div>
-                <div id="contactForm">
+                <div id="contactForm" data-stellar-background-ratio="0.5">
                     <div class="">
-                        <h1> Contact </h1>
+                        <h1  data-stellar-ratio="0.9" class="fade"> Contact </h1>
 
                         <!--google form-->
                         <form class="" action="https://docs.google.com/spreadsheet/formResponse?formkey=dGRpME5UQ1I4dTJHSlBwNFZ1RDZIVFE6MA&amp;embedded=true&amp;ifq" method="POST" id="ss-form">
-                            <label  class="left ss-q-title" for="entry_2">E-mail:</label>
-                            <label class="ss-q-help" for="entry_2"></label>
-                            <div class="small-12 columns">
+                            <div data-stellar-ratio="0.8" class="fade">
+                                <label  class="left ss-q-title" for="entry_2">E-mail:</label>
+                                <label class="ss-q-help" for="entry_2"></label>
                                 <input placeholder="Votre e-mail" type="text" name="entry.2.single" value="" class="form-control ss-q-short" id="entry_2">
                             </div>
-                            <div class="">
+                            <div data-stellar-ratio="0.8" class="fade">
                                 <div class="ss-form-entry">
                                     <label class="left ss-q-title" for="entry_5">Message:</label>
                                     <label class="ss-q-help" for="entry_5"></label>
-                                    <div class="small-12 columns">
+                                    <div class="">
                                         <textarea placeholder="Votre message" name="entry.5.single" rows="8" cols="75" class="form-control ss-q-long" id="entry_5" ></textarea>
                                     </div>
                                 </div>
@@ -65,7 +78,7 @@
                             <input type="hidden" name="backupCache" value="">
                             <div class="">
                                 <br/>
-                                <div class="sendContainer">
+                                <div data-stellar-ratio="0.95" class="fade sendContainer">
                                     <input class="btn btn-success sendContact" type="submit" name="submit" value="Envoyer">
                                 </div>
                             </div>
