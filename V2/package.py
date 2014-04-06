@@ -1,12 +1,19 @@
 css2min = [
-            "public/css/src/general.css",
+            "public/css/libs/bootstrap.min.css",
+            "public/css/libs/bootflat.css",
             "public/css/src/general.css",
             ]
 js2min = [
-            "public/js/src/stellarConfig.js",
+            "public/js/libs/bootstrap.min.js",
             "public/js/libs/stellar.js",
+            "public/js/libs/respond.min.js",
+            "public/js/libs/icheck.min.js",
+            "public/js/src/stellarConfig.js",
             ]
 html2min = [
             "indexbis.html",
             ]
-file2min = css2min + js2min + html2min
+file2min = js2min + html2min
+
+path2cssMin = "public/gen/min.css"
+path2jsMin = "public/gen/min.js"

@@ -8,8 +8,10 @@
 
 import os
 import sys
-import package
+from package import *
+import cssmin
 
+#need arguments ?
 if len(sys.argv) > 2:
     print sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4]
     city = sys.argv[1]
@@ -44,21 +46,31 @@ class Page:
         self.file.close()
         print self.path, "page saved !"
 
-
+#Create a start page (index)
 indexHtml = Page('indexbis.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 indexHtml.write("hello world ! ")
 indexHtml.close()
 
+#minify all files
 for file in file2min:
-    output = file.replace(".","-min.")
+    if file != "index.html":
+        output = file.replace(".","-min.")
     os.system("./bin/jsmin <" + file + " >" + output)
 
+# merge all css files
 cssConcat = ""
 for css in css2min:
-    css = css.replace(".","-min.")
-    cssConcat += open(css, "r").read()
-# open(css, "r").write
+    cssConcat += cssmin.cssmin(open(css, "r").read())
+    
+open(path2cssMin, "w").write(cssConcat)
 
+# merge all js files
+jsConcat = ""
+for js in js2min:
+    js = js.replace(".","-min.")
+    jsConcat += open(js, "r").read()
+    
+open(path2jsMin, "w").write(jsConcat)
 
 #Delete file generated
 os.system("rm indexbis.html")
