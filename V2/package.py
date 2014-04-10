@@ -20,7 +20,7 @@ js2min = [
             "public/js/src/scrollButton.js",
             ]
 html2min = [
-            "indexbis.html",
+            "index-orig.html",
             ]
             
 file2min = js2min + html2min

@@ -16,8 +16,10 @@ import cssmin
 def minifyFiles():
     # Minify all files
     for file in file2min:
-        if file != "index.html":
+        if file != "index-orig.html":
             output = file.replace(".","-min.")
+        else:
+            output = "index.html"
         os.system("./bin/jsmin <" + file + " >" + output)
 
     # Merge all css files
@@ -34,6 +36,7 @@ def minifyFiles():
         jsConcat += open(js, "r").read()
     open(path2jsMin, "w").write(jsConcat)
     print "all files minified !"
+
 
 #########################################################################
 # Page object
@@ -53,10 +56,14 @@ class Page:
         self.write( self.desc + '">')
         self.write("<title>"+ self.title + "</title>")
         self.write(importJSHtml + importCSSHtml+ "</head><body><div id='wrap'>")
-        self.write('<div id="main">')
+        self.write('<div id="main" class="">')
         
     def write(self,content):
         self.file.write(content)
+        
+    def addSectionHtml (self, pathSection):
+        component = PageSectionHtml(pathSection)
+        self.write(component.getHtml())
     
     def close(self):
         self.file.close()
@@ -67,8 +74,23 @@ class Page:
 #
 # -path : (string) the path of the html file 
 #########################################################################
-class PageSection:
+class PageSectionHtml:
     def __init__(self,path):
+        self.path = path
+        self._file = open(path, "r")
+        self.content = (self._file).read()
+        self._file.close()
+        
+    def getHtml(self):
+        return self.content
+
+#########################################################################
+# Page section object like a header, footer or contact form (html)
+#
+# -path : (string) the path of the html file 
+#########################################################################
+class PageSection:
+    def __init__(self):
         self.path = path
         self._file = open(path, "r")
         self.content = (self._file).read()
@@ -90,24 +112,16 @@ doctype = (open("templates/doctype.html", "r")).read()
 importJSHtml = (open("templates/importsJS.html", "r")).read()
 importCSSHtml = (open("templates/importsCSS.html", "r")).read()
 
-
-
-
 # Create a start page (index)
-indexHtml = Page('indexbis.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
-headerComponent = PageSection("pages/components/header.html")
-indexHtml.write(headerComponent.getHtml())
+indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 
-indexHtml.write("hello world ! ")
-contactComponent = PageSection("pages/components/contact.html")
-indexHtml.write(contactComponent.getHtml())
+indexPage.addSectionHtml("pages/components/header.html")
+indexPage.write("hello world !")
+indexPage.addSectionHtml("pages/components/contact.html")
+indexPage.addSectionHtml("pages/components/footer.html")
 
-footerComponent = PageSection("pages/components/footer.html")
-indexHtml.write(footerComponent.getHtml())
-
-indexHtml.close()
-
+indexPage.close()
 minifyFiles()
 
 # Delete file generated
-os.system("rm indexbis.html")
+#os.system("rm indexbis.html")
