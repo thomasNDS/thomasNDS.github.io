@@ -11,6 +11,7 @@ import os
 import sys
 from package import *
 import cssmin
+from pages.experiences import experience
 
 ############################-Minification-###############################
 def minifyFiles():
@@ -55,8 +56,9 @@ class Page:
         self.write (doctype)
         self.write( self.desc + '">')
         self.write("<title>"+ self.title + "</title>")
-        self.write(importJSHtml + importCSSHtml+ "</head><body><div id='wrap'>")
-        self.write('<div id="main" class="">')
+        self.write(importJSHtml + importCSSHtml+ "</head><body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>")
+        self.write('''<div id="main" class=""><p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
         
     def write(self,content):
         self.file.write(content)
@@ -116,7 +118,9 @@ importCSSHtml = (open("templates/importsCSS.html", "r")).read()
 indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 
 indexPage.addSectionHtml("pages/components/header.html")
-indexPage.write("hello world !")
+indexPage.write(experience.getMenu())
+indexPage.write(experience.getAll())
+indexPage.addSectionHtml("pages/articles/testArticle.html")
 indexPage.addSectionHtml("pages/components/contact.html")
 indexPage.addSectionHtml("pages/components/footer.html")
 
@@ -124,4 +128,3 @@ indexPage.close()
 minifyFiles()
 
 # Delete file generated
-#os.system("rm indexbis.html")

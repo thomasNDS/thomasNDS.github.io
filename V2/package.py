@@ -9,6 +9,7 @@
 css2min = [
             "public/css/libs/bootstrap.css",
             "public/css/libs/bootflat.css",
+            "public/css/src/sidebar.css",
             "public/css/src/general.css",
             ]
 js2min = [
@@ -18,6 +19,7 @@ js2min = [
             "public/js/libs/icheck.min.js",
             "public/js/src/stellarConfig.js",
             "public/js/src/scrollButton.js",
+            "public/js/src/scrollMenu.js",
             ]
 html2min = [
             "index-orig.html",
