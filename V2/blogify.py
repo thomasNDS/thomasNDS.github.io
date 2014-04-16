@@ -9,9 +9,10 @@
 
 import os
 import sys
-from package import *
 import cssmin
+from package import *
 from pages.experiences import experience
+from pages.template import *
 
 ############################-Minification-###############################
 def minifyFiles():
@@ -117,8 +118,11 @@ importCSSHtml = (open("templates/importsCSS.html", "r")).read()
 # Create a start page (index)
 indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 
+menu = Menu()
+menu.addSectionElement(experience.getMenu())
+
 indexPage.addSectionHtml("pages/components/header.html")
-indexPage.write(experience.getMenu())
+indexPage.write(menu)
 indexPage.write(experience.getAll())
 indexPage.addSectionHtml("pages/articles/testArticle.html")
 indexPage.addSectionHtml("pages/components/contact.html")
