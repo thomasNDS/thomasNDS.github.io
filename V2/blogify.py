@@ -118,11 +118,14 @@ importCSSHtml = (open("templates/importsCSS.html", "r")).read()
 # Create a start page (index)
 indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 
+# Create the menu
 menu = Menu()
-menu.addSectionElement(experience.getMenu())
+nameSub, idSub, elts = experience.experiences.get4menu()
+menu.addSubMenu(nameSub, idSub, elts)
 
+# Build the page
 indexPage.addSectionHtml("pages/components/header.html")
-indexPage.write(menu)
+indexPage.write(str(menu))
 indexPage.write(experience.getAll())
 indexPage.addSectionHtml("pages/articles/testArticle.html")
 indexPage.addSectionHtml("pages/components/contact.html")

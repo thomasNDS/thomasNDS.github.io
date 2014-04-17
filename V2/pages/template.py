@@ -5,62 +5,33 @@
 # copyright Thomas Nunes <thomasnds.github.io>
 # License MIT
 #############################################################
-
-###############################################
-# Convert a name (String) to an valid id (String)
-#
-# @param (string) name
-# @return (String) a valid id
-###############################################
-def name2id(name):
-    id = "no-id"
-    if name != "":
-        id = name.replace(" ","-")
-        id= id.replace("'","-")
-        id= id.replace("é","e")
-        id= id.replace("è","e")
-        id= id.replace("&","-")
-        id= id.replace("~","-")
-        id= id.replace("ç","c")
-        id= id.replace("à","a")
-        id= id.replace("ù","u")
-        id= id.replace("#","-")
-        id= id.replace("?","")
-        id= id.replace("!","")
-        id= id.replace(",","")
-        id= id.replace(";","")
-        id= id.replace("/","")
-        id= id.replace(":","")
-        id= id.replace(".","-")
-    return id
     
-
 ###############################################
 # Submenu of element
 # 
-# _elements ([String])
+# _elements [(String, String)] value, id
 ###############################################
 class SubMenu:
     _elements = []
 
-    # elts ([String])
-    # name (String)
-    def __init__(self, name, elts):
+    # elts [(String, String)]
+    def __init__(self, elts, title,id):
        self._elements = elts
+       print elts
+       self.title = title
+       self.id = id
     
-    # elt (String)
-    def addElement(self,elt):
-        _elements.append(elt)
+    def addElement(self,name,id):
+        _elements.append((name,id))
 
     def __str__(self):
         res= "<li>"
-        res += '<a href="#' + name2id(self.name) + '">' + self.name + '</a><ul class="nav">'
+        res += '<a href="#' + str(self.id) + '">' + self.title + '</a><ul class="nav">'
         for elt in self._elements:
-            res += '<li><a href="#' + name2id(elt) + '">' + elt + '</a></li>'
+            res += '<li><a href="#' + str(elt[0]) + '">' + str(elt[1]) + '</a></li>'
         
         res += "</ul></li>"
         return res
-
 
 ###############################################
 # Create right menu with submenu
@@ -72,8 +43,8 @@ class Menu:
 
     # elts ([String])
     # name (String)
-    def addSubMenu(self, name, elts):
-        self._subMenu.append(SubMenu(elts))
+    def addSubMenu(self, title, id, elts):
+        self._subMenu.append(SubMenu(elts, title, id))
     
     def __str__(self):
         res= """<div class="container"><div class="row">
@@ -81,7 +52,7 @@ class Menu:
             <ul class="nav sidenav" data-spy="affix" data-offset-top="10">"""
             
         for sub in self._subMenu:
-            res += sub
+            res += str(sub)
         
         res += """    </ul>
                     </nav>

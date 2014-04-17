@@ -44,28 +44,6 @@ class Entreprise:
 # An Abstract Element
 #
 # name (string)
-# _elements ([AbstractElement])
-###############################################
-class Category:
-    _elements= []
-    
-    def __init__(self, name):
-         self.name = name
-    
-    #elt (AbstractElement)
-    def addElement(self,elt):
-        _elements.append(elt)
-        
-    def __str__(self):
-        res = ""
-        for elt in _elements:
-            res += elt
-        return res
-
-###############################################
-# An Abstract Element
-#
-# name (string)
 # description (string)
 ###############################################
 class AbstractElement:
@@ -73,6 +51,33 @@ class AbstractElement:
     def __init__(self, name, description):
         self.name = name
         self.description = description
+        self.id = self.name2id(name)
+
+    # Convert a name (String) to an valid id (String)
+    #
+    # @param (string) name
+    # @return (String) a valid id
+    def name2id(self, name):
+        id = "no-id"
+        if name != "":
+            id = name.replace(" ","-")
+            id= id.replace("'","-")
+            id= id.replace("é","e")
+            id= id.replace("è","e")
+            id= id.replace("&","-")
+            id= id.replace("~","-")
+            id= id.replace("ç","c")
+            id= id.replace("à","a")
+            id= id.replace("ù","u")
+            id= id.replace("#","-")
+            id= id.replace("?","")
+            id= id.replace("!","")
+            id= id.replace(",","")
+            id= id.replace(";","")
+            id= id.replace("/","")
+            id= id.replace(":","")
+            id= id.replace(".","-")
+        return id
     
     def __str__(self):
         res= """<div class="col-6 col-sm-6 col-lg-4 element">
@@ -80,6 +85,38 @@ class AbstractElement:
               <p class="element-description">""" + self.description + """ </p>"""
         res += """<p><a class="btn btn-default" href="#" role="button">More »</a></p></div><!--/span-->"""
         return res
+
+###############################################
+# An category of Abstract Element
+#
+# name (string)
+# _elements ([AbstractElement])
+###############################################
+class Category(AbstractElement):
+    _elements= []
+    
+    def __init__(self, name):
+         AbstractElement.__init__(self, name, "")
+    
+    #elt (AbstractElement)
+    def addElement(self,elt):
+        self._elements.append(elt)
+        
+    def __str__(self):
+        res = ""
+        for elt in self._elements:
+            res += str(elt)
+        return res
+    
+#  get the list of names
+#    
+#  @return (String, [String]) : name of category and list of elements names
+    def get4menu(self):
+        res = []
+        for elt in self._elements:
+            res.append((elt.name,elt.id))
+            
+        return (self.name, self.id, res)
 
 ###############################################
 # An experience Object
@@ -98,6 +135,7 @@ class Experience(AbstractElement):
     dateEnd = None
     location = None
     _entreprise = None
+    id = None
 
     def __init__(self, name, description):
         AbstractElement.__init__(self, name, description)

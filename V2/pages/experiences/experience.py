@@ -66,3 +66,10 @@ def getAll():
       </div><!--/row-->
     </div>"""
     return res
+
+experiences = Category("experiences")
+testexp = Experience("test","description")
+
+experiences.addElement(testexp)
+
+
