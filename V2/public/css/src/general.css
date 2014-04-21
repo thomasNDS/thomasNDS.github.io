@@ -19,6 +19,12 @@ wrap{
 .footer-nav .nav-item >.badge-default{
     color: #434a54;
 }
+.white{
+    color: white;
+}
+.white:hover{
+    color: #DDD;
+}
 
 /*Contact form*/
 #contactForm {

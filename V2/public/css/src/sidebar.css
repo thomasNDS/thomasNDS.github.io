@@ -8,6 +8,7 @@ ul.affix-bottom {
 .sidebar{
     position: absolute;
     right: 0;
+    z-index: 1;
 }
 
 /* All levels of nav */

@@ -15,21 +15,26 @@ class SubMenu:
     _elements = []
 
     # elts [(String, String)]
-    def __init__(self, elts, title,id):
+    def __init__(self, elts, title,id, first = False):
        self._elements = elts
        print elts
        self.title = title
        self.id = id
+       self.isFirst = first
     
     def addElement(self,name,id):
         _elements.append((name,id))
 
     def __str__(self):
-        res= "<li>"
+        if self.isFirst:
+            res= "<li class='active'>"
+        else:
+            res= "<li>"     
         res += '<a href="#' + str(self.id) + '">' + self.title + '</a><ul class="nav">'
+        first = "class='active'"
         for elt in self._elements:
-            res += '<li><a href="#' + str(elt[0]) + '">' + str(elt[1]) + '</a></li>'
-        
+            res += '<li '+ first +'><a href="#' + str(elt[0]) + '">' + str(elt[1]) + '</a></li>'
+            first = ""
         res += "</ul></li>"
         return res
 
@@ -40,11 +45,14 @@ class SubMenu:
 ###############################################
 class Menu:
     _subMenu = []
-
+    
     # elts ([String])
     # name (String)
     def addSubMenu(self, title, id, elts):
-        self._subMenu.append(SubMenu(elts, title, id))
+        first = False
+        if len(self._subMenu)<=0:
+            first = True
+        self._subMenu.append(SubMenu(elts, title, id, first))
     
     def __str__(self):
         res= """<div class="container"><div class="row">

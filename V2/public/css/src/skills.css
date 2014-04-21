@@ -1,0 +1,27 @@
+
+.skill-element{
+    display: inline;
+    margin: 3.5px;
+    font-size: 1.05em;
+    color: #79818D;
+}
+
+.skill-element.skill-medium{
+    font-size: 1.2em;
+    color: #6C747F;
+}
+
+.skill-element.skill-good{
+    font-size: 1.35em;
+    color: #535B66;
+}
+
+.skill-element.skill-expert{
+    font-size: 1.50em;
+    color: #434a54;
+}
+
+/*container*/
+.skills-container{
+
+}

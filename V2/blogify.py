@@ -1,4 +1,4 @@
-#! /usr/bin/python2.7
+#! /usr/bin/python3.4
 # -*-coding:Utf-8 -*
 #
 # Static blog generator
@@ -11,7 +11,8 @@ import os
 import sys
 import cssmin
 from package import *
-from pages.experiences import experience
+from pages.projects import project
+from pages.skills import skills
 from pages.template import *
 
 ############################-Minification-###############################
@@ -87,21 +88,6 @@ class PageSectionHtml:
     def getHtml(self):
         return self.content
 
-#########################################################################
-# Page section object like a header, footer or contact form (html)
-#
-# -path : (string) the path of the html file 
-#########################################################################
-class PageSection:
-    def __init__(self):
-        self.path = path
-        self._file = open(path, "r")
-        self.content = (self._file).read()
-        self._file.close()
-        
-    def getHtml(self):
-        return self.content
-
 ############################-Create pages-###############################
 
 #need arguments ?
@@ -120,18 +106,21 @@ indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of 
 
 # Create the menu
 menu = Menu()
-nameSub, idSub, elts = experience.experiences.get4menu()
+
+menu.addSubMenu(skills.skills.name, skills.skills.id, skills.skills.getMenu())
+
+nameSub, idSub, elts = project.projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
+
 
 # Build the page
 indexPage.addSectionHtml("pages/components/header.html")
 indexPage.write(str(menu))
-indexPage.write(experience.getAll())
+indexPage.write(str(skills.skills.description))
+indexPage.write(str(project.projects))
 indexPage.addSectionHtml("pages/articles/testArticle.html")
 indexPage.addSectionHtml("pages/components/contact.html")
 indexPage.addSectionHtml("pages/components/footer.html")
 
 indexPage.close()
 minifyFiles()
-
-# Delete file generated

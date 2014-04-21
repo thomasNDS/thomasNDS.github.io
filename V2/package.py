@@ -1,4 +1,4 @@
-#! /usr/bin/python2.7
+#! /usr/bin/python3.4
 # -*-coding:Utf-8 -*
 #
 # Static blog generator
@@ -9,6 +9,7 @@
 css2min = [
             "public/css/libs/bootstrap.css",
             "public/css/libs/bootflat.css",
+            "public/css/src/skills.css",
             "public/css/src/sidebar.css",
             "public/css/src/general.css",
             ]
