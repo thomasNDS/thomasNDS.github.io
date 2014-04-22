@@ -30,7 +30,8 @@ class Place:
 ###############################################
 class AbstractElement:
 
-    def __init__(self, name, description):
+    def __init__(self, name, description, ownPage = False):
+        self.ownPage = ownPage
         self.name = name
         self.description = description
         self.id = self.name2id(name)
@@ -83,6 +84,14 @@ class Category(AbstractElement):
     #elt (AbstractElement)
     def addElement(self,elt):
         self._elements.append(elt)
+        
+    # @return [AbstractElement]
+    def getElementsWithOwnPage(self):
+        res = []
+        for elt in _elements:
+            if elt.ownPage:
+                res.append(elt)
+        return res
         
     def __str__(self, list= _elements):
         res = '<h1 class="title-section" id="'+ self.id +'">' + self.name + '</h1>' + """<div class="container">
