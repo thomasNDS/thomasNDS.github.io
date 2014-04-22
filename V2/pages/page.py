@@ -4,7 +4,7 @@
 #
 # copyright Thomas Nunes <thomasnds.github.io>
 # License MIT
-#############################################################
+############################################################
 
 import string
 import datetime
@@ -157,6 +157,13 @@ class Project(AbstractElement):
         res += """</div><!--/span-->"""
         return res
     
+###############################################
+# A section (part of page) class
+#
+# name (string)
+# description (string)
+# menu ([String]) list of subtitles to include in a menu
+###############################################
 class Section(AbstractElement):
     def __init__(self, name, description, menu):
         AbstractElement.__init__(self, name, description)
