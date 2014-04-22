@@ -9,6 +9,62 @@
 import string
 import datetime
 
+
+#########################################################################
+# Page object
+#
+# -path : (string) path of the new page
+# -title : the tile of the page <title>
+# -descr : the description of the page <meta> 
+#########################################################################
+class Page:
+    # Files imported
+    doctype = (open("templates/doctype.html", "r")).read()
+    importJSHtml = (open("templates/importsJS.html", "r")).read()
+    importCSSHtml = (open("templates/importsCSS.html", "r")).read()
+
+    def __init__(self, path, title, descr):
+        self.file = open(path, "w")
+        self.desc = descr
+        self.path = path
+        self.title = title
+        self.setHeader()
+    
+    def setHeader(self):
+        self.write (self.doctype)
+        self.write( self.desc + '">')
+        self.write("<title>"+ self.title + "</title>")
+        self.write(self.importJSHtml + self.importCSSHtml+ "</head><body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>")
+        self.write('''<div id="main" class=""><p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
+        
+    def write(self,content):
+        self.file.write(content)
+        
+    def addSectionHtml (self, pathSection):
+        component = PageSectionHtml(pathSection)
+        self.write(component.getHtml())
+    
+    def close(self):
+        self.file.close()
+        print self.path, "page saved !"
+   
+
+#########################################################################
+# Page section object like a header, footer or contact form (html)
+#
+# -path : (string) the path of the html file 
+#########################################################################
+class PageSectionHtml:
+    def __init__(self,path):
+        self.path = path
+        self._file = open(path, "r")
+        self.content = (self._file).read()
+        self._file.close()
+        
+    def getHtml(self):
+        return self.content
+
 ###############################################
 # A location (GPS)
 #
@@ -35,6 +91,8 @@ class AbstractElement:
         self.name = name
         self.description = description
         self.id = self.name2id(name)
+        if ownPage:
+            self.createOwnPage()
 
     # Convert a name (String) to an valid id (String)
     #
@@ -61,6 +119,9 @@ class AbstractElement:
             id= id.replace(":","")
             id= id.replace(".","-")
         return id.lower()
+    
+    def createOwnPage(self):
+        print "createOwnPage not yet defined"
     
     def __str__(self):
         res= """<div class="col-6 col-sm-6 col-lg-4 element">
@@ -146,8 +207,14 @@ class Project(AbstractElement):
     dateEnd = None
     id = None
 
-    def __init__(self, name, description):
-        AbstractElement.__init__(self, name, description)
+    def __init__(self, name, description, ownPage = False):
+        AbstractElement.__init__(self, name, description, ownPage)
+    
+    def createOwnPage(self):
+        self.path2page = "projects/" + self.name + ".html"
+        self.page = Page(self.path2page, self.name, self.description)
+        self.page.write(self.description)
+        self.page.close()
     
     def __str__(self):
         res= "<div id='" + self.id + """' class="col-6 col-sm-6 col-lg-4 element">
