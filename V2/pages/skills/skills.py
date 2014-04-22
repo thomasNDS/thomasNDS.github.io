@@ -4,18 +4,28 @@
 #
 # copyright Thomas Nunes <thomasnds.github.io>
 # License MIT
-#############################################################
+############################################################
 from pages.page import *
 
+###################################################
+# Level of a skill, between 1 and 4 (4 is the best)
+# 
+# level (int) the current level
+# normal, medium, good, expert: (int) differents levels
+###################################################
 class LevelSkill():
     normal = 1
     medium = 2
     good = 3
     expert = 4
     level = 1
+
     def __init__(self, level= 1):
         self.level = level
     
+#######################################
+# get the css class associated
+#######################################
     def getClass(self):
         if self.level == self.normal:
             return ""
@@ -27,7 +37,11 @@ class LevelSkill():
             return "skill-expert"
         return ""
                 
-
+###################################################
+# A skill
+#
+# levelSkill (LevelSkill) the level of the skill
+###################################################
 class SkillElement:
     levelSkill = None
     
@@ -40,14 +54,20 @@ class SkillElement:
         return """<div id="content-skills"  class='skill-element
                """+ self.levelSkill.getClass() + """'>
                """ + str(self.name) + """</div><!--/span-->"""
-               
+ 
+###################################################
+# A skill subgroup
+#
+# _skillsElements ([SkillElement]) list of skills
+###################################################              
 class SubSkillSection(AbstractElement):
     _skillsElements = []
    
     def __init__(self, name):
         AbstractElement.__init__(self, name, "")
         self._skillsElements = []
-        
+ 
+    # skill (SkillElement)
     def addSkill(self, skill):
         self._skillsElements.append(skill)
     
@@ -60,6 +80,12 @@ class SubSkillSection(AbstractElement):
         res += "</div><!--/span-->"
         return res
 
+###################################################
+# A skills global group
+#
+# _skillsElements ([SkillElement]) list of skills
+# _subSkillSection ([SubSkillSection]) list of subgroup of skills
+###################################################       
 class SkillSection(AbstractElement):
     _subSkillSection = []
     _skillsElements = []
@@ -68,10 +94,12 @@ class SkillSection(AbstractElement):
         AbstractElement.__init__(self, name, "")
         self._subSkillSection = []
         self._skillsElements = []
-        
+     
+    # skill (SubSkillSection)
     def addSkillSection(self, skill):
         self._subSkillSection.append(skill)
 
+    # skill (SkillElement)
     def addSkill(self, skill):
         self._skillsElements.append(skill)
         
@@ -134,9 +162,7 @@ programming.addSkill(SkillElement("IOT", 3))
 programming.addSkill(SkillElement("PHP", 1))
 programming.addSkill(SkillElement("Javascript", 4))
 skillSections.append(programming)
-#############################################################
-
-
+############################################################
 
 
 skills.description = """
