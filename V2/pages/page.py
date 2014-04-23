@@ -23,20 +23,23 @@ class Page:
     importJSHtml = (open("templates/importsJS.html", "r")).read()
     importCSSHtml = (open("templates/importsCSS.html", "r")).read()
 
-    def __init__(self, path, title, descr):
+    def __init__(self, path, title, descr, header = ""):
         self.file = open(path, "w")
-        self.desc = descr
+        self.description = descr
         self.path = path
         self.title = title
-        self.setHeader()
+        self.setHeader(header)
     
-    def setHeader(self):
+    def setHeader(self, header):
         self.write (self.doctype)
-        self.write( self.desc + '">')
+        self.write( self.description + '">')
         self.write("<title>"+ self.title + "</title>")
-        self.write(self.importJSHtml + self.importCSSHtml+ "</head><body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>")
-        self.write('''<div id="main" class=""><p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
+        if header == "":
+            self.write(self.importJSHtml + self.importCSSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>")
+            self.write('''<div id="main" class=""><p class="pull-right visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
+        else:
+            self.write(header)
         
     def write(self,content):
         self.file.write(content)
@@ -149,9 +152,9 @@ class Category(AbstractElement):
     # @return [AbstractElement]
     def getElementsWithOwnPage(self):
         res = []
-        for elt in _elements:
+        for elt in self._elements:
             if elt.ownPage:
-                res.append(elt)
+                res.append(elt.path2page)
         return res
         
     def __str__(self, list= _elements):
@@ -212,8 +215,7 @@ class Project(AbstractElement):
     
     def createOwnPage(self):
         self.path2page = "projects/" + self.name + ".html"
-        self.page = Page(self.path2page, self.name, self.description)
-        self.page.write(self.description)
+        self.page = PageProject(self.path2page, self.name, self.description)
         self.page.close()
     
     def __str__(self):
@@ -228,9 +230,38 @@ class Project(AbstractElement):
             if self.dateStart:
                 res+= """<p class="element-date"><span class="start-date">
                 """ + self.dateStart.strftime("%m/%Y") + """</span></p>"""
-            res += '''<p><a class="btn btn-default" href="#" role="button">More »</a></p>'''
+            res += '<p><a class="btn btn-default" href="' + self.path2page + '" role="button">More »</a></p>'
             
         res += """</div><!--/span-->"""
+        return res
+ 
+class PageProject(Page):
+    def __init__(self, path, title, descr):
+        header = '''<link rel="stylesheet" type="text/css" href="../public/gen/min.css" media="all" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../public/gen/min.js"></script></head>
+        <body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>'''
+        Page.__init__(self, path, title, descr, header)
+        self.write("<h1 id='title-subpage'>" + self.title + '</h1><div class="container">')
+        self.write(self.description + '</div>')
+        self.fil= FilsAriane([("Projects", "../projects", ""), (self.title, "#", "") ]) 
+        self.write(str(self.fil))
+
+###############################################
+#
+#
+###############################################
+class FilsAriane:
+    
+    def __init__(self, sections):
+        self._sections = sections
+    
+    def __str__(self):
+        res = '''<ol class="breadcrumb breadcrumb-arrow">
+                  <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>'''
+        for section in self._sections :
+            res += '<li><a href="' + section[1] + '"><i class="glyphicon '+ section[2] +'"></i>' + section[0] + '</a></li>'
+        res += '</ol>'
         return res
     
 ###############################################

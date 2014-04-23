@@ -12,8 +12,6 @@ import sys
 import cssmin
 from package import *
 from pages import *
-#from project import *
-#from skill import *
 from pages.template import *
 from pages.page import *
 from pages import skills
@@ -23,10 +21,13 @@ from pages import project
 def minifyFiles():
     # Minify all files
     for file in file2min:
+        output = file
+        #Case index.html
         if file != "index-orig.html":
             output = file.replace(".","-min.")
         else:
             output = "index.html"
+        #######
         os.system("./bin/jsmin <" + file + " >" + output)
 
     # Merge all css files
@@ -73,5 +74,8 @@ indexPage.addSectionHtml("pages/articles/testArticle.html")
 indexPage.addSectionHtml("pages/components/contact.html")
 indexPage.addSectionHtml("pages/components/footer.html")
 
+
+# minify
+file2min += project.projects.getElementsWithOwnPage()
 indexPage.close()
 minifyFiles()
