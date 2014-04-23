@@ -44,6 +44,8 @@ class Page:
     def write(self,content):
         self.file.write(content)
         
+    # Add html file to the content
+    # pathSection (String) path of a html file
     def addSectionHtml (self, pathSection):
         component = PageSectionHtml(pathSection)
         self.write(component.getHtml())
@@ -123,6 +125,7 @@ class AbstractElement:
             id= id.replace(".","-")
         return id.lower()
     
+    # create a personalised page for this element
     def createOwnPage(self):
         print "createOwnPage not yet defined"
     
