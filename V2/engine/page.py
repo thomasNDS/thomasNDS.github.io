@@ -205,6 +205,8 @@ class Category(AbstractElement):
 # dateEnd (Date) :  the end date of experience
 # location ([Object Places]) :  Where is the experience
 # _entreprise (Object Entreprise) :  the entreprise
+# path2page (String) : path to the own page
+# page (PageProject) : the page coresponding
 ###############################################
 class Project(AbstractElement):
     name = None
@@ -239,8 +241,12 @@ class Project(AbstractElement):
         return res
 
 ###############################################
+# Page of a project
 #
-#
+# -path : (string) path of the new page
+# -title : the tile of the page <title>
+# -description : the description of the page <meta> 
+# -fil : (FilsAriane) the fil d'ariane
 ###############################################
 class PageProject(Page):
     def __init__(self, path, title, descr):
@@ -256,8 +262,9 @@ class PageProject(Page):
         self.write('</div>' + self.description + '</div></div></div>')
 
 ###############################################
+# Fils Ariane 
 #
-#
+# sections ([(String,String,String)]) list of (name, class, link)
 ###############################################
 class FilsAriane:
     
