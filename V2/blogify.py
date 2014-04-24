@@ -16,13 +16,15 @@ from engine.template import *
 from engine.page import *
 from engine import skills
 from engine import project
+from engine import experience
+from engine import formation
 
 ############################-Minification-###############################
 def minifyFiles():
     # Minify all files
     for file in file2min:
         output = file.replace("-orig.",".")
-        print output
+#        print output
         os.system("./bin/jsmin <" + file + " >" + output)
 
     # Merge all css files
@@ -43,7 +45,7 @@ def minifyFiles():
 
 ############################-Create pages-###############################
 
-#need arguments ?
+# Need arguments ?
 if len(sys.argv) > 2:
     print sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4]
     city = sys.argv[1]
@@ -52,25 +54,37 @@ if len(sys.argv) > 2:
 # Create a start page (index)
 indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
 
-# Create the menu
+# Create the menu ###########################
 menu = Menu()
-
-menu.addSubMenu(skills.skills.name, skills.skills.id, skills.skills.getMenu())
-
+# Exp
+nameSub, idSub, elts = experience.experiences.getMenu()
+menu.addSubMenu(nameSub, idSub, elts)
+# Formations
+nameSub, idSub, elts = formation.formations.getMenu()
+menu.addSubMenu(nameSub, idSub, elts)
+# Skill
+menu.addSubMenu(skills.skills.name, skills.skills.id, [])
+# Project
 nameSub, idSub, elts = project.projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
 
-# Build the page
+# Build the page ###########################
 indexPage.addSectionHtml("engine/components/header.html")
 indexPage.write(str(menu))
+# EXP
+indexPage.write(str(experience.experiences))
+# Formations
+indexPage.write(str(formation.formations))
+# Skills
 indexPage.write(str(skills.skills.description))
+# Project
 indexPage.write(str(project.projects))
-indexPage.addSectionHtml("engine/articles/testArticle.html")
+# Contact
 indexPage.addSectionHtml("engine/components/contact.html")
+# Footer
 indexPage.addSectionHtml("engine/components/footer.html")
 
-
-# minify
+# Minify ###########################
 file2min += project.projects.getElementsWithOwnPage()
 indexPage.close()
 minifyFiles()

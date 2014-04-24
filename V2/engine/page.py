@@ -52,7 +52,7 @@ class Page:
     
     def close(self):
         self.file.close()
-        print self.path, "page saved !"
+#        print self.path, "page saved !"
    
 
 #########################################################################
@@ -88,6 +88,8 @@ class Place:
 #
 # name (string)
 # description (string)
+# ownPage (Page)
+# id (String)
 ###############################################
 class AbstractElement:
 
@@ -147,6 +149,7 @@ class Category(AbstractElement):
     
     def __init__(self, name):
          AbstractElement.__init__(self, name, "")
+         self._elements= []
     
     #elt (AbstractElement)
     def addElement(self,elt):
@@ -160,14 +163,15 @@ class Category(AbstractElement):
                 res.append(elt.path2page)
         return res
         
-    def __str__(self, list= _elements):
+    def __str__(self):
+        list = self._elements
         res = '<h1 class="title-section" id="'+ self.id +'">' + self.name + '</h1>' + """<div class="container">
                   <div class="">
                    <div class="col-xs-12 col-sm-9">""" 
         listOfYears = self.getListOfYear()
         for date in listOfYears:
             ################         
-            res+= '     <h2>' + date.strftime("%Y") + '</h2>'
+            res+= '     <h2 id="' + self.id + date.strftime("%Y") + '">' + date.strftime("%Y") + '</h2>'
             res+= '     <div class="row">'
             for elt in list:
                 if elt.dateStart.year == date.year:
@@ -186,7 +190,7 @@ class Category(AbstractElement):
         res = []
         for elt in self._elements:
             res.append((elt.name,elt.id))    
-        return (self.name, self.id, res)
+        return (self.name, self.id, self.getListOfYearsId())
     
     def getListOfYear(self):
         res = set()
@@ -194,6 +198,12 @@ class Category(AbstractElement):
             if elt.dateStart:
                 res.add(elt.dateStart)
         return sorted(res)
+    
+    def getListOfYearsId(self):
+        res = []
+        for elt in self.getListOfYear():
+            res.append((self.id + elt.strftime("%Y"),(elt.strftime("%Y"))))
+        return res
 
     
 ###############################################
@@ -235,7 +245,7 @@ class Project(AbstractElement):
             if self.dateStart:
                 res+= """<p class="element-date"><span class="start-date">
                 """ + self.dateStart.strftime("%m/%Y") + """</span></p>"""
-            res += '<p><a class="btn btn-default" href="' + self.path2page + '" role="button">More »</a></p>'
+            res += '<p><a class="btn btn-default" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'
             
         res += """</div><!--/span-->"""
         return res
