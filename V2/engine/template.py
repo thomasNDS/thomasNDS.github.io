@@ -17,7 +17,6 @@ class SubMenu:
     # elts [(String, String)]
     def __init__(self, elts, title,id, first = False):
        self._elements = elts
-       print elts
        self.title = title
        self.id = id
        self.isFirst = first

@@ -11,6 +11,7 @@ css2min = [
             "public/css/libs/bootflat.css",
             "public/css/src/skills.css",
             "public/css/src/sidebar.css",
+            "public/css/src/arianne.css",
             "public/css/src/general.css",
             ]
 js2min = [

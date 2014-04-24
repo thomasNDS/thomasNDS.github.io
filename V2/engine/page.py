@@ -217,7 +217,7 @@ class Project(AbstractElement):
         AbstractElement.__init__(self, name, description, ownPage)
     
     def createOwnPage(self):
-        self.path2page = "projects/" + self.name + ".html"
+        self.path2page = "projects/" + self.name + "-orig.html"
         self.page = PageProject(self.path2page, self.name, self.description)
         self.page.close()
     
@@ -237,7 +237,11 @@ class Project(AbstractElement):
             
         res += """</div><!--/span-->"""
         return res
- 
+
+###############################################
+#
+#
+###############################################
 class PageProject(Page):
     def __init__(self, path, title, descr):
         header = '''<link rel="stylesheet" type="text/css" href="../public/gen/min.css" media="all" />
@@ -245,10 +249,11 @@ class PageProject(Page):
         <script type="text/javascript" src="../public/gen/min.js"></script></head>
         <body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>'''
         Page.__init__(self, path, title, descr, header)
-        self.write("<h1 id='title-subpage'>" + self.title + '</h1><div class="container">')
-        self.write(self.description + '</div>')
+        self.write("<h1 id='title-subpage'>" + self.title + '''</h1><div class="container">
+        <div class="row"><div class="col-md-12">''')
         self.fil= FilsAriane([("Projects", "../projects", ""), (self.title, "#", "") ]) 
         self.write(str(self.fil))
+        self.write('</div>' + self.description + '</div></div></div>')
 
 ###############################################
 #
@@ -260,10 +265,15 @@ class FilsAriane:
         self._sections = sections
     
     def __str__(self):
-        res = '''<ol class="breadcrumb breadcrumb-arrow">
-                  <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>'''
-        for section in self._sections :
-            res += '<li><a href="' + section[1] + '"><i class="glyphicon '+ section[2] +'"></i>' + section[0] + '</a></li>'
+        res = '''<ol class="breadcrumb breadcrumb-arrow"> <!--
+            --> <li><a href="#">Home</a></li><!--
+            -->'''
+        for i in range(0,len(self._sections)-1):
+            section = self._sections[i]
+            res += '\n <li><a class="elt-arianne" href="' + section[1] + '">' + section[0] + '''</a></li><!--
+            -->'''
+        section = self._sections[-1]
+        res += '<li class="elt-arianne active"><span>' + section[0] + '</span></li> \n'
         res += '</ol>'
         return res
     

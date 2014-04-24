@@ -5,7 +5,7 @@
 # copyright Thomas Nunes <thomasnds.github.io>
 # License MIT
 ############################################################
-from pages.page import *
+from engine.page import *
 
 ###################################################
 # Level of a skill, between 1 and 4 (4 is the best)
@@ -121,7 +121,7 @@ skillSections = []
 
 itSkills = SkillSection("IT skills")
 environement = SubSkillSection("Tools")
-systemes = SubSkillSection("Systemes")
+systemes = SubSkillSection("Systems")
 design = SubSkillSection("Design")
 
 systemes.addSkill(SkillElement("Linux", 4))

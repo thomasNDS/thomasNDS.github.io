@@ -11,23 +11,18 @@ import os
 import sys
 import cssmin
 from package import *
-from pages import *
-from pages.template import *
-from pages.page import *
-from pages import skills
-from pages import project
+from engine import *
+from engine.template import *
+from engine.page import *
+from engine import skills
+from engine import project
 
 ############################-Minification-###############################
 def minifyFiles():
     # Minify all files
     for file in file2min:
-        output = file
-        #Case index.html
-        if file != "index-orig.html":
-            output = file.replace(".","-min.")
-        else:
-            output = "index.html"
-        #######
+        output = file.replace("-orig.",".")
+        print output
         os.system("./bin/jsmin <" + file + " >" + output)
 
     # Merge all css files
@@ -66,13 +61,13 @@ nameSub, idSub, elts = project.projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
 
 # Build the page
-indexPage.addSectionHtml("pages/components/header.html")
+indexPage.addSectionHtml("engine/components/header.html")
 indexPage.write(str(menu))
 indexPage.write(str(skills.skills.description))
 indexPage.write(str(project.projects))
-indexPage.addSectionHtml("pages/articles/testArticle.html")
-indexPage.addSectionHtml("pages/components/contact.html")
-indexPage.addSectionHtml("pages/components/footer.html")
+indexPage.addSectionHtml("engine/articles/testArticle.html")
+indexPage.addSectionHtml("engine/components/contact.html")
+indexPage.addSectionHtml("engine/components/footer.html")
 
 
 # minify
