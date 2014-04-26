@@ -2,6 +2,14 @@
 body,html{
     height:100%;
     min-height:100%;
+    /*background: #FCFCFC;*/
+}
+.grey-back{
+    background: #E6E6E6;
+}
+.container{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 wrap{
     min-height:100%;
@@ -71,3 +79,9 @@ wrap{
     display: block;
 }
 
+.separate-margin200{
+    margin-bottom: 200px;
+}
+.separate-margin100{
+    margin-bottom: 100px;
+}

@@ -165,16 +165,18 @@ skillSections.append(programming)
 ############################################################
 
 
-skills.description = """
-        <h1 id="skills" class="title-section">""" + skills.name + """</h1>
-            <div class="container"><div class="">
+content = """
+            <div class="container">
+              <div class="category">
+                <h1 id="skills" class="title-section">""" + skills.name + """</h1>
                     <div class="col-xs-12 col-sm-9 skills-container">
                         <div class="row">"""
 for section in skillSections:
-    skills.description += str(section)
-skills.description += """
+    content += str(section)
+content += """
                         </div><!--/span-->
                     </div><!--/span-->
                 </div><!--/row-->
             </div>
         """
+skills.setContent(content)

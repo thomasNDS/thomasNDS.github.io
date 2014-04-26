@@ -58,10 +58,10 @@ indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of 
 menu = Menu()
 # Exp
 nameSub, idSub, elts = experience.experiences.getMenu()
-menu.addSubMenu(nameSub, idSub, elts)
+menu.addSubMenu(nameSub, idSub, [])
 # Formations
 nameSub, idSub, elts = formation.formations.getMenu()
-menu.addSubMenu(nameSub, idSub, elts)
+menu.addSubMenu(nameSub, idSub, [])
 # Skill
 menu.addSubMenu(skills.skills.name, skills.skills.id, [])
 # Project
@@ -76,9 +76,10 @@ indexPage.write(str(experience.experiences))
 # Formations
 indexPage.write(str(formation.formations))
 # Skills
-indexPage.write(str(skills.skills.description))
+indexPage.write(str(skills.skills))
 # Project
 indexPage.write(str(project.projects))
+indexPage.write("<div class='separate-margin200'></div>")
 # Contact
 indexPage.addSectionHtml("engine/components/contact.html")
 # Footer

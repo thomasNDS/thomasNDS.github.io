@@ -54,6 +54,30 @@ class Page:
         self.file.close()
 #        print self.path, "page saved !"
    
+#########################################################################
+#
+#########################################################################
+class AbstractPageStandAlone(Page):
+    def __init__(self, path, title, descr):
+        header = '''<link rel="stylesheet" type="text/css" href="../public/gen/min.css" media="all" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../public/gen/min.js"></script></head>
+        <body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>'''
+        Page.__init__(self, path, title, descr, header)
+        self.setFilArianne()
+        self.setTitle()
+        self.setContent(self.description)
+        
+    def setTitle(self):
+        self.write("<h1 id='title-subpage'>" + self.title + '''</h1><div class="container">
+        <div class="row"><div class="col-md-12">''')
+        self.write(str(self.fil))
+    
+    def setFilArianne(self):
+        self.fil= FilsAriane([("Others", "../projects", ""), (self.title, "#", "") ]) 
+
+    def setContent(self, content):
+        self.write('</div>' + content + '</div></div></div>')
 
 #########################################################################
 # Page section object like a header, footer or contact form (html)
@@ -92,7 +116,7 @@ class Place:
 # id (String)
 ###############################################
 class AbstractElement:
-
+    
     def __init__(self, name, description, ownPage = False):
         self.ownPage = ownPage
         self.name = name
@@ -144,7 +168,7 @@ class AbstractElement:
 # name (string)
 # _elements ([AbstractElement])
 ###############################################
-class Category(AbstractElement):
+class AbstractCategory(AbstractElement):
     _elements= []
     
     def __init__(self, name):
@@ -165,18 +189,13 @@ class Category(AbstractElement):
         
     def __str__(self):
         list = self._elements
-        res = '<h1 class="title-section" id="'+ self.id +'">' + self.name + '</h1>' + """<div class="container">
-                  <div class="">
-                   <div class="col-xs-12 col-sm-9">""" 
-        listOfYears = self.getListOfYear()
-        for date in listOfYears:
-            ################         
-            res+= '     <h2 id="' + self.id + date.strftime("%Y") + '">' + date.strftime("%Y") + '</h2>'
-            res+= '     <div class="row">'
-            for elt in list:
-                if elt.dateStart.year == date.year:
-                    res += str(elt)
-            res += """  </div><!--/row-->"""
+        res = '''<div class="category grey-back"><div class="container">
+                    <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
+                     <div class="col-xs-12 col-sm-9">""" 
+        list.sort(key=lambda x: x.dateStart, reverse=True)
+        for elt in list:
+                res += str(elt)
+        res += """  </div><!--/row-->"""
             ################
         res += """</div><!--/span-->
                </div><!--/row-->
@@ -197,7 +216,7 @@ class Category(AbstractElement):
         for elt in self._elements:
             if elt.dateStart:
                 res.add(elt.dateStart)
-        return sorted(res)
+        return sorted(res, reverse=True)
     
     def getListOfYearsId(self):
         res = []
@@ -205,71 +224,6 @@ class Category(AbstractElement):
             res.append((self.id + elt.strftime("%Y"),(elt.strftime("%Y"))))
         return res
 
-    
-###############################################
-# An experience Object
-#
-# name (string)
-# description (string)
-# dateStart (Date): the start date of experience
-# dateEnd (Date) :  the end date of experience
-# location ([Object Places]) :  Where is the experience
-# _entreprise (Object Entreprise) :  the entreprise
-# path2page (String) : path to the own page
-# page (PageProject) : the page coresponding
-###############################################
-class Project(AbstractElement):
-    name = None
-    description = None
-    dateStart = None
-    dateEnd = None
-    id = None
-
-    def __init__(self, name, description, ownPage = False):
-        AbstractElement.__init__(self, name, description, ownPage)
-    
-    def createOwnPage(self):
-        self.path2page = "projects/" + self.name + "-orig.html"
-        self.page = PageProject(self.path2page, self.name, self.description)
-        self.page.close()
-    
-    def __str__(self):
-        res= "<div id='" + self.id + """' class="col-6 col-sm-6 col-lg-4 element">
-            <h3 class="element-title">""" + self.name + """</h3>
-              <p class="element-description">""" + self.description + """ </p>"""
-        
-        if self.dateStart and self.dateEnd:
-            res+= """<p class="element-date"><span class="start-date">
-            """ + self.dateStart + """</span> - <span class="end-date">""" + self.dateEnd +"""</span></p>"""
-        else: 
-            if self.dateStart:
-                res+= """<p class="element-date"><span class="start-date">
-                """ + self.dateStart.strftime("%m/%Y") + """</span></p>"""
-            res += '<p><a class="btn btn-default" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'
-            
-        res += """</div><!--/span-->"""
-        return res
-
-###############################################
-# Page of a project
-#
-# -path : (string) path of the new page
-# -title : the tile of the page <title>
-# -description : the description of the page <meta> 
-# -fil : (FilsAriane) the fil d'ariane
-###############################################
-class PageProject(Page):
-    def __init__(self, path, title, descr):
-        header = '''<link rel="stylesheet" type="text/css" href="../public/gen/min.css" media="all" />
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script type="text/javascript" src="../public/gen/min.js"></script></head>
-        <body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>'''
-        Page.__init__(self, path, title, descr, header)
-        self.write("<h1 id='title-subpage'>" + self.title + '''</h1><div class="container">
-        <div class="row"><div class="col-md-12">''')
-        self.fil= FilsAriane([("Projects", "../projects", ""), (self.title, "#", "") ]) 
-        self.write(str(self.fil))
-        self.write('</div>' + self.description + '</div></div></div>')
 
 ###############################################
 # Fils Ariane 
@@ -300,11 +254,24 @@ class FilsAriane:
 # name (string)
 # description (string)
 # menu ([String]) list of subtitles to include in a menu
+# _content (String)
 ###############################################
 class Section(AbstractElement):
+    _content = ""
+    
     def __init__(self, name, description, menu):
         AbstractElement.__init__(self, name, description)
         self.menu = menu
+        self._content = ""
     
     def getMenu(self):
         return self.menu
+    
+    def setContent(self, content):
+        self._content = content
+
+    def getContent(self):
+        return self._content
+    
+    def __str__(self):
+        return self._content

@@ -10,6 +10,24 @@ from engine.page import *
 from engine.template import *
 import datetime
 
+###############################################
+# Page 
+#
+# -path : (string) path of the new page
+# -title : the tile of the page <title>
+# -description : the description of the page <meta> 
+# -fil : (FilsAriane) the fil d'ariane
+###############################################
+class PageFormation(AbstractPageStandAlone):
+    def __init__(self, path, title, descr):
+        AbstractPageStandAlone.__init__(self, path, title, descr)
+    
+    def setFilArianne(self):
+        self.fil= FilsAriane([("Formations", "../formations", ""), (self.title, "#", "") ]) 
+
+###############################################
+#
+###############################################
 class  Formation(AbstractElement):
     name = None
     description = None
@@ -22,7 +40,7 @@ class  Formation(AbstractElement):
     
     def createOwnPage(self):
         self.path2page = "formations/" + self.name + "-orig.html"
-        self.page = PageProject(self.path2page, self.name, self.description)
+        self.page = PageFormation(self.path2page, self.name, self.description)
         self.page.close()
     
     def __str__(self):
@@ -41,8 +59,33 @@ class  Formation(AbstractElement):
             
         res += """</div><!--/span-->"""
         return res
+    
+    
+###############################################
+#
+###############################################
+class FormationCategory(AbstractCategory):
+    def __init__(self, name):
+        AbstractCategory.__init__(self, name)
+        
+    def __str__(self):
+        list = self._elements
+        res = '''<div class="category grey-back"><div class="container">
+                    <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
+                     <div class="col-xs-12 col-sm-9">""" 
+        list.sort(key=lambda x: x.dateStart, reverse=True)
+        for elt in list:
+                res += str(elt)
+        res += """  </div><!--/row-->"""
+            ################
+        res += """</div><!--/span-->
+               </div><!--/row-->
+             </div>"""
+        return res
+    
+###############################################
 
-formations = Category("formation")
+formations = FormationCategory("Formation")
 
 testexp = Formation("formation1","description",True)
 testexp.dateStart = datetime.date(2002, 1, 1)

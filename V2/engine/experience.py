@@ -10,6 +10,25 @@ from engine.page import *
 from engine.template import *
 import datetime
  
+###############################################
+# Page 
+#
+# -path : (string) path of the new page
+# -title : the tile of the page <title>
+# -description : the description of the page <meta> 
+# -fil : (FilsAriane) the fil d'ariane
+###############################################
+class PageExperience(AbstractPageStandAlone):
+    def __init__(self, path, title, descr):
+        AbstractPageStandAlone.__init__(self, path, title, descr)
+    
+    def setFilArianne(self):
+        self.fil= FilsAriane([("Experiences", "../experiences", ""), (self.title, "#", "") ]) 
+
+
+###############################################
+#
+###############################################
 class  Experience(AbstractElement):
     name = None
     description = None
@@ -21,7 +40,7 @@ class  Experience(AbstractElement):
     
     def createOwnPage(self):
         self.path2page = "experiences/" + self.name + "-orig.html"
-        self.page = PageProject(self.path2page, self.name, self.description)
+        self.page = PageExperience(self.path2page, self.name, self.description)
         self.page.close()
     
     def __str__(self):
@@ -41,8 +60,32 @@ class  Experience(AbstractElement):
         res += """</div><!--/span-->"""
         return res
 
+
+###############################################
+#
+###############################################
+class ExperienceCategory(AbstractCategory):
+    def __init__(self, name):
+        AbstractCategory.__init__(self, name)
+
+    def __str__(self):
+        list = self._elements
+        res = '''<div class="category"><div class="container">
+                    <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
+                     <div class="col-xs-12 col-sm-9">""" 
+        list.sort(key=lambda x: x.dateStart, reverse=True)
+        for elt in list:
+                res += str(elt)
+        res += """  </div><!--/row-->"""
+            ################
+        res += """</div><!--/span-->
+               </div><!--/row-->
+             </div>"""
+        return res
+
+###############################################
  
-experiences = Category("experiences")
+experiences = ExperienceCategory("Experiences")
 
 exp = Experience("exp1","description",True)
 exp.dateStart = datetime.date(2002, 3, 11)
@@ -51,5 +94,3 @@ experiences.addElement(exp)
 exp2 = Experience("exp2","description",True)
 exp2.dateStart = datetime.date(2003, 3, 11)
 experiences.addElement(exp2)
-for i in experiences._elements:
-    print i
