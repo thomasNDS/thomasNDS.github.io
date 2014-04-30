@@ -166,7 +166,7 @@ skillSections.append(programming)
 
 
 content = """
-            <div class="container">
+            <div class="container container-part">
               <div class="category">
                 <h1 id="skills" class="title-section">""" + skills.name + """</h1>
                     <div class="col-xs-12 col-sm-9 skills-container">

@@ -52,7 +52,9 @@ if len(sys.argv) > 2:
     argument = sys.argv[2]
 
 # Create a start page (index)
-indexPage = Page('index-orig.html',"Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS")
+indexPage = Page('index-orig.html',
+                "Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS",
+                startHeaderHtml="engine/components/header.html" )
 
 # Create the menu ###########################
 menu = Menu()
@@ -69,7 +71,6 @@ nameSub, idSub, elts = project.projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
 
 # Build the page ###########################
-indexPage.addSectionHtml("engine/components/header.html")
 indexPage.write(str(menu))
 # EXP
 indexPage.write(str(experience.experiences))

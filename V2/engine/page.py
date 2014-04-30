@@ -22,22 +22,26 @@ class Page:
     doctype = (open("templates/doctype.html", "r")).read()
     importJSHtml = (open("templates/importsJS.html", "r")).read()
     importCSSHtml = (open("templates/importsCSS.html", "r")).read()
-
-    def __init__(self, path, title, descr, header = ""):
+    
+    #
+    def __init__(self, path, title, descr, header = "", startHeaderHtml=""):
         self.file = open(path, "w")
         self.description = descr
         self.path = path
         self.title = title
-        self.setHeader(header)
+        self.setHeader(header,startHeaderHtml)
     
-    def setHeader(self, header):
+    #
+    def setHeader(self, header, startHeaderHtml):
         self.write (self.doctype)
         self.write( self.description + '">')
         self.write("<title>"+ self.title + "</title>")
         if header == "":
-            self.write(self.importJSHtml + self.importCSSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'><div id='wrap'>")
-            self.write('''<div id="main" class=""><p class="pull-right visible-xs">
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
+            self.write(self.importJSHtml + self.importCSSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
+            if startHeaderHtml != "":
+                self.addSectionHtml(startHeaderHtml)
+            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
         else:
             self.write(header)
         

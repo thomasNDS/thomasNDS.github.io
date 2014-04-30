@@ -37,7 +37,8 @@ class  Formation(AbstractElement):
     
     def __init__(self, name, description, ownPage = False):
         AbstractElement.__init__(self, name, description, ownPage)
-    
+    #
+    #
     def createOwnPage(self):
         self.path2page = "formations/" + self.name + "-orig.html"
         self.page = PageFormation(self.path2page, self.name, self.description)
@@ -45,19 +46,20 @@ class  Formation(AbstractElement):
     
     def __str__(self):
         res= "<div id='" + self.id + """' class="col-6 col-sm-6 col-lg-4 element">
+        <div class="thumbnail">
+           <div class="caption text-center">
             <h3 class="element-title">""" + self.name + """</h3>
               <p class="element-description">""" + self.description + """ </p>"""
         
         if self.dateStart and self.dateEnd:
             res+= """<p class="element-date"><span class="start-date">
             """ + self.dateStart + """</span> - <span class="end-date">""" + self.dateEnd +"""</span></p>"""
-        else: 
-            if self.dateStart:
-                res+= """<p class="element-date"><span class="start-date">
-                """ + self.dateStart.strftime("%m/%Y") + """</span></p>"""
-            res += '<p><a class="btn btn-default" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'
-            
-        res += """</div><!--/span-->"""
+        
+        res += '<p><a class="btn btn-info" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'   
+        res += """
+                </div><!--/caption-->
+            </div><!--/tumbnail-->
+        </div><!--/element-->"""
         return res
     
     
@@ -70,7 +72,7 @@ class FormationCategory(AbstractCategory):
         
     def __str__(self):
         list = self._elements
-        res = '''<div class="category grey-back"><div class="container">
+        res = '''<div class="category grey-back"><div class="container container-part">
                     <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
                      <div class="col-xs-12 col-sm-9">""" 
         list.sort(key=lambda x: x.dateStart, reverse=True)

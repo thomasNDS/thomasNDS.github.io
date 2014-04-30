@@ -7,7 +7,7 @@ body,html{
 .grey-back{
     background: #E6E6E6;
 }
-.container{
+.container-part{
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -40,7 +40,6 @@ wrap{
     box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
     text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
     color: #FFF;
-    min-height: 100%;
     padding: 35px;
 }
 .sendContainer{
@@ -84,4 +83,22 @@ wrap{
 }
 .separate-margin100{
     margin-bottom: 100px;
+}
+.exp-img-content{
+    min-height: 85px;
+    margin-bottom: 5px;
+}
+.title-section{
+    margin-bottom: 20px;
+}
+.element-description{
+    text-align: justify;
+}
+
+/*sections on white*/
+.element-frame:hover{
+    border: solid 1px rgba(72, 207, 173, 0.33);
+}
+.element-frame{
+    border:1px solid transparent;
 }
