@@ -1,415 +1,86 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Thomas Nunes page</title>
-        <link rel="stylesheet" href="css/lib/normalize.css">
-        <link rel="stylesheet" href="css/lib/foundation.min.css">
-        <link rel="stylesheet" href="css/lib/isotope.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">  
-        <link rel="stylesheet" href="css/style.css">  
-        <link rel="stylesheet" href="css/lib/responsive.css">  
-
-        <script src="js/lib/vendor/jquery.js"></script>
-        <script src="js/lib/jquerySlider.js"></script>
-        <script src="js/lib/isotope.min.js"></script>
-        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
-    </head>
-    <body style="">
-        <!-- Header and Nav -->
-        <nav class="top-bar">
-            <ul class="title-area">
-                <!-- Title Area -->
-                <li class="name">
-                    <h1>
-                        <a href="#">Thomas Nunes</a>
-                    </h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-            </ul>
-
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
-                <ul  class="right" >
-                    <li>
-                        <a target="_blank" href="https://github.com/thomasNDS"> <img width="35" height="35" src="./img/github.png" alt="github profile">
-                            <span class="reseauxSociaux">Github</span>
-                        </a>
-                    </li>
-                    <li> 
-                        <a target="_blank" href="http://fr.linkedin.com/in/thomasnunesdasilva"> <img width="30" height="30" src="./img/linkedin.png" alt="linkedin profile">
-                            <span class="reseauxSociaux">LinkedIn</span>
-                        </a>
-                    </li>
-                    <li> 
-                        <a target="_blank" href="http://fr.viadeo.com/fr/profile/thomas.nunes1"> <img width="30" height="30" src="./img/viadeo.png" alt="viadeo profile">
-                            <span class="reseauxSociaux">Viadeo</span>
-                        </a>
-                    </li>
-                </ul>
-            </section></nav>            <br><br><br><br>
-        <!-- End Header and Nav -->
-
-        <!-- Main Grid Section -->
-        <section id="options" class="clearfix">
-            <div id="sort-by-X" class="">
-                <span id="selector-display" class="actions select-sort">
-                    <i class="iconelist fa fa-sort-amount-desc" ></i> 
-                    <span class="no-on-tablets">Tri :
-                    </span>
-                </span>
-                <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
-                    <li>
-                        <a href="#sortBy=original-order" data-option-value="original-order" class="selected">Original</a>
-                    </li>
-                    <li>
-                        <a href="#sortBy=symbol" data-option-value="symbol">Alphabétique</a>
-                    </li>
-                    <li>
-                        <a href="#sortBy=number" data-option-value="number">Par niveaux</a>
-                    </li>
-                </ul>
-            </div> 
-            <div id="options-content">
-                <ul id="filters" class="option-set clearfix headFilter" data-option-key="filter" style="text-align: center">
-                    <li id="menu-1" class="part4 active">
-                        <a class="filterHead selected" id="allFilter" href="#filter" data-option-value=".skill, .exp, .formation" >Tout</a>
-                    </li>
-                    <li id="menu-2" class="part4">
-                        <a class="filterHead " id="skillFilter" href="#filter" data-option-value=".skill">Compétences</a>
-                    </li>
-                    <li id="menu-3" class="part4">
-                        <a class="filterHead" id="expFilter" href="#filter" data-option-value=".exp">Expériences</a>
-                    </li>
-                    <li id="menu-4" class="part4">
-                        <a class="filterHead" id="formationFilter" href="#filter" data-option-value=".formation">Formations</a>
-                    </li>
-                </ul> 
-                <div id="skills" style="display: none">
-                    <div class="subtitle only-tablet">
-                        <p>FILTRES</p>
-                        <hr class="hr-bar "/>
-                    </div>
-                    <ul  class="list-inline option-set clearfix" data-option-key="filter">
-                        <li class="menuPart-1 part4 li-toolbar">
-                            <a href="#filter" data-option-value=".dev, .other" class="selected">Tout</a>
-                        </li>
-                        <li class="menuPart-2 part4 li-toolbar">
-                            <a href="#filter" data-option-value=".dev">Developpement</a>
-                        </li>
-                        <li class="menuPart-3 part4 li-toolbar">
-                            <a href="#filter" data-option-value=".other">Autres</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="exps" style="display: none">
-                    <div class="subtitle only-tablet">
-                        <p>FILTRES</p>
-                        <hr class="hr-bar "/>
-                    </div>
-                    <ul  class="list-inline option-set clearfix" data-option-key="filter">
-                        <li class="menuPart-1 part4 li-toolbar">
-                            <a href="#content-display" data-option-value=".programmation, .environnement" class="selected">Tout</a>
-                        </li>
-                        <li class="menuPart-2 part4 li-toolbar">
-                            <a href="#content-display" data-option-value=".environnement">Environnement</a>
-                        </li>
-                        <li class="menuPart-3 part4 li-toolbar">
-                            <a href="#footer" data-option-value=".programmation">Programmation</a>
-                        </li>
-                    </ul>
-                </div>
-                <br>
-            </div> 
-        </section> <!-- #options -->
-        <div id="content-display" style="max-width: 98%">
-            <div class="row">
-                <div class="large">
-                    <section id="content" class="variable-sizes">
-                        <div style="display: block">
-                        </div>
-                        <div id="container" class="clickable clearfix isotope" >
-
-                            <div class="element skill programmation width2 height2 very-long isotope-item" data-symbol="Python" >
-                                <p class="number">9</p>
-                                <h3 class="symbol">Python</h3>
-                                <div class="name">
-                                    <p>Python est un langage de programmation objet polyvalent, multi-paradigme et multi-plateformes.</p>
-
-                                    <h4>Frameworks et librairies</h4>
-                                    <ul>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/PyQt">PyQt</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/OpenERP">OpenERP</a> / <a target="blank" href="https://en.wikipedia.org/wiki/Django_(web_framework)">Django</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/Flask_(web_framework)">Flask</a>,  <a target="blank" href="https://en.wikipedia.org/wiki/Pyramid_(web_framework)#Pyramid">Pyramid</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/Robot_Operating_System">Robot Operating System (ROS)</a> </li>
-                                    </ul>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- <strong>Stage développeur OpenERP </strong> - (PyQt + OpenERP) 2013</li>
-                                        <li>- <strong>RobAIR</strong>, un robot de téléprésence -(Flask + ROS) 2013</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="element skill programmation  width2 height2 very-long  isotope-item" data-symbol="Java" >
-                                <p class="number">10</p>
-                                <h3 class="symbol">Java/J2E</h3>
-                                <div class="name">
-                                    <p>JAVA est un langage très populaire de programmation objet polyvalent et multi-plateformes.</p>
-                                    <h4>Frameworks et librairies</h4>
-                                    <ul>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/JavaServer_Faces">JSF</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/Swing_java">SWING</a> </li>
-                                        <li>- Android SDK </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/OpenCV">OpenCV</a> </li>
-                                    </ul>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- <strong>DONZEER</strong>, une site de e-commerce - (J2EE/JSF) 2014</li>
-                                        <li>- <strong>Serrure biométrique</strong> à reconnaissance de visage et de voix -2014 (Android + OpenCV)</li>
-                                        <li>- <strong>Jeu de plateforme</strong> de combat de robots dans une arene  - (JAVA + OCaml) 2012</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="element skill programmation isotope-item" data-symbol="ADA">
-                                <p class="number">3</p>
-                                <h3 class="symbol">ADA</h3>
-                                <div class="name">
-                                    <p>ADA est un language de programmation objet utilisé dans les systèmes temps réel et 
-                                        embarqués nécessitant un haut niveau de fiabilité et de sécurité.</p>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li> <strong>Résolveur de labyrinthe</strong> basé sur l'algorithme <a target="blank" href="https://en.wikipedia.org/wiki/A*_search_algorithm">Astar</a> - 2011</li>
-                                        <li> <strong>Simulateur de files d'attente</strong> dans un bureau de poste - 2010</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="element skill programmation height2 width2 isotope-item" data-symbol="C/C++" >
-                                <p class="number">7</p>
-                                <h3 class="symbol">C/C++</h3>
-                                <div class="name">
-                                    <p>C++ est un langage de programmation objet multi-paradigme, multi-plateformes et compilé.</p>
-                                    <h4>Frameworks et librairies</h4>
-                                    <ul>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/OpenGL">OpenGL</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/Qt_(software)">Qt</a> </li>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/OpenCV">OpenCV</a> </li>
-                                    </ul>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- <strong>Animation 3D</strong> d'un magicien avec OpenGL -2013 (C++)</li>
-                                        <li>- <strong>Jeu d'échec</strong> avec intelligence artificielle - 2010 (C)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="element skill programmation isotope-item" data-symbol="PHP" >
-                                <p class="number">3</p>
-                                <h3 class="symbol">PHP</h3>
-                                <div class="name">
-                                    <p>PHP est un langage de programmation objet principalement utilisé pour le développement web.</p>
-                                    <h4>Frameworks et librairies</h4>
-                                    <ul>
-                                        <li>- <a target="blank" href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> </li>
-                                    </ul>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- Site Web de la junior entreprise PRO-PG -(Wordpress) 2013</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="element skill programmation  isotope-item" data-symbol="Ocaml" >
-                                <p class="number">4</p>
-                                <h3 class="symbol">Ocaml</h3>
-                                <div class="name">
-                                    <p>OcamL est un langage multi-paradigme fortement typé utilisé en particulier pour la sécurité et les outils de vérification. </p>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- Simulateur</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="element skill programmation width2 isotope-item" data-symbol="Javascript"  >
-                                <p class="number">26</p>
-                                <h3 class="symbol">Javascript</h3>
-                                <div class="name">
-                                    <p></p>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>- </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="element skill programmation isotope-item" data-symbol="Perl" >
-                                <p class="number">6</p>
-                                <h3 class="symbol">Perl</h3>
-                                <div class="name">
-                                    <p></p>
-                                    <h4>Projets et expériences liés</h4>
-                                    <ul>
-                                        <li>-</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="element skill programmation height2 isotope-item" data-symbol="HTML5">
-                                <p class="number">11</p>
-                                <h3 class="symbol">HTML5</h3>
-                                <h2 class="name">HTML5</h2>
-                            </div>
-
-                            <div class="element skill programmation isotope-item" data-symbol="SQL" >
-                                <p class="number">18</p>
-                                <h3 class="symbol">SQL</h3>
-                                <h2 class="name">SQL</h2>
-                            </div>
-                            <div class="element skill  environnement    isotope-item" data-symbol="Eclipse" >
-                                <p class="number">7</p>
-                                <h3 class="symbol">Eclipse</h3>
-                                <h2 class="name">Bismuth</h2>
-                            </div>
-
-                            <div class="element skill environnement height2  isotope-item" data-symbol="Netbeans" >
-                                <p class="number">17</p>
-                                <h3 class="symbol">Netbeans</h3>
-                                <h2 class="name">Netbeans</h2>
-                            </div>
-
-                            <div class="element skill environnement height2  isotope-item" data-symbol="Git" >
-                                <p class="number">4</p>
-                                <h3 class="symbol">Git</h3>
-                                <h2 class="name">Git</h2>
-                            </div>
-
-                            <div class="element skill environnement  isotope-item" data-symbol="Mercurial" >
-                                <p class="number">7</p>
-                                <h3 class="symbol">Mercurial</h3>
-                                <h2 class="name">Mercurial</h2>
-                            </div>
-
-                            <div class="element environnement width2 isotope-item" data-symbol="Linux" >
-                                <p class="number">22</p>
-                                <h3 class="symbol">Linux</h3>
-                                <h2 class="name">Linux</h2>
-                            </div>
-                            <div class="element environnement height2 isotope-item" data-symbol="Windows" >
-                                <p class="number">7</p>
-                                <h3 class="symbol">Windows</h3>
-                                <h2 class="name">Windows</h2>
-                            </div>
-                            <!--experiences-->
-                            <div class="element exp other width2 isotope-item" data-symbol="C2i" >
-                                <p class="number">-81</p>
-                                <h3 class="symbol">Tuteur C2i</h3>
-                                <h2 class="name">C2i</h2>
-                            </div>
-                            <div class="element exp dev width2 height2 isotope-item" data-symbol="OpenERP" >
-                                <p class="number">-111</p>
-                                <h3 class="symbol">Développeur OpenERP</h3>
-                                <h2 class="name">Openerp</h2>
-                            </div>
-                            <div class="element formation width2 height2 isotope-item" data-symbol="OpenERP" >
-                                <p class="number">-1111</p>
-                     sdiv>
-                        </div>
-                        <script src="./js/configIsotope.js"></script>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <div id="ContactForm">
-            <div class="row">
-                <h1> Contact </h1>
-                <!--google form-->
-                <form class="large columns" action="https://docs.google.com/spreadsheet/formResponse?formkey=dGRpME5UQ1I4dTJHSlBwNFZ1RDZIVFE6MA&amp;embedded=true&amp;ifq" method="POST" id="ss-form">
-                    <br>
-                    <div class="errorbox-good">
-                        <div class="row ss-item  ss-text">
-                            <div class="ss-form-entry">
-                                <div class="small-12 columns">
-                                    <label  class="left ss-q-title" for="entry_2">E-mail:</label>
-                                    <label class="ss-q-help" for="entry_2"></label>
-                                </div>
-                                <div class="small-12 columns">
-                                    <input placeholder="Votre e-mail" type="text" name="entry.2.single" value="" class="form-control ss-q-short" id="entry_2">
-                                </div>
-                            </div>
-                        </div>
-                        <br> 
-                        <div class="errorbox-good">
-                        </div>
-                        <div class="row ss-item  ss-paragraph-text">
-                            <div class="ss-form-entry">
-                                <div class="small-12 columns">
-                                    <label class="left ss-q-title" for="entry_5">Message:</label>
-                                    <label class="ss-q-help" for="entry_5"></label>
-                                </div>
-                                <div class="small-12 columns">
-                                    <textarea placeholder="Votre message" name="entry.5.single" rows="8" cols="75" class="ss-q-long" id="entry_5"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="hidden" name="pageNumber" value="0">
-                    <input type="hidden" name="backupCache" value="">
-                    <div class="ss-item ss-navigate large">
-                        <br/>
-                        <div class="ss-form-entry center" >
-                            <input class="myButton" type="submit" name="submit" value="Envoyer">
-                        </div>
-                    </div>
-                </form>
-                <p style="font-size:"> &nbsp;</p>
-            </div> 
-        </div>
-
-        <!--ENd google form-->
-        <!-- End Grid Section -->
-
-        <!-- Footer -->
-        <footer id="footer">
-            <a href="#" class="scrollup"><img src="img/backtotop.png" alt="TOP"/></a>
-            <div class="row">
-                <div class="large">
-                    <h1>Thomas Nunes</h1>
-                    <p>Crée avec Fundation, Isotope  
-                        <br/>     Technologies Jquerry, HTML5, CSS3 </p>
-                    <hr/><br/>
-                    Licence MIT - héberger avec Github
-                </div>
-            </div>
-        </footer>
-        <script src="js/lib/vendor/zepto.js"></script>
-        <script src="js/lib/foundation/foundation.min.js"></script>
-        <script>
-            $(document).foundation();
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                if ($(window).width() > 590) {
-                    $(window).scroll(function() {
-                        if ($(this).scrollTop() > 100) {
-                            $('.scrollup').fadeIn();
-                        } else {
-                            $('.scrollup').fadeOut();
-                        }
-                    });
-
-                    $('.scrollup').click(function() {
-                        $("html, body").animate({
-                            scrollTop: 0
-                        }, 600);
-                        return false;
-                    });
-                }
-            });
-        </script>
-
-
-    </body></html>
+<!DOCTYPE html><html lang="fr"><head><!--ThomasNDS.github.io
+Thomas Nunes tout droits réservés 2014--><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport"content="width=device-width"><meta name="author"content="Thomas Nunes <http://thomasNDS.github.io> All Rights Reserved"/><link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="rel="icon"type="image/x-icon"/><meta name="description"content="Personnal website of Thomas Nunes. thomasNDS"><title>Thomas Nunes website</title><script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><script type="text/javascript"src="public/gen/min.js"></script><script></script><link rel="stylesheet"type="text/css"href="public/gen/min.css"media="all"/><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic"rel="stylesheet"type="text/css"></head><body data-spy='scroll'data-target='#affix-nav'><header id="header-main-page"><h1>Thomas Nunes</h1><hr/></header><div id='wrap'><div id="main"class=""><p class="pull-right visible-xs"><button type="button"class="btn btn-primary btn-xs"data-toggle="offcanvas">Toggle nav</button></p><div class="container"><div class="row"><nav id="affix-nav"class="sidebar col-md-3 sidebar-offcanvas"><ul class="nav sidenav"data-spy="affix"data-offset-top="10"><li class='active'><a href="#experiences">Experiences</a><ul class="nav"></ul></li><li><a href="#formation">Formation</a><ul class="nav"></ul></li><li><a href="#skills">Skills</a><ul class="nav"></ul></li><li><a href="#projects">Projects</a><ul class="nav"><li class='active'><a href="#projects2003">2003</a></li><li><a href="#projects2002">2002</a></li></ul></li></ul></nav></div><!--/row-->
+                </div><div class="category"><div class="container container-part"><h1 class="title-section"id="experiences">Experiences</h1><div class="col-xs-12 col-sm-9"><div id="orange"class="col-6 col-sm-6 col-lg-4 element-frame"><h3 class="element-title">Orange</h3></a><div class="exp-img-content"><img class="img-rounded exp-img"width="200px"alt="logo company"src="./public/img/exps/obs.jpg"></div><p class="element-description">Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum</p><p class="element-date"><span class="start-date">2002</span>-<span class="end-date">2005</span></p><p class="text-right"><a class="btn btn-info"target="_blank"href="experiences/Orange.html"role="button">More »</a></p></div><!--/span--><div id="emisys" class="col-6 col-sm-6 col-lg-4 element-frame">
+               <h3 class="element-title">Emisys</h3></a><div class="exp-img-content"><img class="img-rounded exp-img"width="200px"alt="logo company"src="./public/img/exps/emisys.jpeg"></div><p class="element-description">Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum</p><p class="element-date"><span class="start-date">2001-Now</span></p><p class="text-right"><a class="btn btn-info"target="_blank"href="experiences/Emisys.html"role="button">More »</a></p></div><!--/span--><div id="joseph-fourier" class="col-6 col-sm-6 col-lg-4 element-frame">
+               <h3 class="element-title">Joseph Fourier</h3></a><div class="exp-img-content"><img class="img-rounded exp-img"width="200px"alt="logo company"src="./public/img/exps/ujf.gif"></div><p class="element-description">Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum</p><p class="element-date"><span class="start-date">2001-Now</span></p><p class="text-right"><a class="btn btn-info"target="_blank"href="experiences/Joseph Fourier.html"role="button">More »</a></p></div><!--/span-->  </div><!--/row--></div><!--/span-->
+               </div><!--/row-->
+             </div><div class="category grey-back"><div class="container container-part"><h1 class="title-section"id="formation">Formation</h1><div class="col-xs-12 col-sm-9"><div id='formation2'class="col-6 col-sm-6 col-lg-4 element"><div class="thumbnail"><div class="caption text-center"><h3 class="element-title">formation2</h3><p class="element-description">description</p><p><a class="btn btn-info"href="formations/formation2.html"role="button">More »</a></p></div><!--/caption-->
+            </div><!--/tumbnail-->
+        </div><!--/element--><div id='formation1' class="col-6 col-sm-6 col-lg-4 element">
+        <div class="thumbnail">
+           <div class="caption text-center">
+            <h3 class="element-title">formation1</h3><p class="element-description">description</p><p><a class="btn btn-info"href="formations/formation1.html"role="button">More »</a></p></div><!--/caption-->
+            </div><!--/tumbnail-->
+        </div><!--/element-->  </div><!--/row--></div><!--/span-->
+               </div><!--/row-->
+             </div><div class="container container-part"><div class="category"><h1 id="skills"class="title-section">Skills</h1><div class="col-xs-12 col-sm-9 skills-container"><div class="row"><div class="col-4 col-sm-6 col-lg-6"><h3 id='it-skills'class="skill-title">IT skills</h3><div class="subtitle-section"><h4 class="subtitle-section-title">Systems</h4><div id="content-skills"class='skill-element
+               skill-expert'>Linux</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               MacOS</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-good'>
+               Windows</div><!--/span--></div><!--/span-->
+        <div class="subtitle-section"><h4 class="subtitle-section-title">
+        Design</h4><div id="content-skills"class='skill-element
+               '>Blender</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               Photoshop</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-medium'>
+               Gimp</div><!--/span--></div><!--/span-->
+        <div class="subtitle-section"><h4 class="subtitle-section-title">
+        Tools</h4><div id="content-skills"class='skill-element
+               skill-expert'>Eclipse</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               Netbeans</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-good'>
+               Svn</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               Git</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-medium'>
+               Mercurial</div><!--/span--></div><!--/span--></div><!--/span-->
+        <div class="col-4 col-sm-6 col-lg-6">
+            <h3 id='programming' class="skill-title">Programming</h3><div id="content-skills"class='skill-element
+               skill-expert'>Java/JEE</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               OcamL</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               C/C++</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               ADA</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-medium'>
+               Perl</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               Python</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               C#</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-good'>
+               Android</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               Ruby</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-good'>
+               HTML5</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               ASP</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-medium'>
+               CSS3</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               MatLab/Octave</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               SQL</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-medium'>
+               NoSQL</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-good'>
+               IOT</div><!--/span--><div id="content-skills"  class='skill-element
+               '>
+               PHP</div><!--/span--><div id="content-skills"  class='skill-element
+               skill-expert'>
+               Javascript</div><!--/span--></div><!--/span-->
+                        </div><!--/span-->
+                    </div><!--/span-->
+                </div><!--/row-->
+            </div><div id="projects-category"class="category grey-back"><div class="container container-part"><h1 class="title-section"id="projects">Projects</h1><div class="col-xs-12 col-sm-9"><h2 id="projects2003">2003</h2><div class="row"><div id='test2'class="col-6 col-sm-6 col-lg-4 element"><div class="thumbnail"><div class="caption text-center"><h3 class="element-title">test2</h3><p class="element-description">description</p><p class="text-right"><a class="btn btn-info"href="projects/test2.html"role="button">More »</a></p></div><!--/caption-->
+                    </div><!--/thumbnail-->
+                </div><!--/element-->     </div><!--/row-->     <h2 id="projects2002">2002</h2><div class="row"><div id='test'class="col-6 col-sm-6 col-lg-4 element"><div class="thumbnail"><div class="caption text-center"><h3 class="element-title">test</h3><p class="element-description">description</p><p class="text-right"><a class="btn btn-info"href="projects/test.html"role="button">More »</a></p></div><!--/caption-->
+                    </div><!--/thumbnail-->
+                </div><!--/element-->     </div><!--/row--></div><!--/span-->
+               </div><!--/row-->
+             </div><div class='separate-margin200'></div><!--Contact--><div id="contactForm"data-stellar-background-ratio="0.5"><div class="container"><div class="row"><h1 data-stellar-ratio="0.9"class="fade"><a href="#contactForm"class="white">Contact</a></h1><!--google form--><form class=""action="https://docs.google.com/spreadsheet/formResponse?formkey=dGRpME5UQ1I4dTJHSlBwNFZ1RDZIVFE6MA&amp;embedded=true&amp;ifq"method="POST"id="ss-form"><div data-stellar-ratio="0.90"class="fade"><label class="left ss-q-title"for="entry_2">E-mail:</label><label class="ss-q-help"for="entry_2"></label><input placeholder="Votre e-mail *"type="text"name="entry.2.single"value=""class="form-control ss-q-short"id="entry_2"></div><div data-stellar-ratio="0.90"class="fade"><div class="ss-form-entry"><label class="left ss-q-title"for="entry_5">Message:</label><label class="ss-q-help"for="entry_5"></label><div class=""><textarea placeholder="Votre message"name="entry.5.single"rows="8"cols="75"class="form-control ss-q-long"id="entry_5"></textarea></div></div></div><input type="hidden"name="pageNumber"value="0"><input type="hidden"name="backupCache"value=""><div class=""><br/><div data-stellar-ratio="0.95"class="fade sendContainer"><input class="btn btn-success sendContact"type="submit"name="submit"value="Envoyer"></div></div></form></div></div></div><!--ENd google form--></div><a href="#"class="scrollup"style="display: none;"><img src="public/img/backtotop.png"alt="TOP"/></a><footer class="footer"><div class="container"><div class="clearfix text-center"><dl class="footer-nav"><dt class="nav-title">TAGS</dt><dd class="nav-item"><a class="badge badge-default"href="#">SmartCampus</a></dd><dd class="nav-item"><a class="badge badge-default"href="#">RobAIR</a></dd></dl><dl class="footer-nav"><dt class="nav-title">SOCIAL</dt><dd class="nav-item"><a href="#">Linkedin</a></dd><dd class="nav-item"><a href="#">Viadeo</a></dd></dl><dl class="footer-nav"><dt class="nav-title">THOMAS NUNES</dt><dd class="nav-item"><a href="#">Me!</a></dd><dd class="nav-item"><a href="#">Contact</a></dd><dd class="nav-item"><a href="#">My Projects</a></dd></dl><dl class="footer-nav"><dt class="nav-title">Made with</dt><dd class="nav-item"><a href="#">Jquery</a></dd><dd class="nav-item"><a href="#">HTML5</a></dd><dd class="nav-item"><a href="#">CSS3</a></dd><dd class="nav-item"><a href="#">Bootstrap</a></dd><dd class="nav-item"><a href="#">Stellar.js</a></dd><dd class="nav-item"><a href="#">Bootflat</a></dd><dd class="nav-item"><a href="#">Blogify</a></dd></dl><dl class="footer-nav"><dt class="nav-title">About</dt><dd class="nav-item"><a href="#">Licence MIT</a></dd><dd class="nav-item"><a href="#">Host via Github</a></dd></dl></div><div class="footer-copyright text-center">Copyright © 2014 Thomas Nunes-Few rights reserved</div></div></footer></div></body></html>
