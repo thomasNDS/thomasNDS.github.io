@@ -36,7 +36,7 @@ wrap{
 
 /*Contact form*/
 #contactForm {
-    background: #1291d1 url(../../../img/trianglepattern.png) repeat;
+    background: #1291d1 url(../img/texture/trianglepattern.png) repeat fixed;
     box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
     text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
     color: #FFF;
@@ -67,17 +67,14 @@ wrap{
     min-height: 0px;
     overflow: hidden;
 }
-
 .fade{
     -webkit-transition: all 1s ease-out;
     opacity: 0; 
 }
-
 .on-show {
     opacity: 1;
     display: block;
 }
-
 .separate-margin200{
     margin-bottom: 200px;
 }
@@ -101,4 +98,10 @@ wrap{
 }
 .element-frame{
     border:1px solid transparent;
+}
+
+/*standard groups*/ 
+.element-date{
+    font-weight: 700;
+    color: #656D78;
 }

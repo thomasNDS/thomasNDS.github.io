@@ -25,9 +25,9 @@ class Page:
     
     #
     def __init__(self, path, title, descr, header = "", startHeaderHtml=""):
-        self.file = open(path, "w")
+        self.path = path.replace(" ", "-")
+        self.file = open(self.path, "w")
         self.description = descr
-        self.path = path
         self.title = title
         self.setHeader(header,startHeaderHtml)
     
@@ -56,7 +56,6 @@ class Page:
     
     def close(self):
         self.file.close()
-#        print self.path, "page saved !"
    
 #########################################################################
 #
@@ -188,7 +187,7 @@ class AbstractCategory(AbstractElement):
         res = []
         for elt in self._elements:
             if elt.ownPage:
-                res.append(elt.path2page)
+                res.append(elt.page.path)
         return res
         
     def __str__(self):

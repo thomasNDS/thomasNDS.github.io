@@ -16,10 +16,11 @@ css2min = [
             "public/css/src/header.css",
             ]
 js2min = [
-            "public/js/libs/bootstrap.min.js",
-            "public/js/libs/stellar.js",
-            "public/js/libs/respond.min.js",
-            "public/js/libs/icheck.min.js",
+            "public/js/libs/bootstrap-min.js",
+            "public/js/libs/stellar-min.js",
+            "public/js/libs/respond-min.js",
+            "public/js/libs/icheck-min.js",
+            "public/js/src/affixConfig.js",
             "public/js/src/stellarConfig.js",
             "public/js/src/scrollButton.js",
             "public/js/src/scrollMenu.js",

@@ -19,7 +19,6 @@ import datetime
 # dateEnd (Date) :  the end date of experience
 # location ([Object Places]) :  Where is the experience
 # _entreprise (Object Entreprise) :  the entreprise
-# path2page (String) : path to the own page
 # page (PageProject) : the page coresponding
 ###############################################
 class Project(AbstractElement):
@@ -33,8 +32,8 @@ class Project(AbstractElement):
         AbstractElement.__init__(self, name, description, ownPage)
     
     def createOwnPage(self):
-        self.path2page = "projects/" + self.name + "-orig.html"
-        self.page = PageProject(self.path2page, self.name, self.description)
+        path = "projects/" + self.name + "-orig.html"
+        self.page = PageProject(path, self.name, self.description)
         self.page.close()
     
     def __str__(self):
@@ -43,7 +42,7 @@ class Project(AbstractElement):
                       <div class="caption text-center">
                         <h3 class="element-title">""" + self.name + """</h3>
                         <p class="element-description">""" + self.description + """ </p>"""
-        res += '        <p class="text-right"><a class="btn btn-info" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'    
+        res += '        <p class="text-right"><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'    
         res += """    </div> <!--/caption-->
                     </div><!--/thumbnail-->
                 </div><!--/element-->   """

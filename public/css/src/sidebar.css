@@ -1,12 +1,15 @@
 /*SIDEBAR--------------------------------------------------------------------*/
-ul.affix-top {
-    position: static;
-}
-ul.affix-bottom {
+.affix-top {
     position: absolute;
 }
-.sidebar{
-    position: absolute;
+.affix-bottom {
+     position: absolute;
+}
+.affix{
+    position: fixed;
+    top: 30%;
+}
+.affix-top, .affix, .affix-bottom{
     right: 0;
     z-index: 1;
 }

@@ -56,7 +56,7 @@ class Menu:
     def __str__(self):
         res= """<div class="container"><div class="row">
         <nav id="affix-nav" class="sidebar col-md-3 sidebar-offcanvas">
-            <ul class="nav sidenav" data-spy="affix" data-offset-top="10">"""
+            <ul id="affix2define" class="nav sidenav" >"""
             
         for sub in self._subMenu:
             res += str(sub)

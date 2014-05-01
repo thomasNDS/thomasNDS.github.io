@@ -23,9 +23,14 @@ from engine import formation
 def minifyFiles():
     # Minify all files
     for file in file2min:
-        output = file.replace("-orig.",".")
-#        print output
-        os.system("./bin/jsmin <" + file + " >" + output)
+        # test if allready minified
+        if not (("-min" in file) or (".min" in file)):
+            #if minify without "-min"
+            if "-orig" in file:
+                output = file.replace("-orig.",".")
+            else:
+                output = file.replace(".","-min.")
+            os.system("./bin/jsmin <" + file + " >" + output)
 
     # Merge all css files
     cssConcat = ""
@@ -37,7 +42,8 @@ def minifyFiles():
     # Merge all js files
     jsConcat = ""
     for js in js2min:
-        js = js.replace(".","-min.")
+        if (not (("-min" in js) or (".min" in js))) :
+            js = js.replace(".","-min.")
         jsConcat += open(js, "r").read()
     open(path2jsMin, "w").write(jsConcat)
     print "all files minified !"
@@ -88,5 +94,8 @@ indexPage.addSectionHtml("engine/components/footer.html")
 
 # Minify ###########################
 file2min += project.projects.getElementsWithOwnPage()
+file2min += experience.experiences.getElementsWithOwnPage()
+file2min += formation.formations.getElementsWithOwnPage()
+
 indexPage.close()
 minifyFiles()

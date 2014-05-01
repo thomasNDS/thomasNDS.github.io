@@ -40,8 +40,8 @@ class  Formation(AbstractElement):
     #
     #
     def createOwnPage(self):
-        self.path2page = "formations/" + self.name + "-orig.html"
-        self.page = PageFormation(self.path2page, self.name, self.description)
+        path = "formations/" + self.name + "-orig.html"
+        self.page = PageFormation(path, self.name, self.description)
         self.page.close()
     
     def __str__(self):
@@ -55,7 +55,7 @@ class  Formation(AbstractElement):
             res+= """<p class="element-date"><span class="start-date">
             """ + self.dateStart + """</span> - <span class="end-date">""" + self.dateEnd +"""</span></p>"""
         
-        res += '<p><a class="btn btn-info" href="' + self.path2page.replace("-orig","") + '" role="button">More »</a></p>'   
+        res += '<p><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'   
         res += """
                 </div><!--/caption-->
             </div><!--/tumbnail-->
