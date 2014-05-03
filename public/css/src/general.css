@@ -19,6 +19,9 @@ wrap{
 }
 
 /*footer correction*/
+.footer{
+    background: #434A54 url(../img/texture/stardust.png);
+}
 .footer-copyright {
     margin-top: 20px;
 }

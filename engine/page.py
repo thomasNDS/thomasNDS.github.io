@@ -40,8 +40,8 @@ class Page:
             self.write(self.importJSHtml + self.importCSSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
             if startHeaderHtml != "":
                 self.addSectionHtml(startHeaderHtml)
-            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>''')
+            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">''')
+            #<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
         else:
             self.write(header)
         
