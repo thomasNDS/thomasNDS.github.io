@@ -107,14 +107,20 @@ wrap{
     margin-bottom: 5px;
 }
 .thumbnail .text-corner-right{
-    bottom: 20px;
+    bottom: 30px;
     right: 24px;
 }
 .text-corner-right{
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 10px;
 }
+.img-rounded{
+    width: 100%;    
+    max-width: 250px;
+    text-align: center;
+}
+
 /*standard groups*/ 
 .element-date{
     font-weight: 700;

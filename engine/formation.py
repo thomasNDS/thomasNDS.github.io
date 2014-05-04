@@ -35,9 +35,10 @@ class  Formation(AbstractElement):
     dateEnd = None
     id = None
     
-    def __init__(self, name, description,image ="", ownPage = False):
+    def __init__(self, name, description,image ="", ownPage = False, siteWeb=("#","fr")):
         AbstractElement.__init__(self, name, description, ownPage)
         self.logoPath = image
+        self.siteWeb =  siteWeb
     #
     #
     def createOwnPage(self):
@@ -46,14 +47,15 @@ class  Formation(AbstractElement):
         self.page.close()
     
     def __str__(self):
+        #thumbnail  ---------------------------
         res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element">
         <div class="thumbnail thumbnail-formations">
-           <div class="formations-img-content"><img class= "img-rounded exp-img" width="100%" alt="logo formation" src="''' + self.logoPath + '''"></div>
+           <div class="formations-img-content"><img class= "img-rounded exp-img" alt="logo formation" src="''' + self.logoPath + '''"></div>
            <div class="caption text-center">
             <h3 class="element-title">''' + self.name + '''</h3>
               <p class="element-description">''' + self.description + ''' </p>
               <p class="element-date"><span class="start-date">'''
-              
+        #DATE  ---------------------------    
         if self.dateStart and self.dateEnd:
             if self.dateStart.year == self.dateEnd.year:    
                 res += self.dateStart.strftime("%Y")
@@ -64,7 +66,14 @@ class  Formation(AbstractElement):
                 res += self.dateStart.strftime("%Y") + """- Now"""
         res += '''</span></p>'''
         
-        res += '<p class="text-corner-right"><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'   
+        #BUTTON CORNER  ---------------------------
+        res += '''<div class="text-corner-right">
+                     <a target="_blank" class="btn btn-default" href="''' + self.siteWeb[0] + '''" role="button">website'''
+        if self.siteWeb[1] != "en":
+            res += "[FR]"
+        res+= ''' »</a> 
+                     <a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
+                    </div>'''  
         res += """
                 </div><!--/caption-->
             </div><!--/tumbnail-->
@@ -100,21 +109,21 @@ formations = FormationCategory("Formation")
 
 #POLYTECH
 testexp = Formation("Enginneering diploma","school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
-"./public/img/formations/polytech.png",True)
+"./public/img/formations/polytech.png",True,("http://www.polytech-grenoble.fr/","fr"))
 testexp.dateStart = datetime.date(2011, 1, 1)
 testexp.dateEnd = datetime.date(2014, 1, 1)
 formations.addElement(testexp)
 
 #IAE
 testexp = Formation("M2 management","school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
-"./public/img/formations/iae-rect.png",True)
+"./public/img/formations/iae-rect.png",True,("http://www.iae-grenoble.fr/business-school-grenoble.html",'en'))
 testexp.dateStart = datetime.date(2013, 1, 1)
 testexp.dateEnd = datetime.date(2015, 1, 1)
 formations.addElement(testexp)
 
 #MIAGE
 testexp = Formation("MIAGE","L2 Université Joseph Fourrier Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
-"./public/img/exps/ujf.gif",True)
+"./public/img/exps/ujf.gif",True,("http://dlst.ujf-grenoble.fr/index.php?module=parcours&idParcours=52#parcourstop",'fr'))
 testexp.dateStart = datetime.date(2009, 1, 1)
 testexp.dateEnd = datetime.date(2011, 1, 1)
 formations.addElement(testexp)

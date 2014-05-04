@@ -49,8 +49,8 @@ class  Experience(AbstractElement):
     
     def __str__(self):
         res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element-frame">
-               <h3 class="element-title">''' + self.name + '''</h3></a>
-               <div class="exp-img-content"><img class= "img-rounded exp-img" width="200px" alt="logo company" src="''' + self.logoPath + '''"></div>
+               <h3 class="element-title">''' + self.name + '''</h3>
+               <div class="exp-img-content"><img class= "img-rounded exp-img" alt="logo company" src="''' + self.logoPath + '''"/></div>
                <p class="element-description">''' + self.description + ''' </p>
                <p class="element-date"><span class="start-date">'''
               
