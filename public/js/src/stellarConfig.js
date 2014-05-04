@@ -6,5 +6,7 @@ $(function() {
             $elem.removeClass("on-show");
         }, });
 });
-$('#contactForm').stellar();
-$('#stellar').stellar();
+$('#wrap').stellar({
+  scrollProperty: 'transform',
+  positionProperty: 'transform'
+});

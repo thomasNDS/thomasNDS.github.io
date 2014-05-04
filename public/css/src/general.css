@@ -25,11 +25,11 @@ wrap{
 .footer-copyright {
     margin-top: 20px;
 }
-
 /*BADGES*/
 .footer-nav .nav-item >.badge-default{
     color: #434a54;
 }
+/*colors*/
 .white{
     color: white;
 }
@@ -84,10 +84,8 @@ wrap{
 .separate-margin100{
     margin-bottom: 100px;
 }
-.exp-img-content{
-    min-height: 85px;
-    margin-bottom: 5px;
-}
+
+
 .title-section{
     margin-bottom: 20px;
 }
@@ -101,8 +99,22 @@ wrap{
 }
 .element-frame{
     border:1px solid transparent;
+    min-height: 450px;
+    padding-bottom: 20px;
 }
-
+.exp-img-content{
+    min-height: 90px;
+    margin-bottom: 5px;
+}
+.thumbnail .text-corner-right{
+    bottom: 20px;
+    right: 24px;
+}
+.text-corner-right{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
 /*standard groups*/ 
 .element-date{
     font-weight: 700;

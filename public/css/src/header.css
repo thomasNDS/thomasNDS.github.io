@@ -6,4 +6,18 @@
     box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
     text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
     background-size: cover;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+#header-main-page-title{
+    font-size: 3.2em;
+}
+#header-main-subtitle{
+    font-size: 1.3em;
+}
+#header-main-page-message{
+    margin: auto;
+    position: absolute;
+    top: 25%; left: 0; bottom: 0; right: 0;
 }

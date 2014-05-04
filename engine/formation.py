@@ -35,8 +35,9 @@ class  Formation(AbstractElement):
     dateEnd = None
     id = None
     
-    def __init__(self, name, description, ownPage = False):
+    def __init__(self, name, description,image ="", ownPage = False):
         AbstractElement.__init__(self, name, description, ownPage)
+        self.logoPath = image
     #
     #
     def createOwnPage(self):
@@ -45,17 +46,25 @@ class  Formation(AbstractElement):
         self.page.close()
     
     def __str__(self):
-        res= "<div id='" + self.id + """' class="col-6 col-sm-6 col-lg-4 element">
-        <div class="thumbnail">
+        res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element">
+        <div class="thumbnail thumbnail-formations">
+           <div class="formations-img-content"><img class= "img-rounded exp-img" width="100%" alt="logo formation" src="''' + self.logoPath + '''"></div>
            <div class="caption text-center">
-            <h3 class="element-title">""" + self.name + """</h3>
-              <p class="element-description">""" + self.description + """ </p>"""
-        
+            <h3 class="element-title">''' + self.name + '''</h3>
+              <p class="element-description">''' + self.description + ''' </p>
+              <p class="element-date"><span class="start-date">'''
+              
         if self.dateStart and self.dateEnd:
-            res+= """<p class="element-date"><span class="start-date">
-            """ + self.dateStart + """</span> - <span class="end-date">""" + self.dateEnd +"""</span></p>"""
+            if self.dateStart.year == self.dateEnd.year:    
+                res += self.dateStart.strftime("%Y")
+            else:
+                res+= self.dateStart.strftime("%Y") + """</span> - <span class="end-date">""" + self.dateEnd.strftime("%Y")
+        else: 
+            if self.dateStart:
+                res += self.dateStart.strftime("%Y") + """- Now"""
+        res += '''</span></p>'''
         
-        res += '<p><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'   
+        res += '<p class="text-corner-right"><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'   
         res += """
                 </div><!--/caption-->
             </div><!--/tumbnail-->
@@ -89,11 +98,24 @@ class FormationCategory(AbstractCategory):
 
 formations = FormationCategory("Formation")
 
-testexp = Formation("formation1","description",True)
-testexp.dateStart = datetime.date(2002, 1, 1)
+#POLYTECH
+testexp = Formation("Enginneering diploma","school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
+"./public/img/formations/polytech.png",True)
+testexp.dateStart = datetime.date(2011, 1, 1)
+testexp.dateEnd = datetime.date(2014, 1, 1)
 formations.addElement(testexp)
 
-testexp = Formation("formation2","description",True)
-testexp.dateStart = datetime.date(2003, 1, 1)
+#IAE
+testexp = Formation("M2 management","school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
+"./public/img/formations/iae-rect.png",True)
+testexp.dateStart = datetime.date(2013, 1, 1)
+testexp.dateEnd = datetime.date(2015, 1, 1)
+formations.addElement(testexp)
+
+#MIAGE
+testexp = Formation("MIAGE","L2 Université Joseph Fourrier Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
+"./public/img/exps/ujf.gif",True)
+testexp.dateStart = datetime.date(2009, 1, 1)
+testexp.dateEnd = datetime.date(2011, 1, 1)
 formations.addElement(testexp)
 

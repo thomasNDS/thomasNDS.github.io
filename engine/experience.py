@@ -63,7 +63,7 @@ class  Experience(AbstractElement):
             if self.dateStart:
                 res += self.dateStart.strftime("%Y") + """- Now"""
         res += '''</span></p>
-        <p class="text-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'
+        <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'
         res += """</div><!--/span-->"""
         return res
 
@@ -102,13 +102,13 @@ exp.dateStart = datetime.date(2002, 3, 11)
 exp.dateEnd = datetime.date(2005, 3, 11)
 experiences.addElement(exp)
 ##
-exp2 = Experience("Emisys","""Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
+exp2 = Experience("Emisys","""Lorem ipsunisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
 True,
 "./public/img/exps/emisys.jpeg")
 exp2.dateStart = datetime.date(2001, 3, 11)
 experiences.addElement(exp2)
 ##
-exp3 = Experience("Joseph Fourier","""Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
+exp3 = Experience("Joseph Fourier","""Lorem ipsum dolincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
 True,
 "./public/img/exps/ujf.gif")
 exp3.dateStart = datetime.date(2001, 3, 11)

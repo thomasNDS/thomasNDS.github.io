@@ -3,7 +3,7 @@
     position: absolute;
 }
 .affix-bottom {
-     position: absolute;
+    position: absolute;
 }
 .affix{
     position: fixed;
@@ -12,6 +12,8 @@
 .affix-top, .affix, .affix-bottom{
     right: 0;
     z-index: 1;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* All levels of nav */
