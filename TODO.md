@@ -4,6 +4,7 @@ TODO
 CORE TASKS
 ----------
 
+short term
 - bug responsive menu
 - bug minification <a></a>
 - anchor title
@@ -12,10 +13,12 @@ CORE TASKS
 - page skill
 - work on projet thumbl
 
+medium term
 - work on footer 
 - links to work page
 - work page
 
+long term
 - content
 - check contact form
 - md engine
