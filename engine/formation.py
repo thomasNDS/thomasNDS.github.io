@@ -26,7 +26,19 @@ class PageFormation(AbstractPageStandAlone):
         self.fil= FilsAriane([("Formations", "../formations", ""), (self.title, "#", "") ]) 
 
 ###############################################
+# Formation object
 #
+### HERITAGE ###
+# name (string)
+# description (string)
+# ownPage (Page)
+# id (String)
+### LOCAL ###
+# _siteWeb (String)
+# _logoPath (String)
+# page (Page)
+# dateStart (datetime)
+# dateEnd (datetime)
 ###############################################
 class  Formation(AbstractElement):
     name = None
@@ -35,12 +47,16 @@ class  Formation(AbstractElement):
     dateEnd = None
     id = None
     
-    def __init__(self, name, description,image ="", ownPage = False, siteWeb=("#","fr")):
+    # name (string)
+    # description (string)
+    #@option ownPage (Page) [False]
+    # _siteWeb (String)
+    def __init__(self, name, description, image ="", ownPage = False, _siteWeb = ("#","fr")):
         AbstractElement.__init__(self, name, description, ownPage)
-        self.logoPath = image
-        self.siteWeb =  siteWeb
-    #
-    #
+        self._logoPath = image
+        self._siteWeb =  _siteWeb
+
+    # create a page for the formation
     def createOwnPage(self):
         path = "formations/" + self.name + "-orig.html"
         self.page = PageFormation(path, self.name, self.description)
@@ -50,7 +66,7 @@ class  Formation(AbstractElement):
         #thumbnail  ---------------------------
         res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element">
         <div class="thumbnail thumbnail-formations">
-           <div class="formations-img-content"><img class= "img-rounded exp-img" alt="logo formation" src="''' + self.logoPath + '''"></div>
+           <div class="formations-img-content"><img class= "img-rounded exp-img" alt="logo formation" src="''' + self._logoPath + '''"></div>
            <div class="caption text-center">
             <h3 class="element-title">''' + self.name + '''</h3>
               <p class="element-description">''' + self.description + ''' </p>
@@ -68,8 +84,8 @@ class  Formation(AbstractElement):
         
         #BUTTON CORNER  ---------------------------
         res += '''<div class="text-corner-right">
-                     <a target="_blank" class="btn btn-default" href="''' + self.siteWeb[0] + '''" role="button">website'''
-        if self.siteWeb[1] != "en":
+                     <a target="_blank" class="btn btn-default" href="''' + self._siteWeb[0] + '''" role="button">website'''
+        if self._siteWeb[1] != "en":
             res += "[FR]"
         res+= ''' »</a> 
                      <a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
@@ -82,9 +98,14 @@ class  Formation(AbstractElement):
     
     
 ###############################################
+# A formation category
 #
+# name (string)
+# _elements ([AbstractElement])
 ###############################################
 class FormationCategory(AbstractCategory):
+    
+    # name (string)
     def __init__(self, name):
         AbstractCategory.__init__(self, name)
         
