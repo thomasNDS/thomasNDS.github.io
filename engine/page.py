@@ -1,6 +1,7 @@
 #! /usr/bin/python3.4
 # -*-coding:Utf-8 -*
 #
+# The core page engine
 #
 # copyright Thomas Nunes <thomasnds.github.io>
 # License MIT
@@ -9,13 +10,13 @@
 import string
 import datetime
 
-
 #########################################################################
 # Page object
 #
-# -path : (string) path of the new page
-# -title : the tile of the page <title>
-# -descr : the description of the page <meta> 
+# -path : (String) path of the new page
+# -title : (String) the tile of the page <title>
+# -description : (String) the description of the page <meta> 
+# -file : (File) 
 #########################################################################
 class Page:
     # Files imported
@@ -23,7 +24,10 @@ class Page:
     importJSHtml = (open("templates/importsJS.html", "r")).read()
     importCSSHtml = (open("templates/importsCSS.html", "r")).read()
     
-    #
+    # path : (String) path of the new page
+    # title : (String) the tile of the page <title>
+    # @option header : the text enter <head></head> balise
+    # @option startHeaderHtml: personnaliled code after <body> balise
     def __init__(self, path, title, descr, header = "", startHeaderHtml=""):
         self.path = path.replace(" ", "-")
         self.file = open(self.path, "w")
@@ -31,7 +35,8 @@ class Page:
         self.title = title
         self.setHeader(header,startHeaderHtml)
     
-    #
+    # header : the text enter <head></head> balise
+    # startHeaderHtml: personnaliled code after <body> balise
     def setHeader(self, header, startHeaderHtml):
         self.write (self.doctype)
         self.write( self.description + '">')
@@ -44,7 +49,8 @@ class Page:
             #<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
         else:
             self.write(header)
-        
+
+    #addContent    
     def write(self,content):
         self.file.write(content)
         
@@ -58,7 +64,14 @@ class Page:
         self.file.close()
    
 #########################################################################
+# # Independant page
 #
+# -path : (String) path of the new page
+# -title : (String) the tile of the page <title>
+# -description : (String) the description of the page <meta> 
+# -file : (File) 
+#
+# -_filArianne : (FilAriane) the fil ariane of the page
 #########################################################################
 class AbstractPageStandAlone(Page):
     def __init__(self, path, title, descr):
@@ -70,14 +83,15 @@ class AbstractPageStandAlone(Page):
         self.setFilArianne()
         self.setTitle()
         self.setContent(self.description)
-        
+    
+    #write the start of the page : title + fil ariane    
     def setTitle(self):
         self.write("<h1 id='title-subpage'>" + self.title + '''</h1><div class="container">
         <div class="row"><div class="col-md-12">''')
-        self.write(str(self.fil))
+        self.write(str(self._filArianne))
     
     def setFilArianne(self):
-        self.fil= FilsAriane([("Others", "../projects", ""), (self.title, "#", "") ]) 
+        self._filArianne= FilsAriane([("Others", "../projects", ""), (self.title, "#", "") ]) 
 
     def setContent(self, content):
         self.write('</div>' + content + '</div></div></div>')
@@ -86,6 +100,8 @@ class AbstractPageStandAlone(Page):
 # Page section object like a header, footer or contact form (html)
 #
 # -path : (string) the path of the html file 
+# -_file : (File) file source of section
+# -content (String) html content
 #########################################################################
 class PageSectionHtml:
     def __init__(self,path):
@@ -120,6 +136,9 @@ class Place:
 ###############################################
 class AbstractElement:
     
+    # name (string)
+    # description (string)
+    # @option ownPage (Page)
     def __init__(self, name, description, ownPage = False):
         self.ownPage = ownPage
         self.name = name
@@ -214,12 +233,16 @@ class AbstractCategory(AbstractElement):
             res.append((elt.name,elt.id))    
         return (self.name, self.id, self.getListOfYearsId())
     
-    def getListOfYear(self):
+    # get the list of years sorted of elements in the category
+    #
+    # @option sortedReverse : if reverse sorting [True]
+    # @return [datetime] : date list
+    def getListOfYear(self, sortedReverse= True):
         res = set()
         for elt in self._elements:
             if elt.dateStart:
                 res.add(elt.dateStart)
-        return sorted(res, reverse=True)
+        return sorted(res, reverse=sortedReverse)
     
     def getListOfYearsId(self):
         res = []
@@ -235,6 +258,7 @@ class AbstractCategory(AbstractElement):
 ###############################################
 class FilsAriane:
     
+    # sections ([(String,String,String)]) list of (name, class, link)
     def __init__(self, sections):
         self._sections = sections
     
@@ -262,6 +286,9 @@ class FilsAriane:
 class Section(AbstractElement):
     _content = ""
     
+    # name (string)
+    # description (string)
+    # menu ([String]) list of subtitles to include in a menu
     def __init__(self, name, description, menu):
         AbstractElement.__init__(self, name, description)
         self.menu = menu
