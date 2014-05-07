@@ -68,12 +68,12 @@ class  Formation(AbstractElement):
         
         #BUTTON CORNER  ---------------------------
         res += '''<div class="text-corner-right">
-                     <a target="_blank" class="btn btn-default" href="''' + self.siteWeb[0] + '''" role="button">website'''
+                     <span><a target="_blank" class="btn btn-default" href="''' + self.siteWeb[0] + '''" role="button">website'''
         if self.siteWeb[1] != "en":
             res += "[FR]"
-        res+= ''' »</a> 
-                     <a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
-                    </div>'''  
+        res+= ''' »</a></span> 
+                     <span><a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
+                    </span></div>'''  
         res += """
                 </div><!--/caption-->
             </div><!--/tumbnail-->
