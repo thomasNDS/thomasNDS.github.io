@@ -50,14 +50,36 @@ def minifyFiles():
     open(path2jsMin, "w").write(jsConcat)
     print ("all files minified !")
 
+############################-Manage Args-###############################
+import getopt
+##
+def cleanAll():
+    os.system("rm -rf *.pyc engine/*.pyc")
+    os.system("rm -rf public/js/src/*-min.js")
+    os.system("rm -rf *.html blog/*.html experiences/*.html formations/*.html projects/*.html public/gen/*.html")
+##
+def cleanMrProper():
+    cleanAll();
+    os.system("rm -rf __pycache__ engine/__pycache__")
+
+##
+try:
+   opts, args = getopt.getopt(sys.argv[1:],"cp",["clean","proper"])
+except getopt.GetoptError:
+   print (''' -c [--clean] clean option
+   -p [--proper] Mr proper option, clean and delete cache''')
+   sys.exit(2)
+   
+for opt, arg in opts:
+   if opt in ("-c", "--clean"):
+      print("clean")
+      cleanAll()
+      sys.exit()
+   elif opt in ("-p", "--proper"):
+      print("proper")
+      sys.exit()
 
 ############################-Create pages-###############################
-
-# Need arguments ?
-if len(sys.argv) > 2:
-    print (sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-    city = sys.argv[1]
-    argument = sys.argv[2]
 
 # Create a start page (index)
 indexPage = Page('index-orig.html',

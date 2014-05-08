@@ -84,7 +84,7 @@ class  Formation(AbstractElement):
         
         #BUTTON CORNER  ---------------------------
         res += '''<div class="text-corner-right">
-                     <span><a target="_blank" class="btn btn-default" href="''' + self._siteWeb[0] + '''" role="button">website'''
+                     <span class="button-bar-thumbnail"><a target="_blank" class="btn btn-default" href="''' + self._siteWeb[0] + '''" role="button">website'''
         if self._siteWeb[1] != "en":
             res += "[FR]"
         res+= ''' »</a></span> 

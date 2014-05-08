@@ -6,7 +6,6 @@ CORE TASKS
 
 short term
 - bug responsive menu
-- bug minification <a></a>
 - anchor title
 - black and white images
 - linked skill

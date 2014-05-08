@@ -1,1 +1,0 @@
-$(function(){$.stellar({horizontalScrolling:false,verticalOffset:40,responsive:true,showElement:function(o){o.addClass("on-show")},hideElement:function(o){o.removeClass("on-show")}})});$("#wrap").stellar({scrollProperty:"transform",positionProperty:"transform"});
