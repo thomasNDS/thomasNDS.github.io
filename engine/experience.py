@@ -23,7 +23,7 @@ class PageExperience(AbstractPageStandAlone):
         AbstractPageStandAlone.__init__(self, path, title, descr)
     
     def setFilArianne(self):
-        self.fil= FilsAriane([("Experiences", "../experiences", ""), (self.title, "#", "") ]) 
+        self._filArianne= FilsAriane([("Experiences", "../experiences", ""), (self.title, "#", "") ]) 
 
 
 ###############################################

@@ -175,7 +175,7 @@ class AbstractElement:
     
     # create a personalised page for this element
     def createOwnPage(self):
-        print "createOwnPage not yet defined"
+        print ("createOwnPage not yet defined")
     
     def __str__(self):
         res= """<div class="col-6 col-sm-6 col-lg-4 element">

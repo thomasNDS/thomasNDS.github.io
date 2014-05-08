@@ -61,7 +61,7 @@ class PageProject(AbstractPageStandAlone):
         AbstractPageStandAlone.__init__(self, path, title, descr)
     
     def setFilArianne(self):
-        self.fil= FilsAriane([("Projets", "../projects", ""), (self.title, "#", "") ]) 
+        self._filArianne= FilsAriane([("Projets", "../projects", ""), (self.title, "#", "") ]) 
 
 
 ###############################################

@@ -11,6 +11,8 @@ Install
     
     pip install cssmin
 
+    npm install -g minifyjs
+
 Configure
 ==========
 

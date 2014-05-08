@@ -30,7 +30,9 @@ def minifyFiles():
                 output = file.replace("-orig.",".")
             else:
                 output = file.replace(".","-min.")
-            os.system("./bin/jsmin <" + file + " >" + output)
+                
+            os.system("cp " + file + " " + output)    
+            os.system("./bin/minify " + output )
 
     # Merge all css files
     cssConcat = ""
@@ -46,14 +48,14 @@ def minifyFiles():
             js = js.replace(".","-min.")
         jsConcat += open(js, "r").read()
     open(path2jsMin, "w").write(jsConcat)
-    print "all files minified !"
+    print ("all files minified !")
 
 
 ############################-Create pages-###############################
 
 # Need arguments ?
 if len(sys.argv) > 2:
-    print sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4]
+    print (sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
     city = sys.argv[1]
     argument = sys.argv[2]
 

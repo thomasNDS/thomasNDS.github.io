@@ -23,7 +23,7 @@ class PageFormation(AbstractPageStandAlone):
         AbstractPageStandAlone.__init__(self, path, title, descr)
     
     def setFilArianne(self):
-        self.fil= FilsAriane([("Formations", "../formations", ""), (self.title, "#", "") ]) 
+        self._filArianne = FilsAriane([("Formations", "../formations", ""), (self.title, "#", "") ]) 
 
 ###############################################
 # Formation object
@@ -84,9 +84,8 @@ class  Formation(AbstractElement):
         
         #BUTTON CORNER  ---------------------------
         res += '''<div class="text-corner-right">
-<<<<<<< HEAD
-                     <span><a target="_blank" class="btn btn-default" href="''' + self.siteWeb[0] + '''" role="button">website'''
-        if self.siteWeb[1] != "en":
+                     <span><a target="_blank" class="btn btn-default" href="''' + self._siteWeb[0] + '''" role="button">website'''
+        if self._siteWeb[1] != "en":
             res += "[FR]"
         res+= ''' »</a></span> 
                      <span><a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
