@@ -1,7 +1,5 @@
 #header-main-page{
-    min-height: 60%;
-    background: wheat;
-    margin-top: -30px;
+    min-height: 100%;
     background: #444 url(../img/texture/stardustblack.png) repeat fixed center;
     box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
     text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
@@ -20,4 +18,25 @@
     margin: auto;
     position: absolute;
     top: 25%; left: 0; bottom: 0; right: 0;
+}
+.halfCircle{
+     height:50px;
+     width:100px;
+     border-radius: 100px 100px 0 0;
+     -moz-border-radius: 100px 100px 0 0;
+     -webkit-border-radius: 100px 100px 0 0;
+     background: rgba(245, 247, 250, 0.19);
+     color: #656D78;
+}
+.bot-center{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left:auto;
+    margin-right:auto;
+}
+.click-down{
+    margin-top: 12px;
+    font-size: 1.8em;
 }

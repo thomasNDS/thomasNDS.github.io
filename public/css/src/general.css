@@ -85,10 +85,6 @@ wrap{
     margin-bottom: 100px;
 }
 
-
-.title-section{
-    margin-bottom: 20px;
-}
 .element-description{
     text-align: justify;
 }
@@ -125,4 +121,21 @@ wrap{
 .element-date{
     font-weight: 700;
     color: #656D78;
+}
+img:not(.clean-img){
+    filter: grayscale(80%); /* Current draft standard */
+    -webkit-filter: grayscale(80%); /* New WebKit */
+    -moz-filter: grayscale(80%);
+    -ms-filter: grayscale(80%); 
+    -o-filter: grayscale(80%); /* Not yet supported in Gecko, Opera or IE */ 
+    filter: gray; /* IE */
+    -webkit-filter: grayscale(0.8); /* Old WebKit */
+}
+img:hover:not(.clean-img){
+    filter: grayscale(20%); /* Current draft standard */
+    -webkit-filter: grayscale(20%); /* New WebKit */
+    -moz-filter: grayscale(20%);
+    -ms-filter: grayscale(20%); 
+    -o-filter: grayscale(20%); /* Not yet supported in Gecko, Opera or IE */ 
+    -webkit-filter: grayscale(0.2); /* Old WebKit */
 }

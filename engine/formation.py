@@ -112,7 +112,9 @@ class FormationCategory(AbstractCategory):
     def __str__(self):
         list = self._elements
         res = '''<div class="category grey-back"><div class="container container-part">
-                    <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
+                    <h1 class="title-section" id="''' + self.id +'''">
+                    <a href="#''' + self.id + '''" class="anchor"><span class="hidden-xs glyphicon glyphicon-link"></span></a>
+                    ''' + self.name + '</h1>' + """
                      <div class="col-xs-12 col-sm-9">""" 
         list.sort(key=lambda x: x.dateStart, reverse=True)
         for elt in list:

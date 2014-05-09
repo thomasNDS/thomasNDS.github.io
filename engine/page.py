@@ -42,7 +42,7 @@ class Page:
         self.write( self.description + '">')
         self.write("<title>"+ self.title + "</title>")
         if header == "":
-            self.write(self.importJSHtml + self.importCSSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
+            self.write(self.importCSSHtml + self.importJSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
             if startHeaderHtml != "":
                 self.addSectionHtml(startHeaderHtml)
             self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">''')
@@ -212,7 +212,9 @@ class AbstractCategory(AbstractElement):
     def __str__(self):
         list = self._elements
         res = '''<div class="category grey-back"><div class="container">
-                    <h1 class="title-section" id="''' + self.id +'">' + self.name + '</h1>' + """
+                    <h1 class="title-section" id="''' + self.id +'''">
+                    <a href="#''' + self.id + '''" class="anchor"><span class="glyphicon glyphicon-link"></span></a>
+                    ''' + self.name + '</h1>' + """
                      <div class="col-xs-12 col-sm-9">""" 
         list.sort(key=lambda x: x.dateStart, reverse=True)
         for elt in list:

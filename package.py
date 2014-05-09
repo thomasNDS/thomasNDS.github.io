@@ -10,6 +10,7 @@ css2min = [
             "public/css/libs/bootstrap.css",
             "public/css/libs/bootflat.css",
             "public/css/src/skills.css",
+            "public/css/src/title.css",
             "public/css/src/sidebar.css",
             "public/css/src/arianne.css",
             "public/css/src/general.css",
@@ -27,10 +28,8 @@ js2min = [
             "public/js/src/scrollMenu.js",
             ]
 html2min = [
-            "index-orig.html",
+            "index.html",
             ]
-            
-file2min = js2min + html2min
 
 #Where generated files will be set
 path2cssMin = "public/gen/min.css"
