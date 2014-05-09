@@ -20,22 +20,10 @@ from engine import experience
 from engine import formation
 
 ############################-Minification-###############################
-def minifyFiles(minify=True):
-#    # Minify all files
-#    for file in file2min:
-#        # test if allready minified
-#        if not (("-min" in file) or (".min" in file)):
-#            #if minify without "-min"
-#            if "-orig" in file:
-#                output = file.replace("-orig.",".")
-#            else:
-#                output = file.replace(".","-min.")
-#                
-#            os.system("cp " + file + " " + output)    
-#            os.system("./bin/minify " + output )
-    if minify: 
-        for html in html2min:
-            os.system("./bin/minify " + html )
+
+##
+# all files must be closed
+def uglifyFiles(minify=True):
 
     # Merge all css files
     cssConcat = ""
@@ -44,14 +32,6 @@ def minifyFiles(minify=True):
     open(path2cssMin, "w").write(cssConcat)
     if minify:
         os.system("./bin/minify " + path2cssMin )
-#    # Merge all js files
-#    jsConcat = ""
-#    for js in js2min:
-#        if (not (("-min" in js) or (".min" in js))) :
-#            js = js.replace(".","-min.")
-#        jsConcat += open(js, "r").read()
-#    open(path2jsMin, "w").write(jsConcat)
-#    print ("all files minified !")
 
     # Merge all js files
     jsConcat = ""
@@ -59,7 +39,12 @@ def minifyFiles(minify=True):
         jsConcat += open(js, "r").read()
     open(path2jsMin, "w").write(jsConcat)
     if minify:
-        os.system("./bin/minify " + path2jsMin )            
+        os.system("./bin/minify " + path2jsMin )    
+    
+    folders2min = ["formations/","skills/","experiences/", "projects/"] + html2min
+    if minify: 
+        for html in folders2min:
+            os.system("./bin/minify " + html )
 
 ############################-Manage Args-###############################
 import getopt
@@ -74,11 +59,13 @@ def cleanMrProper():
     os.system("rm -rf __pycache__ engine/__pycache__")
 
 ##
+minify = False
 try:
-   opts, args = getopt.getopt(sys.argv[1:],"cp",["clean","proper"])
+   opts, args = getopt.getopt(sys.argv[1:],"cpm",["clean","proper", "minify"])
 except getopt.GetoptError:
    print (''' -c [--clean] clean option
-   -p [--proper] Mr proper option, clean and delete cache''')
+   -p [--proper] Mr proper option, clean and delete cache
+   -m minify all''')
    sys.exit(2)
    
 for opt, arg in opts:
@@ -88,15 +75,15 @@ for opt, arg in opts:
       sys.exit()
    elif opt in ("-p", "--proper"):
       print("proper")
+      cleanMrProper()
       sys.exit()
+   elif opt in ("-m", "--minify"):
+      minify = True
 
 ############################-Create pages-###############################
 
 # Create a start page (index)
-indexPage = Page('index-orig.html',
-                "Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS",
-                startHeaderHtml="engine/components/header.html" )
-cv = Page('cv-orig.html',
+indexPage = Page('index.html',
                 "Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS",
                 startHeaderHtml="engine/components/header.html" )
 
@@ -131,10 +118,10 @@ indexPage.addSectionHtml("engine/components/contact.html")
 indexPage.addSectionHtml("engine/components/footer.html")
 
 # Minify ###########################
-html2min += skills.skills.getElementsWithOwnPage()
-html2min += project.projects.getElementsWithOwnPage()
-html2min += experience.experiences.getElementsWithOwnPage()
-html2min += formation.formations.getElementsWithOwnPage()
+#html2min += skills.skills.getElementsWithOwnPage()
+#html2min += project.projects.getElementsWithOwnPage()
+#html2min += experience.experiences.getElementsWithOwnPage()
+#html2min += formation.formations.getElementsWithOwnPage()
 
 indexPage.close()
-minifyFiles()
+uglifyFiles(minify)

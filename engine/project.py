@@ -32,7 +32,7 @@ class Project(AbstractElement):
         AbstractElement.__init__(self, name, description, ownPage)
     
     def createOwnPage(self):
-        path = "projects/" + self.name + "-orig.html"
+        path = "projects/" + self.name.lower() + ".html"
         self.page = PageProject(path, self.name, self.description)
         self.page.close()
     
@@ -42,7 +42,7 @@ class Project(AbstractElement):
                       <div class="caption text-center">
                         <h3 class="element-title">""" + self.name + """</h3>
                         <p class="element-description">""" + self.description + """ </p>"""
-        res += '        <p class="text-right"><a class="btn btn-info" href="' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'    
+        res += '        <p class="text-right"><a target="_blank" class="btn btn-info" href="' + self.page.path + '" role="button">More »</a></p>'    
         res += """    </div> <!--/caption-->
                     </div><!--/thumbnail-->
                 </div><!--/element-->   """

@@ -146,6 +146,7 @@ class AbstractElement:
         self.id = self.name2id(name)
         if ownPage:
             self.createOwnPage()
+            self.page.close()
 
     # Convert a name (String) to an valid id (String)
     #

@@ -80,6 +80,7 @@ class SkillElement:
     def createPage(self):
         path = "skills/" + self.name.replace("/","-").lower() + ".html"
         self._page = PageSkill(path, self.name, self._description)
+        self._page.close()
         
     def __str__(self):
         return """<a target="_blank" href='""" + self.getPagePath() + """' >

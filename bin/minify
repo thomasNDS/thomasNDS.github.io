@@ -127,7 +127,6 @@ done
 minify_path=$(echo $minify_path | sed 's/\/+$//g')
 [ -z $output_folder ] && output_folder=$minify_path
 
-#rm -rf $output_folder
 # copy all file to output folder if minify_path is not equal to output_folder
 if [ $minify_path != $output_folder ]; then
     if [ -e $output_folder ]; then

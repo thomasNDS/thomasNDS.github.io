@@ -43,7 +43,7 @@ class  Experience(AbstractElement):
     
     #
     def createOwnPage(self):
-        path = "experiences/" + self.name + "-orig.html"
+        path = "experiences/" + self.name.lower() + ".html"
         self.page = PageExperience(path, self.name, self.description)
         self.page.close()
     
@@ -63,7 +63,7 @@ class  Experience(AbstractElement):
             if self.dateStart:
                 res += self.dateStart.strftime("%Y") + """- Now"""
         res += '''</span></p>
-        <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path.replace("-orig","") + '" role="button">More »</a></p>'
+        <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path + '" role="button">More »</a></p>'
         res += """</div><!--/span-->"""
         return res
 

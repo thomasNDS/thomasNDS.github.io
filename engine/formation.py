@@ -58,7 +58,7 @@ class  Formation(AbstractElement):
 
     # create a page for the formation
     def createOwnPage(self):
-        path = "formations/" + self.name + "-orig.html"
+        path = "formations/" + self.name.lower() + ".html"
         self.page = PageFormation(path, self.name, self.description)
         self.page.close()
     
@@ -88,7 +88,7 @@ class  Formation(AbstractElement):
         if self._siteWeb[1] != "en":
             res += "[FR]"
         res+= ''' »</a></span> 
-                     <span><a target="_blank" class="btn btn-info" href="''' + self.page.path.replace("-orig","") + '''" role="button">More »</a>
+                     <span><a target="_blank" class="btn btn-info" href="''' + self.page.path + '''" role="button">More »</a>
                     </span></div>'''  
         res += """
                 </div><!--/caption-->
