@@ -105,3 +105,4 @@ testexp = Project("test2","description",True)
 testexp.dateStart = datetime.date(2003, 3, 11)
 projects.addElement(testexp)
 
+    

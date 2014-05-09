@@ -50,8 +50,9 @@ class  Experience(AbstractElement):
     def __str__(self):
         res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element-frame">
                <h3 class="element-title">''' + self.name + '''</h3>
-               <div class="exp-img-content"><img class= "img-rounded exp-img" alt="logo company" src="''' + self.logoPath + '''"/></div>
-               <p class="element-description">''' + self.description + ''' </p>
+               <div class="exp-img-content">
+                    <img class= "img-rounded exp-img" alt="logo company" src="''' + self.logoPath + '''"/>
+                </div>
                <p class="element-date"><span class="start-date">'''
               
         if self.dateStart and self.dateEnd:
@@ -63,10 +64,9 @@ class  Experience(AbstractElement):
             if self.dateStart:
                 res += self.dateStart.strftime("%Y") + """- Now"""
         res += '''</span></p>
-        <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path + '" role="button">More »</a></p>'
+                    <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path + '" role="button">More »</a></p>'
         res += """</div><!--/span-->"""
         return res
-
 
 ###############################################
 #
@@ -95,23 +95,3 @@ class ExperienceCategory(AbstractCategory):
 
 ###############################################
  
-experiences = ExperienceCategory("Experiences")
-####
-exp = Experience("Orange","""Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
-True,
-"./public/img/exps/obs.jpg")
-exp.dateStart = datetime.date(2002, 3, 11)
-exp.dateEnd = datetime.date(2005, 3, 11)
-experiences.addElement(exp)
-##
-exp2 = Experience("Emisys","""Lorem ipsunisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
-True,
-"./public/img/exps/emisys.jpeg")
-exp2.dateStart = datetime.date(2001, 3, 11)
-experiences.addElement(exp2)
-##
-exp3 = Experience("Joseph Fourier","""Lorem ipsum dolincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
-True,
-"./public/img/exps/ujf.gif")
-exp3.dateStart = datetime.date(2001, 3, 11)
-experiences.addElement(exp3)

@@ -18,6 +18,7 @@ from engine import skills
 from engine import project
 from engine import experience
 from engine import formation
+from engine import xmlParser
 
 ############################-Minification-###############################
 
@@ -82,6 +83,9 @@ for opt, arg in opts:
 
 ############################-Create pages-###############################
 
+xmlParser = xmlParser.XmlParser()
+experiences = xmlParser.createExperiences()
+
 # Create a start page (index)
 indexPage = Page('index.html',
                 "Thomas Nunes website","Personnal website of Thomas Nunes. thomasNDS",
@@ -95,7 +99,7 @@ menu.addSubMenu(skills.skills.name, skills.skills.id, [])
 nameSub, idSub, elts = project.projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
 # Exp
-nameSub, idSub, elts = experience.experiences.getMenu()
+nameSub, idSub, elts = experiences.getMenu()
 menu.addSubMenu(nameSub, idSub, [])
 # Formations
 nameSub, idSub, elts = formation.formations.getMenu()
@@ -105,23 +109,16 @@ menu.addSubMenu(nameSub, idSub, [])
 indexPage.write(str(menu))
 # Skills
 indexPage.write(str(skills.skills))
-# Project
+# Projectexperiences
 indexPage.write(str(project.projects))
 # EXP
-indexPage.write(str(experience.experiences))
+indexPage.write(str(experiences))
 # Formations
 indexPage.write(str(formation.formations))
-indexPage.write("<div class='separate-margin200'></div>")
 # Contact
 indexPage.addSectionHtml("engine/components/contact.html")
 # Footer
 indexPage.addSectionHtml("engine/components/footer.html")
-
-# Minify ###########################
-#html2min += skills.skills.getElementsWithOwnPage()
-#html2min += project.projects.getElementsWithOwnPage()
-#html2min += experience.experiences.getElementsWithOwnPage()
-#html2min += formation.formations.getElementsWithOwnPage()
 
 indexPage.close()
 uglifyFiles(minify)

@@ -4,9 +4,7 @@ TODO
 CORE TASKS
 ----------
 
-short term
-- linked skill
-- page skill
+short terms
 - work on projet thumbl
 
 medium term
