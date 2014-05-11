@@ -214,52 +214,52 @@ class SkillSection(Section):
         return res
     
 ####
-skills = SkillSection("Skills", "", [("it-skills", "IT Skills"),
-                                ("programming", "Programming")])
-
-
-itSkills = SkillContainer("IT skills")
-environement = SubSkillContainer("Tools")
-systemes = SubSkillContainer("Systems")
-design = SubSkillContainer("Design")
-
-systemes.addSkill(SkillElement("Linux", 4))
-systemes.addSkill(SkillElement("MacOS", 1))
-systemes.addSkill(SkillElement("Windows", 3))
-design.addSkill(SkillElement("Blender",1))
-design.addSkill(SkillElement("Photoshop",4))
-design.addSkill(SkillElement("Gimp", 2))
-environement.addSkill(SkillElement("Eclipse",4))
-environement.addSkill(SkillElement("Netbeans",4))
-environement.addSkill(SkillElement("Svn",3))
-environement.addSkill(SkillElement("Git",4))
-environement.addSkill(SkillElement("Mercurial",2))
-
-itSkills.addSubSkillContainer(systemes)
-itSkills.addSubSkillContainer(design)
-itSkills.addSubSkillContainer(environement)
-skills.addSkillContainer(itSkills)
-############################################################
-
-programming = SkillContainer("Programming")
-programming.addSkill(SkillElement("Java/JEE", 4))
-programming.addSkill(SkillElement("OcamL", 1))
-programming.addSkill(SkillElement("C/C++", 4))
-programming.addSkill(SkillElement("ADA", 1))
-programming.addSkill(SkillElement("Perl", 2))
-programming.addSkill(SkillElement("Python", 4))
-programming.addSkill(SkillElement("C#", 1))
-programming.addSkill(SkillElement("Android", 3))
-programming.addSkill(SkillElement("Ruby", 1))
-programming.addSkill(SkillElement("HTML5", 3))
-programming.addSkill(SkillElement("ASP", 1))
-programming.addSkill(SkillElement("CSS3", 2))
-programming.addSkill(SkillElement("MatLab/Octave", 1))
-programming.addSkill(SkillElement("SQL", 4))
-programming.addSkill(SkillElement("NoSQL", 2))
-programming.addSkill(SkillElement("IOT", 3))
-programming.addSkill(SkillElement("PHP", 1))
-programming.addSkill(SkillElement("Javascript", 4))
-skills.addSkillContainer(programming)
-############################################################
+#skills = SkillSection("Skills", "", [("it-skills", "IT Skills"),
+#                                ("programming", "Programming")])
+#
+#
+#itSkills = SkillContainer("IT skills")
+#environement = SubSkillContainer("Tools")
+#systemes = SubSkillContainer("Systems")
+#design = SubSkillContainer("Design")
+#
+#systemes.addSkill(SkillElement("Linux", 4))
+#systemes.addSkill(SkillElement("MacOS", 1))
+#systemes.addSkill(SkillElement("Windows", 3))
+#design.addSkill(SkillElement("Blender",1))
+#design.addSkill(SkillElement("Photoshop",4))
+#design.addSkill(SkillElement("Gimp", 2))
+#environement.addSkill(SkillElement("Eclipse",4))
+#environement.addSkill(SkillElement("Netbeans",4))
+#environement.addSkill(SkillElement("Svn",3))
+#environement.addSkill(SkillElement("Git",4))
+#environement.addSkill(SkillElement("Mercurial",2))
+#
+#itSkills.addSubSkillContainer(systemes)
+#itSkills.addSubSkillContainer(design)
+#itSkills.addSubSkillContainer(environement)
+#skills.addSkillContainer(itSkills)
+#############################################################
+#
+#programming = SkillContainer("Programming")
+#programming.addSkill(SkillElement("Java/JEE", 4))
+#programming.addSkill(SkillElement("OcamL", 1))
+#programming.addSkill(SkillElement("C/C++", 4))
+#programming.addSkill(SkillElement("ADA", 1))
+#programming.addSkill(SkillElement("Perl", 2))
+#programming.addSkill(SkillElement("Python", 4))
+#programming.addSkill(SkillElement("C#", 1))
+#programming.addSkill(SkillElement("Android", 3))
+#programming.addSkill(SkillElement("Ruby", 1))
+#programming.addSkill(SkillElement("HTML5", 3))
+#programming.addSkill(SkillElement("ASP", 1))
+#programming.addSkill(SkillElement("CSS3", 2))
+#programming.addSkill(SkillElement("MatLab/Octave", 1))
+#programming.addSkill(SkillElement("SQL", 4))
+#programming.addSkill(SkillElement("NoSQL", 2))
+#programming.addSkill(SkillElement("IOT", 3))
+#programming.addSkill(SkillElement("PHP", 1))
+#programming.addSkill(SkillElement("Javascript", 4))
+#skills.addSkillContainer(programming)
+#############################################################
 

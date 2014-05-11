@@ -95,14 +95,14 @@ class ProjectCategory(AbstractCategory):
 
 ###############################################
 
-projects = ProjectCategory("Projects")
+#projects = ProjectCategory("Projects")
 
-testexp = Project("test","description",True)
-testexp.dateStart = datetime.date(2002, 3, 11)
-projects.addElement(testexp)
-
-testexp = Project("test2","description",True)
-testexp.dateStart = datetime.date(2003, 3, 11)
-projects.addElement(testexp)
+#testexp = Project("test","description",True)
+#testexp.dateStart = datetime.date(2002, 3, 11)
+#projects.addElement(testexp)
+#
+#testexp = Project("test2","description",True)
+#testexp.dateStart = datetime.date(2003, 3, 11)
+#projects.addElement(testexp)
 
     

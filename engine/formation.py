@@ -131,8 +131,12 @@ class FormationCategory(AbstractCategory):
 formations = FormationCategory("Formation")
 
 #POLYTECH
-testexp = Formation("Enginneering diploma","school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
-"./public/img/formations/polytech.png",True,("http://www.polytech-grenoble.fr/","fr"))
+testexp = Formation("Enginneering diploma",
+"school enginneer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo",
+"./public/img/formations/polytech.png",
+True,
+("http://www.polytech-grenoble.fr/","fr"))
+
 testexp.dateStart = datetime.date(2011, 1, 1)
 testexp.dateEnd = datetime.date(2014, 1, 1)
 formations.addElement(testexp)

@@ -1,0 +1,9 @@
+<skill>
+    <container>itSkills</container>
+    <level>4</level>
+    <title>Orange</title>
+    <description>Lorem ipsum dolor sit amet, consectetur a</description>
+    <image>
+        ./public/img/exps/obs.jpg
+    </image>
+</skill>

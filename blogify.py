@@ -15,9 +15,6 @@ from engine import *
 from engine.template import *
 from engine.page import *
 from engine import skills
-from engine import project
-from engine import experience
-from engine import formation
 from engine import xmlParser
 
 ############################-Minification-###############################
@@ -85,6 +82,9 @@ for opt, arg in opts:
 
 xmlParser = xmlParser.XmlParser()
 experiences = xmlParser.createExperiences()
+projects = xmlParser.createProjects()
+formations = xmlParser.createFormations()
+skills = xmlParser.createSkills()
 
 # Create a start page (index)
 indexPage = Page('index.html',
@@ -94,27 +94,27 @@ indexPage = Page('index.html',
 # Create the menu ###########################
 menu = Menu()
 # Skill
-menu.addSubMenu(skills.skills.name, skills.skills.id, [])
+menu.addSubMenu(skills.name, skills.id, [])
 # Project
-nameSub, idSub, elts = project.projects.getMenu()
+nameSub, idSub, elts = projects.getMenu()
 menu.addSubMenu(nameSub, idSub, elts)
 # Exp
 nameSub, idSub, elts = experiences.getMenu()
 menu.addSubMenu(nameSub, idSub, [])
 # Formations
-nameSub, idSub, elts = formation.formations.getMenu()
+nameSub, idSub, elts = formations.getMenu()
 menu.addSubMenu(nameSub, idSub, [])
 
 # Build the page ###########################
 indexPage.write(str(menu))
 # Skills
-indexPage.write(str(skills.skills))
+indexPage.write(str(skills))
 # Projectexperiences
-indexPage.write(str(project.projects))
+indexPage.write(str(projects))
 # EXP
 indexPage.write(str(experiences))
 # Formations
-indexPage.write(str(formation.formations))
+indexPage.write(str(formations))
 # Contact
 indexPage.addSectionHtml("engine/components/contact.html")
 # Footer
