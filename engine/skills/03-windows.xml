@@ -1,0 +1,9 @@
+<skill>
+    <container>systemes</container>
+    <level>3</level>
+    <title>Windows</title>
+    <description>Lorem ipsum dolor sit amet, consectetur a</description>
+    <image>
+        ./public/img/skills/blank.jpg
+    </image>
+</skill>

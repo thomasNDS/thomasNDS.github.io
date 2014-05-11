@@ -116,7 +116,7 @@ class XmlParser:
             skillElt = skills.SkillElement(str(root.skill.title.string),int(root.skill.level.string))
             if str(container) == "itSkills":
                 itSkills.addSkill(skillElt)
-            elif str(container) == "environement":
+            elif str(container) == "environnement":
                 itSkills.addSkill(skillElt)
             elif str(container) == "systemes":
                 systemes.addSkill(skillElt)

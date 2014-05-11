@@ -1,0 +1,9 @@
+<skill>
+    <container>programming</container>
+    <level>1</level>
+    <title>C#</title>
+    <description>Lorem ipsum dolor sit amet, consectetur a</description>
+    <image>
+        ./public/img/skills/blank.jpg
+    </image>
+</skill>

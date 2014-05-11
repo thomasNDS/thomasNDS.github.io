@@ -1,0 +1,9 @@
+<skill>
+    <container>design</container>
+    <level>4</level>
+    <title>Photoshop</title>
+    <description>Lorem ipsum dolor sit amet, consectetur a</description>
+    <image>
+        ./public/img/skills/blank.jpg
+    </image>
+</skill>
