@@ -1,9 +1,15 @@
 
 .skill-element{
     display: inline;
-    margin: 3.5px;
+    margin: 1.5px;
+    padding: 2px 2px 2px 4px;
     font-size: 1.05em;
     color: #79818D;
+    border:1px solid transparent;
+}
+.skill-element:hover{
+    border: solid 1px rgba(72, 207, 173, 0.16);
+    background: rgba(72, 207, 173, 0.08);
 }
 
 .skill-element.skill-medium{
@@ -19,9 +25,4 @@
 .skill-element.skill-expert{
     font-size: 1.50em;
     color: #434a54;
-}
-
-/*container*/
-.skills-container{
-
 }

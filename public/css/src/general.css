@@ -14,10 +14,9 @@ body,html{
 wrap{
     min-height:100%;
 }
-#main{
-    min-height:350px;
+.category{
+    padding-bottom: 30px;
 }
-
 /*footer correction*/
 .footer{
     background: #434A54 url(../img/texture/stardust.png);
@@ -95,8 +94,6 @@ wrap{
 }
 .element-frame{
     border:1px solid transparent;
-    min-height: 450px;
-    padding-bottom: 20px;
 }
 .exp-img-content{
     min-height: 90px;
@@ -121,6 +118,7 @@ wrap{
 .element-date{
     font-weight: 700;
     color: #656D78;
+    padding-bottom: 32px;
 }
 img:not(.clean-img){
     filter: grayscale(100%); /* Current draft standard */

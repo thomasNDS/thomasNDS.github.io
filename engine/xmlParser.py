@@ -55,7 +55,8 @@ class XmlParser:
             elt = project.Project(str(root.project.title.string),
             str(root.project.description.string),
             True)
-            
+            if root.project.image:
+                elt.setLogoPath(str(root.project.image.string))
             elt.dateStart = datetime.date(
               int(root.project.datestart.y.string), 
               int(root.project.datestart.m.string), 

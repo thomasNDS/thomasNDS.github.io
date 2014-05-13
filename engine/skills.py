@@ -66,12 +66,13 @@ class SkillElement:
     _page = None
     
     #
-    def __init__(self, name, level = 1, description = ""):
+    def __init__(self, name, level = 1, description = "", image=""):
         self.type = type
         self.name = name
         self._description = description
         self.levelSkill = LevelSkill(level)
         self.createPage()
+        self._logoPath = image
     
     #
     def getPagePath(self):
@@ -84,10 +85,10 @@ class SkillElement:
         
     def __str__(self):
         return """<a target="_blank" href='""" + self.getPagePath() + """' >
-                    <div id="content-skills" class='skill-element
+                    <span id="content-skills" class='skill-element
                      """+ self.levelSkill.getClass() + """'>
                      """ + str(self.name) + """
-                    </div>
+                    </span>
                   </a><!--/-->"""
  
 ###################################################

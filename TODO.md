@@ -5,7 +5,8 @@ CORE TASKS
 ----------
 
 short terms
-- work on projet thumbl
+- page skill more complete
+- fil ariane works
 
 medium term
 - change image link to logo
@@ -15,6 +16,7 @@ medium term
 
 long term
 - content
+- about & co pages
 - check contact form
 - md engine
 - multilingue

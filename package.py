@@ -16,6 +16,7 @@ css2min = [
             "public/css/src/general.css",
             "public/css/src/header.css",
             "public/css/src/formations.css",
+            "public/css/src/projects.css",
             ]
 js2min = [
             "public/js/libs/bootstrap-min.js",

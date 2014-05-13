@@ -1,5 +1,5 @@
 .thumbnail-formations{
-    min-height: 350px;
+    min-height: 150px;
 }
 .formations-img-content{
     margin-top: 10px;
@@ -7,4 +7,8 @@
 }
 .button-bar-thumbnail{
     margin-right: 5px;
+}
+#formation-container{
+    background: #444 url(../img/texture/skulls.png) repeat fixed center;
+    min-height: 100%;
 }

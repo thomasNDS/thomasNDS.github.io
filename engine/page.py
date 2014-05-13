@@ -45,7 +45,7 @@ class Page:
             self.write(self.importCSSHtml + self.importJSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
             if startHeaderHtml != "":
                 self.addSectionHtml(startHeaderHtml)
-            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">''')
+#            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">''')
             #<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
         else:
             self.write(header)
@@ -212,19 +212,19 @@ class AbstractCategory(AbstractElement):
         
     def __str__(self):
         list = self._elements
-        res = '''<div class="category grey-back"><div class="container">
-                    <h1 class="title-section" id="''' + self.id +'''">
-                    <a href="#''' + self.id + '''" class="anchor"><span class="glyphicon glyphicon-link"></span></a>
-                    ''' + self.name + '</h1>' + """
-                     <div class="col-xs-12 col-sm-9">""" 
+        res = '''<div class="category grey-back">
+                    <div class="container">
+                      <h1 class="title-section" id="''' + self.id +'''">
+                      <a href="#''' + self.id + '''" class="anchor"><span class="glyphicon glyphicon-link"></span></a>
+                      ''' + self.name + '</h1>' + """
+                      <div class="col-xs-12 col-sm-9">""" 
         list.sort(key=lambda x: x.dateStart, reverse=True)
         for elt in list:
                 res += str(elt)
-        res += """  </div><!--/row-->"""
+        res += """    </div><!--/col-->"""
             ################
-        res += """</div><!--/span-->
-               </div><!--/row-->
-             </div>"""
+        res += """   </div><!--/container-->
+                  </div><!--/category-->"""
         return res
          
 #  get the list of names

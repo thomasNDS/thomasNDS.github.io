@@ -49,23 +49,12 @@ class  Experience(AbstractElement):
     
     def __str__(self):
         res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element-frame">
-               <h3 class="element-title">''' + self.name + '''</h3>
-               <div class="exp-img-content">
+                <a class="" target="_blank" href="''' + self.page.path + '''" role="button">
+                 <div class="exp-img-content">
                     <img class= "img-rounded exp-img" alt="logo company" src="''' + self.logoPath + '''"/>
-                </div>
-               <p class="element-date"><span class="start-date">'''
-              
-        if self.dateStart and self.dateEnd:
-            if self.dateStart.year == self.dateEnd.year:    
-                res += self.dateStart.strftime("%Y")
-            else:
-                res+= self.dateStart.strftime("%Y") + """</span> - <span class="end-date">""" + self.dateEnd.strftime("%Y")
-        else: 
-            if self.dateStart:
-                res += self.dateStart.strftime("%Y") + """- Now"""
-        res += '''</span></p>
-                    <p class="text-corner-right"><a class="btn btn-info" target="_blank" href="''' + self.page.path + '" role="button">More »</a></p>'
-        res += """</div><!--/span-->"""
+                 </div><!--/exp-->
+                </a>
+            </div><!--/col-->'''
         return res
 
 ###############################################
@@ -77,20 +66,22 @@ class ExperienceCategory(AbstractCategory):
 
     def __str__(self):
         list = self._elements
-        res = '''<div class="category"><div class="container container-part">
-                    <h1 class="title-section" id="''' + self.id +'''">
-                    <a href="#''' + self.id + '''" class="anchor"><span class="hidden-xs glyphicon glyphicon-link"></span></a>
-                    ''' + self.name + '</h1>' + """
-                    <div class="col-xs-12 col-sm-9">
-                     """ 
+        res = '''<div class="category">
+                    <div class="container container-part">
+                        <h1 class="title-section" id="''' + self.id +'''">
+                        <a href="#''' + self.id + '''" class="anchor">
+                        <span class="hidden-xs glyphicon glyphicon-link"></span></a>
+                        ''' + self.name + '</h1>' + """
+                        <div class="col-xs-12 col-sm-9">
+                            """ 
         list.sort(key=lambda x: x.dateStart, reverse=True)
         for elt in list:
                 res += str(elt)
-        res += """  </div><!--/row-->"""
+        res += """      </div><!--/col-->"""
             ################
-        res += """</div><!--/span-->
-               </div><!--/row-->
-             </div>"""
+        res += """</div><!--/container-->
+               </div><!--/category-->
+             """
         return res
 
 ###############################################

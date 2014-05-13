@@ -97,13 +97,13 @@ menu = Menu()
 menu.addSubMenu(skills.name, skills.id, [])
 # Project
 nameSub, idSub, elts = projects.getMenu()
-menu.addSubMenu(nameSub, idSub, elts)
+menu.addSubMenu(nameSub, "project-container", elts)
 # Exp
 nameSub, idSub, elts = experiences.getMenu()
 menu.addSubMenu(nameSub, idSub, [])
 # Formations
 nameSub, idSub, elts = formations.getMenu()
-menu.addSubMenu(nameSub, idSub, [])
+menu.addSubMenu(nameSub, "formation-container", [])
 
 # Build the page ###########################
 indexPage.write(str(menu))
@@ -115,6 +115,8 @@ indexPage.write(str(projects))
 indexPage.write(str(experiences))
 # Formations
 indexPage.write(str(formations))
+# inter
+indexPage.write("<div class='separate-margin200'></div>")
 # Contact
 indexPage.addSectionHtml("engine/components/contact.html")
 # Footer

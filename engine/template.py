@@ -54,17 +54,19 @@ class Menu:
         self._subMenu.append(SubMenu(elts, title, id, first))
     
     def __str__(self):
-        res= """<div class="container"><div class="row">
-        <nav id="affix-nav" class="sidebar col-md-3 sidebar-offcanvas hidden-xs">
-            <ul id="affix2define" class="nav sidenav" >"""
+        res= """
+        <div class="container">
+            <div class="row">
+                <nav id="affix-nav" class="sidebar col-md-3 sidebar-offcanvas hidden-xs">
+                    <ul id="affix2define" class="nav sidenav" >"""
             
         for sub in self._subMenu:
             res += str(sub)
         
-        res += """    </ul>
-                    </nav>
-                  </div><!--/row-->
-                </div>"""
+        res += """  </ul>
+                </nav>
+            </div><!--/row-->
+        </div><!--/container-->"""
         return res
 
         

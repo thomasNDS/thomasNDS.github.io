@@ -28,24 +28,50 @@ class Project(AbstractElement):
     dateEnd = None
     id = None
 
-    def __init__(self, name, description, ownPage = False):
+    def __init__(self, name, description, ownPage = False, image=""):
         AbstractElement.__init__(self, name, description, ownPage)
+        self._logoPath = image
     
+    def setLogoPath(self,path):
+        self._logoPath = path
+        
     def createOwnPage(self):
         path = "projects/" + self.name.lower() + ".html"
         self.page = PageProject(path, self.name, self.description)
         self.page.close()
     
     def __str__(self):
-        res= "  <div id='" + self.id + """' class="col-6 col-sm-6 col-lg-4 element">
-                    <div class="thumbnail">
-                      <div class="caption text-center">
-                        <h3 class="element-title">""" + self.name + """</h3>
-                        <p class="element-description">""" + self.description + """ </p>"""
-        res += '        <p class="text-right"><a target="_blank" class="btn btn-info" href="' + self.page.path + '" role="button">More »</a></p>'    
-        res += """    </div> <!--/caption-->
-                    </div><!--/thumbnail-->
-                </div><!--/element-->   """
+        #thumbnail  ---------------------------
+        res= '<div id="' + self.id + '''" class="col-6 col-sm-6 col-lg-4 element">
+        <div class="thumbnail thumbnail-formations">
+           '''
+        if self._logoPath != "":
+            res += '''<div class="formations-img-content">
+                        <img class= "img-rounded exp-img" alt="logo formation" src="''' + self._logoPath + '"></div>'
+        res +='''
+           <div class="caption text-center">
+            <h3 class="element-title">''' + self.name + '''</h3>
+              <p class="element-description">''' + self.description + ''' </p>
+              <p class="element-date"><span class="start-date">'''
+        #DATE  ---------------------------    
+        if self.dateStart and self.dateEnd:
+            if self.dateStart.year == self.dateEnd.year:    
+                res += self.dateStart.strftime("%Y")
+            else:
+                res+= self.dateStart.strftime("%Y") + """</span> - <span class="end-date">""" + self.dateEnd.strftime("%Y")
+        else: 
+            if self.dateStart:
+                res += self.dateStart.strftime("%Y") + """- Now"""
+        res += '''</span></p>'''
+        
+        #BUTTON CORNER  ---------------------------
+        res += '''<div class="text-corner-right">
+                     <span><a target="_blank" class="btn btn-info" href="''' + self.page.path + '''" role="button">More »</a>
+                    </span></div>'''  
+        res += """
+                </div><!--/caption-->
+            </div><!--/tumbnail-->
+        </div><!--/element-->"""
         return res
 
 ###############################################
@@ -73,11 +99,14 @@ class ProjectCategory(AbstractCategory):
     
     def __str__(self):
         list = self._elements
-        res = '''<div id="projects-category" class="category grey-back"><div class="container container-part">
-        <h1 class="title-section" id="''' + self.id +'''">
-        <a href="#''' + self.id + '''" class="anchor"><span class="hidden-xs glyphicon glyphicon-link"></span></a>
-        ''' + self.name + '</h1>' + """
-                   <div class="col-xs-12 col-sm-9">""" 
+        res = '''
+        <div id="project-container" class="category grey-back">
+            <div class="container container-part">
+                <h1 class="title-section" id="''' + self.id +'''">
+                <a href="#project-container" class="anchor">
+                <span class="hidden-xs glyphicon glyphicon-link"></span></a>
+                ''' + self.name + '</h1>' + """
+                <div class="col-xs-12 col-sm-9">""" 
         listOfYears = self.getListOfYear()
         for date in listOfYears:
             ################         
@@ -86,11 +115,13 @@ class ProjectCategory(AbstractCategory):
             for elt in list:
                 if elt.dateStart.year == date.year:
                     res += str(elt)
-            res += """  </div><!--/row-->"""
+            res += """  
+                </div><!--/col-->"""
             ################
-        res += """</div><!--/span-->
-               </div><!--/row-->
-             </div>"""
+        res += """
+            </div><!--/container-->
+        </div><!--/category-->
+        </div><!--/???projects-->"""
         return res
 
 ###############################################
