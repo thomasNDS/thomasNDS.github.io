@@ -120,7 +120,9 @@ indexPage.write("<div class='separate-margin200'></div>")
 # Contact
 indexPage.addSectionHtml("engine/components/contact.html")
 # Footer
+indexPage.write("<div class='clean'>")
 indexPage.addSectionHtml("engine/components/footer.html")
+indexPage.write("</div><!--clean-->")
 
 indexPage.close()
 uglifyFiles(minify)

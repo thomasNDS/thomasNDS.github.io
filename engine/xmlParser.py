@@ -115,6 +115,17 @@ class XmlParser:
             container = (str(root.skill.container.string))
             
             skillElt = skills.SkillElement(str(root.skill.title.string),int(root.skill.level.string))
+            #setters
+            if(root.skill.content_en):
+                skillElt.setContent(root.skill.content_en.contents[0],"en")
+            if(root.skill.content_fr):
+                skillElt.setContent(root.skill.content_fr.contents[0],"fr")
+            if(root.skill.description_en):
+                skillElt.setDescription(root.skill.description_en.contents[0],"en")
+            if(root.skill.content_fr):
+                skillElt.setDescription(root.skill.description_fr.contents[0],"fr")
+            skillElt.createPage()
+            #set in category
             if str(container) == "itSkills":
                 itSkills.addSkill(skillElt)
             elif str(container) == "environnement":

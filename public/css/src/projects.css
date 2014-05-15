@@ -1,4 +1,8 @@
 #project-container{
     background: #444 url(../img/texture/shattered.png) repeat fixed center;
-    min-height: 100%;
+}
+@media(max-height: 767px){
+    #project-container{
+        min-height: 100%;
+    }
 }

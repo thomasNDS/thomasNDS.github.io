@@ -16,12 +16,12 @@ from engine.page import *
 # -fil : (FilsAriane) the fil d'ariane
 ###############################################
 class PageSkill(AbstractPageStandAlone):
-    def __init__(self, path, title, descr):
-        AbstractPageStandAlone.__init__(self, path, title, descr)
+    def __init__(self, path, title, descr, content):
+#        print ("skill ", descr, content)
+        AbstractPageStandAlone.__init__(self, path, title, descr, content)
     
     def setFilArianne(self):
-        self._filArianne= FilsAriane([("Skills", "../projects", ""), (self.title, "#", "") ]) 
-
+        self._filArianne= FilsAriane([("Skills", "../skills", ""), (self.title, "#", "") ]) 
 
 
 ###################################################
@@ -58,29 +58,50 @@ class LevelSkill():
 # levelSkill (LevelSkill) the level of the skill
 # _page (PageSkill)
 # _description (String)
+# _content(String)
 # type
 # name (String)
 ###################################################
 class SkillElement:
     levelSkill = None
     _page = None
-    
+    _content = None
+    _description = None
     #
-    def __init__(self, name, level = 1, description = "", image=""):
+    def __init__(self, name, level = 1):
         self.type = type
         self.name = name
-        self._description = description
         self.levelSkill = LevelSkill(level)
-        self.createPage()
-        self._logoPath = image
+        self._logoPath = ""
+        self._content = {}
+        self._description = {}
     
+    def setContent(self, content, lang='en'):
+        self._content[lang] = content
+        
+    def setDescription(self, description, lang='en'):
+        self._description[lang] = description
+    
+    def getDescrition(self,lang='en'):
+        try :
+            return self._description[lang]
+        except KeyError:
+            return ""
+        
+    def getContent(self,lang='en'):
+        try :
+            return self._content[lang]
+        except KeyError:
+            return ""
+        
     #
     def getPagePath(self):
             return self._page.path
-        
+    
+    #
     def createPage(self):
         path = "skills/" + self.name.replace("/","-").lower() + ".html"
-        self._page = PageSkill(path, self.name, self._description)
+        self._page = PageSkill(path, self.name, self.getDescrition() , self.getContent())
         self._page.close()
         
     def __str__(self):
@@ -89,7 +110,7 @@ class SkillElement:
                      """+ self.levelSkill.getClass() + """'>
                      """ + str(self.name) + """
                     </span>
-                  </a><!--/-->"""
+                  </a><!---->"""
  
 ###################################################
 # A skill subgroup

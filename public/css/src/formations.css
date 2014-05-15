@@ -8,7 +8,11 @@
 .button-bar-thumbnail{
     margin-right: 5px;
 }
+@media(max-height: 767px){
+    #formation-container{
+        min-height: 100%;
+    }
+}
 #formation-container{
     background: #444 url(../img/texture/skulls.png) repeat fixed center;
-    min-height: 100%;
 }

@@ -2,7 +2,6 @@
 body,html{
     height:100%;
     min-height:100%;
-    /*background: #FCFCFC;*/
 }
 .grey-back{
     background: #E6E6E6;
@@ -11,8 +10,10 @@ body,html{
     padding-top: 25px;
     padding-bottom: 25px;
 }
-wrap{
+#wrap{
+    overflow:auto;
     min-height:100%;
+    padding-bottom: 350px;
 }
 .category{
     padding-bottom: 30px;
@@ -20,6 +21,12 @@ wrap{
 /*footer correction*/
 .footer{
     background: #434A54 url(../img/texture/stardust.png);
+    clear:both;
+}
+div:not(.clean) .footer{
+    position: relative;
+    margin-top: -350px; /* negative value of footer height */
+    height: 350px;
 }
 .footer-copyright {
     margin-top: 20px;

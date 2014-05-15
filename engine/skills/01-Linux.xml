@@ -3,20 +3,20 @@
     <level>4</level>
     <title>Linux</title>
     
-    <description-fr>
-Linux est le nom couramment donné à tout système d'exploitation libre fonctionnant avec le noyau Linux. C'est une implémentation libre du système UNIX respectant les spécifications POSIX. Ce système est né de la rencontre entre le mouvement du logiciel libre et le modèle de développement collaboratif et décentralisé via Internet.
-    <a target="_blank" class="more-wikipedia" href="http://fr.wikipedia.org/wiki/Linux">En lire plus sur Wikipedia</a>
-   </description-fr>
-       <description-en>
-Linux is a Unix-like and mostly POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution.
-    <a target="_blank" class="more-wikipedia" href="http://en.wikipedia.org/wiki/Linux">More on Wikipedia</a>
-   </description-en>
+    <description_fr>
+        Linux est le nom couramment donné à tout système d'exploitation libre fonctionnant avec le noyau Linux. C'est une implémentation libre du système UNIX respectant les spécifications POSIX. Ce système est né de la rencontre entre le mouvement du logiciel libre et le modèle de développement collaboratif et décentralisé via Internet.
+        <a target="_blank" class="more-wikipedia" href="http://fr.wikipedia.org/wiki/Linux">En lire plus sur Wikipedia</a>
+    </description_fr>
+    <description_en>
+        Linux is a Unix-like and mostly POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution.
+        <a target="_blank" class="more-wikipedia" href="http://en.wikipedia.org/wiki/Linux">More on Wikipedia</a>
+    </description_en>
    
-   <content-en>
-       I use this operating system and more specifically <a target="_blank" class="wiki-link" href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a> and <a target="_blank" class="wiki-link" href="http://en.wikipedia.org/wiki/Debian">Debian</a> distributions on Desktops and servers.
-    </content-en>
-    <content-fr>
-       J'utilise ce système d'exploitation, et plus spécifiquement les distributions <a target="_blank" class="wiki-link" href="http://fr.wikipedia.org/wiki/Ubuntu">Ubuntu</a> et <a target="_blank" class="wiki-link" href="http://fr.wikipedia.org/wiki/Debian">Debian</a> sur mes PCs et serveurs.
-   </content-fr>
+    <content_en>
+        I use this operating system and more specifically <a target="_blank" class="wiki-link" href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a> and <a target="_blank" class="wiki-link" href="http://en.wikipedia.org/wiki/Debian">Debian</a> distributions on Desktops and servers.
+    </content_en>
+    <content_fr>
+        J'utilise ce système d'exploitation, et plus spécifiquement les distributions <a target="_blank" class="wiki-link" href="http://fr.wikipedia.org/wiki/Ubuntu">Ubuntu</a> et <a target="_blank" class="wiki-link" href="http://fr.wikipedia.org/wiki/Debian">Debian</a> sur mes PCs et serveurs.
+    </content_fr>
    
 </skill>

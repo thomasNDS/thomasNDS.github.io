@@ -45,8 +45,6 @@ class Page:
             self.write(self.importCSSHtml + self.importJSHtml + "</head><body data-spy='scroll' data-target='#affix-nav'>")
             if startHeaderHtml != "":
                 self.addSectionHtml(startHeaderHtml)
-#            self.write('''<div id='wrap'><div id="main" class=""><p class="pull-right visible-xs">''')
-            #<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
         else:
             self.write(header)
 
@@ -74,7 +72,7 @@ class Page:
 # -_filArianne : (FilAriane) the fil ariane of the page
 #########################################################################
 class AbstractPageStandAlone(Page):
-    def __init__(self, path, title, descr):
+    def __init__(self, path, title, descr, content=""):
         header = '''<link rel="stylesheet" type="text/css" href="../public/gen/min.css" media="all" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript" src="../public/gen/min.js"></script></head>
@@ -82,19 +80,35 @@ class AbstractPageStandAlone(Page):
         Page.__init__(self, path, title, descr, header)
         self.setFilArianne()
         self.setTitle()
+        self.setDescription(content)
         self.setContent(self.description)
+        self.setFooter()
     
     #write the start of the page : title + fil ariane    
     def setTitle(self):
-        self.write("<h1 id='title-subpage'>" + self.title + '''</h1><div class="container">
-        <div class="row"><div class="col-md-12">''')
+        self.write('''<div class="container main">
+                        <div class="row">   
+                            <div class="col-md-12">
+                                <h1 id="title-subpage">''' + self.title + '</h1>')
         self.write(str(self._filArianne))
     
     def setFilArianne(self):
         self._filArianne= FilsAriane([("Others", "../projects", ""), (self.title, "#", "") ]) 
 
+    def setDescription(self, content):
+        self.write('<div id="description">' + content + '</div>')
+
     def setContent(self, content):
-        self.write('</div>' + content + '</div></div></div>')
+        self.write('<div id="content">' + content + '''
+                    </div><!--content -->
+                </div><!--col -->
+            </div><!--row -->
+        </div><!--container -->''')
+    
+    def setFooter(self):
+        self.write("</div><!--wrap -->")
+        self.addSectionHtml("engine/components/footer.html")
+        
 
 #########################################################################
 # Page section object like a header, footer or contact form (html)
