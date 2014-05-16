@@ -1,46 +1,4 @@
-Personal website of Thomas Nunes
-================================
+npm install -g bower
+npm install -g grunt
 
-http://thomasNDS.github.io
 
-Personnal website with my own static blog engine named blogify. More flexible to my usage
- than Jekill and Octopus.
-
-Install
-==========
-    
-    pip install cssmin
-
-    npm install -g minifyjs
-
-Configure
-==========
-
-See the file package.py for configurations
-
-Compile
-=========
-
-    python blogify.py
-
-Technologies
-============
-
-Site
-------
-
-- jquery
-- stellar.js
-- bootstrap
-- theme bootflat
-
-Engine
---------
-
-- cssmin (python)
-- jsmin (C)
-
-License
-============
-
-MIT

@@ -1,9 +1,0 @@
-<skill>
-    <container>programming</container>
-    <level>4</level>
-    <title>javascript</title>
-    <description>Lorem ipsum dolor sit amet, consectetur a</description>
-    <image>
-        ./public/img/skills/blank.jpg
-    </image>
-</skill>

@@ -29,6 +29,10 @@ div.clean .footer{
     position: relative;
     margin-top: 0;
 }
+#myname{
+    color: #DDD;
+    font-size: 1.3em;
+}
 .footer-copyright {
     margin-top: 20px;
 }
