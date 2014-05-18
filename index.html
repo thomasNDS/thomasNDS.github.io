@@ -10,29 +10,94 @@
         <meta name="author" content="Thomas Nunes <http://thomasNDS.github.io> All Rights Reserved" />
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
         <meta name="description" content="Personnal website of Thomas Nunes. thomasNDS"><title>Thomas Nunes website</title><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
-<link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
-<link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />  
+        <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
+        <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
+        <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />  
 
-</head>
-<body data-spy='scroll' data-target='#affix-nav'>
-	<div id="main"></div>
-	<header id="header-main-page">
-    <div id="header-main-page-message">
-        <h1 id='header-main-page-title'>Hello !</h1> 
-        <div id="header-main-subtitle">
-            <p>I am Thomas Nunes,<br/>
-                a french engineer and this is my personnal website.<p>
-        </div>
-    </div>
-</header>
+    </head>
+    <body id="firefly" data-spy='scroll' data-target='#affix-nav'>
+        <header>
+            <div class="conteneur">
+                <div class="container bloc">
+                    <h1 id='header-part1'>Hello !</h1> 
+                    <div id="header-part2">
+                        <p>I am Thomas Nunes,<br/>
+                            a french engineer and this is my personnal website.<p>
+                    </div>
+                    <div id="header-part3" class="social-icons">
+                        <span class="socicon socicon-github"></span>
+                        <span class="socicon socicon-linkedin"></span>
+                        <span class="socicon socicon-viadeo"></span>
+                        <span class="socicon socicon-twitter"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-</div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="public/js/libs/bootstrap-min.js"></script>
-<script type="text/javascript" src="public/js/libs/stellar-min.js"></script>
-<script type="text/javascript" src="public/js/src/script.js"></script>
-<script>
-</script>
-</body>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="public/js/libs/bootstrap-min.js"></script>
+        <script type="text/javascript" src="public/js/libs/stellar-min.js"></script>
+        <script type="text/javascript" src="public/js/libs/firefly-min.js"></script>
+        <script type="text/javascript" src="public/js/src/script.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                setFirefly();
+            });
+            function setFirefly() {
+                $(function() {
+                    $.firefly();
+                });
+            }
+
+            function socialAnimation() {
+                console.log("social")
+                $("#header-part3").animate({
+                    "margin-top": "1em",
+                    "opacity": "1"
+                }, "swing",
+                        3000);
+            }
+
+            function textAnimation() {
+                console.log("text")
+                $("#header-part2").animate({
+                    "margin": "0px",
+                    "opacity": "1"
+                },
+                {
+                    duration: 4000,
+                    easing: "swing",
+                    complete: function() {
+                        titleAnimation()
+                    }
+                });
+            }
+            
+            function titleAnimation() {
+                console.log("title")
+                $("#header-part1").animate({
+                    "margin": "0px",
+                    "opacity": "1"
+                },
+                {
+                    duration: 4000,
+                    easing: "swing",
+                    complete: function() {
+                        socialAnimation()
+                    }
+                });
+            }
+            
+            $(document).ready(function() {
+                if ($(window).height() > 512) {
+
+
+                    textAnimation();
+                }
+            }
+            );
+
+        </script>
+    </body>
 </html>
