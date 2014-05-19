@@ -4,13 +4,27 @@ body,html{
     min-height:100%;
     background: url(../../img/background/5.jpg) center no-repeat;
 }
-.grey-back{
-    background: #E6E6E6;
+
+.company, .city{
+    border-bottom: 1px dashed rgba(221, 221, 221, 0.24);
 }
+.company:hover, .city:hover{
+    color: rgba(235, 221, 221, 0.90);
+    cursor: pointer;
+}
+#map-bloc, #company-bloc{
+    border: dashed rgba(221, 221, 221, 0.24) 1px;
+     max-width: 500px;  
+}
+#container-extra{
+    text-align: center;
+    width: 100%;
+}
+
 div.conteneur { 
     text-align:center; /* centrage horizontal */
-    color: whitesmoke;
-    opacity: 0.8;
+    color: rgba(235, 221, 221, 0.68);
+    opacity: 1;
 }
 
 div.bloc { 
@@ -29,23 +43,40 @@ div.bloc {
 }
 #header-part1{
     opacity: 1;
+    font-size: 3.3em;
+    font-family: 'Sonsie One', cursive;
+    letter-spacing: 0.1em;
+    padding-left: 1em;
 }
 #header-part2{
     opacity: 1;
+    font-size: 1.2em;
 }
 @media(min-height:512px){
     #header-part3{
-        /*margin-top: -15em;*/
-        opacity: 0.3;
+        margin-top: 0.7em;
+        opacity: 0;
     }
     #header-part1{
-        margin-bottom: -5em;
-        /*opacity: 0;*/
+        margin-top: -3em;
+        opacity: 0;
     }
     #header-part2{
-        margin-top: -5em;
-        /*opacity: 0;*/
+        margin-top: -3em;
+        opacity: 0;
     }
+}
+/*mobile*/
+@media(max-width:767px){
+    #header-part3{
+        font-size: 3em;
+    }
+    #header-part1{
+        font-size: 2em;
+    }
+    #header-part2{
+        font-size: 1em;
+    }  
 }
 /*Contact form*/
 #contactForm {
@@ -64,34 +95,6 @@ div.bloc {
 #contactForm h1{
     text-align: center;
 }
-
-/*scroll button*/
-.scrollup>img{
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-}
-
-/*test*/
-#stellar{
-    height: 1050px;
-    min-height: 0px;
-    overflow: hidden;
-}
-.fade{
-    -webkit-transition: all 1s ease-out;
-    opacity: 0; 
-}
-.on-show {
-    opacity: 1;
-    display: block;
-}
-.element-description{
-    text-align: justify;
-}
-
 
 /*standard groups*/ 
 .element-date{
@@ -117,7 +120,13 @@ div.bloc {
     -webkit-filter: grayscale(0.2); /* Old WebKit */
 }
 .social-icons{
-    font-size: 2.5em;
+    font-size: 3em;
+}
+.social-icons>a{
+    color: rgba(235, 221, 221, 0.56);
+}
+.social-icons>a:hover{
+    color: rgba(255, 255, 255, 0.78);
 }
 
 @font-face {
@@ -141,7 +150,7 @@ div.bloc {
     -webkit-font-smoothing: antialiased;
 }
 .socicon:empty{
-    width: 1em;
+    width: 1.2em;
 }
 
 .socicon-easid:before { content: "5"; }

@@ -10,28 +10,48 @@
         <meta name="author" content="Thomas Nunes <http://thomasNDS.github.io> All Rights Reserved" />
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
         <meta name="description" content="Personnal website of Thomas Nunes. thomasNDS"><title>Thomas Nunes website</title><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
         <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />  
-
+        <style>.mask-it{height: 0px; opacity: 0}</style>
     </head>
     <body id="firefly" data-spy='scroll' data-target='#affix-nav'>
+        <!--loading-->
+        <div id="overlay" style="z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;">
+            <div style="top: 30%;position: absolute; width: 100%;text-align: center; font-size: 2em;">
+                Loading... <br/><img src="public/img/bx_loader.gif"/>
+            </div><!--loading img-->
+        </div><!--overlay-->
+        <!--end loading-->
         <header>
             <div class="conteneur">
                 <div class="container bloc">
                     <h1 id='header-part1'>Hello !</h1> 
                     <div id="header-part2">
-                        <p>I am Thomas Nunes,<br/>
-                            a french engineer and this is my personnal website.<p>
-                    </div>
+                        <p>I am Thomas Nunes, <br/>
+                            a french engineer and this is my personal website.<br/>
+                            I currently work at 
+                            <span class="company">Orange Business Service</span> in 
+                            <span class="city">Grenoble (France)</span> as developer. 
+                        </p>
+                    </div> <!--text description-->
+                    <div id="container-extra">
+                        <div id="company-bloc" class="mask-it">
+                            <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
+                        </div>
+                        <div id="map-bloc" class="mask-it">
+                            <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
+                        </div>
+                    </div><!--conitaner extra-->
                     <div id="header-part3" class="social-icons">
-                        <span class="socicon socicon-github"></span>
-                        <span class="socicon socicon-linkedin"></span>
-                        <span class="socicon socicon-viadeo"></span>
-                        <span class="socicon socicon-twitter"></span>
+                        <a href="https://github.com/thomasNDS/" target="_blank"> <span class="socicon socicon-github"></span></a>
+                        <a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank"><span class="socicon socicon-linkedin"></span></a>
+                        <a href="http://fr.viadeo.com/fr/profile/thomas.nunes1" target="_blank"><span class="socicon socicon-viadeo"></span></a>
+                        <a href="https://twitter.com/Thomas_Nunes_" target="_blank"><span class="socicon socicon-twitter"></span></a>
                     </div>
-                </div>
-            </div>
+                </div><!--bloc-->
+            </div><!--conteneur-->
         </header>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -40,8 +60,37 @@
         <script type="text/javascript" src="public/js/libs/firefly-min.js"></script>
         <script type="text/javascript" src="public/js/src/script.js"></script>
         <script>
+            var city = false;
+            var company = false;
+
+            function toogleCity() {
+                $("#map-bloc").animate({
+                    "height": "100px",
+                   "opacity": 1
+                }, {
+                    duration: 1000,
+                    easing: "swing"
+                });
+            }
+            function toogleCompany() {
+                $("#company-bloc").animate({
+                   "height": "100px",
+                   "opacity": 1
+                }, {
+                    duration: 1000,
+                    easing: "swing"
+                });
+            }
+            $(".company").click(function() {
+                toogleCompany();
+            });
+            $(".city").click(function() {
+                toogleCity();
+            });
+
 
             $(document).ready(function() {
+                $('#overlay').toggle();
                 setFirefly();
             });
             function setFirefly() {
@@ -51,49 +100,47 @@
             }
 
             function socialAnimation() {
-                console.log("social")
                 $("#header-part3").animate({
-                    "margin-top": "1em",
                     "opacity": "1"
-                }, "swing",
-                        3000);
+                }, {
+                    duration: 7000,
+                    easing: "swing"
+                });
             }
 
             function textAnimation() {
-                console.log("text")
                 $("#header-part2").animate({
-                    "margin": "0px",
+                    "margin-top": "1em",
                     "opacity": "1"
                 },
                 {
-                    duration: 4000,
+                    duration: 500,
                     easing: "swing",
                     complete: function() {
-                        titleAnimation()
+                        socialAnimation();
                     }
                 });
             }
-            
+
             function titleAnimation() {
-                console.log("title")
                 $("#header-part1").animate({
                     "margin": "0px",
                     "opacity": "1"
                 },
                 {
-                    duration: 4000,
+                    duration: 500,
                     easing: "swing",
                     complete: function() {
-                        socialAnimation()
+                        textAnimation();
                     }
                 });
             }
-            
+
             $(document).ready(function() {
                 if ($(window).height() > 512) {
 
 
-                    textAnimation();
+                    titleAnimation();
                 }
             }
             );
