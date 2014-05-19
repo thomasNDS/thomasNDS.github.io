@@ -3,6 +3,11 @@ body,html{
     height:100%;
     min-height:100%;
     background: url(../../img/background/5.jpg) center no-repeat;
+    
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+      -o-background-size: cover;
+     background-size: cover;
 }
 
 .company, .city{
@@ -54,6 +59,7 @@ div.bloc {
 }
 @media(min-height:512px){
     #header-part3{
+
         margin-top: 0.7em;
         opacity: 0;
     }
