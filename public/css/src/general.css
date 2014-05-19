@@ -40,16 +40,16 @@ div.bloc {
 }
 @media(min-height:512px){
     #header-part3{
-        /*margin-top: -15em;*/
+       /* margin-top: -15em;*/
         opacity: 0.3;
     }
     #header-part1{
-        margin-bottom: -5em;
-        /*opacity: 0;*/
+        margin-bottom: -15em;
+        opacity: 0;
     }
     #header-part2{
-        margin-top: -5em;
-        /*opacity: 0;*/
+        margin-top: -15em;
+        opacity: 0;
     }
 }
 /*Contact form*/
