@@ -14,12 +14,13 @@
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
         <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />  
-        <style>.mask-it{display:none !important}</style>
+        <style>#loading{top: 30%;position: absolute; width: 100%;text-align: center; font-size: 2em;}
+        #overlay{z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;}</style>
     </head>
     <body id="firefly" data-spy='scroll' data-target='#affix-nav'>
         <!--loading-->
-        <div id="overlay" style="z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;">
-            <div style="top: 30%;position: absolute; width: 100%;text-align: center; font-size: 2em;">
+        <div id="overlay">
+            <div id="loading">
                 Loading... <br/><img src="public/img/bx_loader.gif"/>
             </div><!--loading img-->
         </div><!--overlay-->
@@ -37,10 +38,10 @@
                         </p>
                     </div> <!--text description-->
                     <div id="container-extra" class="container">
-                        <div id="company-bloc" class="mask-it center-block">
+                        <div id="company-bloc" class=" center-block" style="display:none;">
                             <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
                         </div>
-                        <div id="map-bloc" class="mask-it center-block">
+                        <div id="map-bloc" class="center-block" style="display:none;">
                             <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
                         </div>
                     </div><!--conitaner extra-->
@@ -60,57 +61,11 @@
         <script type="text/javascript" src="public/js/libs/firefly-min.js"></script>
         <script type="text/javascript" src="public/js/src/script.js"></script>
         <script>
-            var city = false;
-            var company = false;
-
-            function toogleCity() {
-                $("#map-bloc").toggleClass('mask-it');
-                /*
-                city= !city;
-                if (city){
-                    $("#map-bloc").animate({
-                        "height": "0px",
-                       "opacity": 0
-                    }, {
-                        duration: 1000,
-                        easing: "swing"
-                    });     
-                }else{
-                    $("#map-bloc").animate({
-                        "height": "100px",
-                       "opacity": 1
-                    }, {
-                        duration: 1000,
-                        easing: "swing"
-                    });
-                }*/
-            }
-            function toogleCompany() {
-                $("#company-bloc").toggleClass('mask-it');
-                /*company= !company
-                if (company){
-                    $("#company-bloc").animate({
-                       "height": "0px",
-                       "opacity": 0
-                    }, {
-                        duration: 1000,
-                        easing: "swing"
-                    });
-                }else{
-                    $("#company-bloc").animate({
-                       "height": "100px",
-                       "opacity": 1
-                    }, {
-                        duration: 1000,
-                        easing: "swing"
-                    });
-                }*/
-            }
             $(".company").click(function() {
-                toogleCompany();
+                $("#company-bloc").slideToggle();
             });
             $(".city").click(function() {
-                toogleCity();
+                $("#map-bloc").slideToggle();
             });
             
             if (window.addEventListener) { // Mozilla, Netscape, Firefox
@@ -172,7 +127,6 @@
                     }
                 });
             }
-
 
         </script>
     </body>
