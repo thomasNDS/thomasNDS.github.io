@@ -12,10 +12,12 @@ body,html{
 
 .company, .city{
     border-bottom: 1px dashed rgba(221, 221, 221, 0.24);
+    color: rgba(235, 221, 221, 0.68);
 }
 .company:hover, .city:hover{
     color: rgba(235, 221, 221, 0.90);
     cursor: pointer;
+    
 }
 #map-bloc, #company-bloc{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
