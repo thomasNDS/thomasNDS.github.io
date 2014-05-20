@@ -49,6 +49,9 @@ div.bloc {
     width: 100%;
     height: 300px;
 }
+div.bloc * {
+    z-index: 2 ;
+}
 
 #header-part3{
     opacity: 1;
