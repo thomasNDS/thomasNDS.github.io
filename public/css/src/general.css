@@ -61,7 +61,7 @@ div.bloc {
     opacity: 1;
     font-size: 1.2em;
 }
-/* TODO : add after start animation */
+/* TODO : add after start animation 
 @media(min-height:512px){
     #header-part3{
         opacity: 0;
@@ -74,7 +74,7 @@ div.bloc {
         margin-top: -3em;
         opacity: 0;
     }
-}
+}*/
 /*mobile*/
 @media(max-width:767px){
     #header-part3{
