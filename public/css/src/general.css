@@ -1,13 +1,20 @@
-/*To set the footer in the bottom of the page*/
+/********************************************
+ThomasNDS.github.io
+licence MIT
+@Author : thomasNDS
+2014
+
+General styles
+**********************************************/
 body,html{
     height:100%;
     min-height:100%;
-    background: url(../../img/background/5.jpg) center no-repeat;
-    
+    background: url(../../img/background/5.jpg) center no-repeat fixed;
+
     webkit-background-size: cover;
     -moz-background-size: cover;
-      -o-background-size: cover;
-     background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .company, .city{
@@ -17,19 +24,28 @@ body,html{
 .company:hover, .city:hover{
     color: rgba(235, 221, 221, 0.90);
     cursor: pointer;
-    
+
+}
+#map-bloc{
+    width: 100%;
+    min-height: 350px;
+    height: 25%;
+    margin-top: 2em;
+}
+#company-bloc{
+    margin-top: 2em;
 }
 #map-bloc, #company-bloc{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
-     max-width: 100%;  
-     min-width: 50%;  
-     margin: 1em;
-     display:inline-block;
+    max-width: 100%;  
+    min-width: 50%;  
+    margin: 0, 1em, 0, 1em;
+    display:inline-block;
+    padding: 1em;
 }
 #container-extra{
     text-align: center;
-    width: 100%;
-    line-height:0;
+    /* width: 100%; */
 }
 
 div.conteneur { 
@@ -39,22 +55,23 @@ div.conteneur {
 }
 
 div.bloc { 
-    z-index: 15;
+    z-index: 105;
     position: absolute;
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 100%;
+    /* width: 100%; */
     height: 300px;
 }
 div.bloc * {
-    z-index: 2 ;
+    z-index: 102 ;
 }
 
 #header-part3{
     opacity: 1;
+    margin-top: 0.3em;
 }
 #header-part1{
     opacity: 1;
@@ -68,7 +85,7 @@ div.bloc * {
     font-size: 1.2em;
 }
 /* TODO : add after start animation 
-@media(min-height:512px){
+*/@media(min-height:512px){
     #header-part3{
         opacity: 0;
     }
@@ -80,7 +97,7 @@ div.bloc * {
         margin-top: -3em;
         opacity: 0;
     }
-}*/
+}
 /*mobile*/
 @media(max-width:767px){
     #header-part3{
@@ -134,100 +151,8 @@ div.bloc * {
     -o-filter: grayscale(20%); /* Not yet supported in Gecko, Opera or IE */ 
     -webkit-filter: grayscale(0.2); /* Old WebKit */
 }
-.social-icons{
-    font-size: 3em;
-}
-.social-icons>a{
-    color: rgba(235, 221, 221, 0.56);
-}
-.social-icons>a:hover{
-    color: rgba(255, 255, 255, 0.78);
-}
 
-@font-face {
-    font-family: 'socicon';
-    src: url('../../fonts/socicon-webfont.eot');
-    src: url('../../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../../fonts/socicon-webfont.woff') format('woff'),
-        url('../../fonts/socicon-webfont.ttf') format('truetype'),
-        url('../../fonts/socicon-webfont.svg#sociconregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+#map { height: 180px; }
+#popup{
+    color: #656D78;
 }
-.socicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'socicon';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.socicon:empty{
-    width: 1.2em;
-}
-
-.socicon-easid:before { content: "5"; }
-.socicon-twitter:before { content: "a"; }
-.socicon-facebook:before { content: "b"; }
-.socicon-google:before { content: "c"; }
-.socicon-pinterest:before { content: "d"; }
-.socicon-foursquare:before { content: "e"; }
-.socicon-yahoo:before { content: "f"; }
-.socicon-skype:before { content: "g"; }
-.socicon-yelp:before { content: "h"; }
-.socicon-feedburner:before { content: "i"; }
-.socicon-linkedin:before { content: "j"; }
-.socicon-viadeo:before { content: "k"; }
-.socicon-xing:before { content: "l"; }
-.socicon-myspace:before { content: "m"; }
-.socicon-soundcloud:before { content: "n"; }
-.socicon-spotify:before { content: "o"; }
-.socicon-grooveshark:before { content: "p"; }
-.socicon-lastfm:before { content: "q"; }
-.socicon-youtube:before { content: "r"; }
-.socicon-vimeo:before { content: "s"; }
-.socicon-dailymotion:before { content: "t"; }
-.socicon-vine:before { content: "u"; }
-.socicon-flickr:before { content: "v"; }
-.socicon-500px:before { content: "w"; }
-.socicon-instagram:before { content: "x"; }
-.socicon-wordpress:before { content: "y"; }
-.socicon-tumblr:before { content: "z"; }
-.socicon-blogger:before { content: "A"; }
-.socicon-technorati:before { content: "B"; }
-.socicon-reddit:before { content: "C"; }
-.socicon-dribbble:before { content: "D"; }
-.socicon-stumbleupon:before { content: "E"; }
-.socicon-digg:before { content: "F"; }
-.socicon-envato:before { content: "G"; }
-.socicon-behance:before { content: "H"; }
-.socicon-delicious:before { content: "I"; }
-.socicon-deviantart:before { content: "J"; }
-.socicon-forrst:before { content: "K"; }
-.socicon-play:before { content: "L"; }
-.socicon-zerply:before { content: "M"; }
-.socicon-wikipedia:before { content: "N"; }
-.socicon-apple:before { content: "O"; }
-.socicon-flattr:before { content: "P"; }
-.socicon-github:before { content: "Q"; }
-.socicon-chimein:before { content: "R"; }
-.socicon-friendfeed:before { content: "S"; }
-.socicon-newsvine:before { content: "T"; }
-.socicon-identica:before { content: "U"; }
-.socicon-bebo:before { content: "V"; }
-.socicon-zynga:before { content: "W"; }
-.socicon-steam:before { content: "X"; }
-.socicon-xbox:before { content: "Y"; }
-.socicon-windows:before { content: "Z"; }
-.socicon-outlook:before { content: "1"; }
-.socicon-coderwall:before { content: "2"; }
-.socicon-tripadvisor:before { content: "3"; }
-.socicon-netcodes:before { content: "4"; }
-.socicon-lanyrd:before { content: "7"; }
-.socicon-slideshare:before { content: "8"; }
-.socicon-buffer:before { content: "9"; }
-.socicon-rss:before { content: ","; }
-.socicon-vkontakte:before { content: ";"; }
-.socicon-disqus:before { content: ":"; }

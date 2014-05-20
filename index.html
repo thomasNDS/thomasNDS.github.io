@@ -13,9 +13,12 @@
         <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
         <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
-        <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />  
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+
+        <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" /> 
+        <link rel="stylesheet" type="text/css" href="public/css/src/social.css" media="all" /> 
         <style>#loading{top: 30%;position: absolute; width: 100%;text-align: center; font-size: 2em;}
-        #overlay{z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;}</style>
+            #overlay{z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;}</style>
     </head>
     <body id="firefly" data-spy='scroll' data-target='#affix-nav'>
         <!--loading-->
@@ -27,7 +30,7 @@
         <!--end loading-->
         <header>
             <div class="conteneur">
-                <div class="container bloc">
+                <div class=" bloc">
                     <h1 id='header-part1'>Hello !</h1> 
                     <div id="header-part2">
                         <p>I am Thomas Nunes, <br/>
@@ -37,14 +40,19 @@
                             <a class="city">Grenoble (France)</a> as developer. 
                         </p>
                     </div> <!--text description-->
-                    <div id="container-extra" class="container">
-                        <div id="company-bloc" class=" center-block" style="display:none;">
-                            <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
+                    <div id="container-extra" class="container" style="display:none;">
+                        <div id="company-bloc" class=" center-block">
+                            Orange Business Services, the business services arm of Orange S.A., is a global integrator of communications solutions for multinational corporations.
+                            It offers integrated communications solutions and services to global enterprises in cloud computing, unified communications and collaboration; which manage and integrate the complexity of international communications.
+                            It operates in over 220 countries and territories and employs over 30,000 employees in 166 countries
+                            <a href="http://en.wikipedia.org/wiki/Orange_Business_Services" target="_blank" class="">Wikipedia</a>
                         </div>
-                        <div id="map-bloc" class="center-block" style="display:none;">
-                            <a href="http://www.orange-business.com/en" target="_blank" class="btn">More</a>
+                    </div><!--container extra-->
+                    <div id="map-container">
+                        <div id="map-bloc">
                         </div>
-                    </div><!--conitaner extra-->
+                    </div>
+
                     <div id="header-part3" class="social-icons">
                         <a href="https://github.com/thomasNDS/" target="_blank"> <span class="socicon socicon-github"></span></a>
                         <a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank"><span class="socicon socicon-linkedin"></span></a>
@@ -60,27 +68,113 @@
         <script type="text/javascript" src="public/js/libs/stellar-min.js"></script>
         <script type="text/javascript" src="public/js/libs/firefly-min.js"></script>
         <script type="text/javascript" src="public/js/src/script.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
         <script>
+//            map
+            var map = L.map('map-bloc').setView([51.505, -0.09], 13);
+
+            L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                id: 'examples.map-i86knfo3'
+            }).addTo(map);
+
+
+            L.marker([51.5, -0.09]).addTo(map)
+                    .bindPopup("<p id='popup'><b>Grenoble </b><br/>\
+    Grenoble is a city in southeastern France, at the foot\
+    of the French Alps.\
+    The proximity of the mountains,\
+    as well as its size, has led to the city being known in \\n\
+    France as the \"Capital of the Alps\"\
+    <a href='http://en.wikipedia.org/wiki/Grenoble\' target='_blank' class=''>Wikipedia</a></p>\
+                ").openPopup();
+
+//            others
+            var state = "none"; // map - text
+
+            function toggleText() {
+                $("#container-extra").animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                }, 500);
+            }
+            function toggleMap() {
+                $("#map-container").animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                }, 1000);
+            }
+
             $(".company").click(function() {
-                $("#company-bloc").slideToggle();
+                switch (state) {
+                    case "none":
+                        state = "text";
+                        toggleText();
+                        break;
+                    case "map":
+                        state = "text";
+                        toggleText();
+                        toggleMap();
+                        break;
+                    case "text":
+                        state = "none";
+                        toggleText();
+                        break;
+                }
+                adaptHeight();
             });
+
             $(".city").click(function() {
-                $("#map-bloc").slideToggle();
+                switch (state) {
+                    case "none":
+                        state = "map";
+                        toggleMap();
+                        break;
+                    case "map":
+                        state = "none";
+                        toggleMap();
+                        break;
+                    case "text":
+                        state = "map";
+                        toggleText();
+                        toggleMap();
+                        break;
+                }
+                adaptHeight();
             });
-            
+
             if (window.addEventListener) { // Mozilla, Netscape, Firefox
-                 window.addEventListener('load', WindowLoad, false);
+                window.addEventListener('load', WindowLoad, false);
             } else if (window.attachEvent) { // IE
                 window.attachEvent('onload', WindowLoad);
             }
 
+            function adaptHeight() {
+                var height2set = 300;
+                switch (state) {
+                    case "none":
+                        height2set = 300;
+                        break;
+                    case "map":
+                        height2set = 600;
+                        break;
+                    case "text":
+                        height2set = 500;
+                        break;
+                }
+                $(".bloc").animate({
+                    height: height2set,
+                }, 500);
+            }
+
             function WindowLoad(event) {
-                $('#overlay').toggle();
+                $("#map-container").toggle();
+                $('#overlay').fadeToggle();
                 if ($(window).height() > 512) {
                     titleAnimation();
                 }
             }
-            
+
             $(document).ready(function() {
                 setFirefly();
             });

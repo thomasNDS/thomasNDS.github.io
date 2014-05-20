@@ -1,0 +1,30 @@
+<html><head>
+        <title>Leaflet Quick Start Guide Example</title>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <style type="text/css"></style></head>
+    <body class="">
+        <div id="map" style="width: 600px; height: 400px; " class="" ></div>
+        
+           
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <script>
+
+            var map = L.map('map').setView([51.505, -0.09], 13);
+
+            L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                id: 'examples.map-i86knfo3'
+            }).addTo(map);
+
+
+            L.marker([51.5, -0.09]).addTo(map)
+                    .bindPopup("<b>Grenoble !</b><br />I am a popup.").openPopup();
+
+        </script>
+
+
+    </body></html>
