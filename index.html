@@ -118,6 +118,9 @@
 
             function WindowLoad(event) {
                 $('#overlay').toggle();
+                if ($(window).height() > 512) {
+                    titleAnimation();
+                }
             }
                             
 
@@ -167,14 +170,6 @@
                 });
             }
 
-            $(document).ready(function() {
-                if ($(window).height() > 512) {
-
-
-                    titleAnimation();
-                }
-            }
-            );
 
         </script>
     </body>
