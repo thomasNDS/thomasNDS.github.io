@@ -109,10 +109,11 @@
             $(".city").click(function() {
                 toogleCity();
             });
-
+            $( window ).load(function() {
+                    $('#overlay').toggle();
+            }
 
             $(document).ready(function() {
-                $('#overlay').toggle();
                 setFirefly();
             });
             function setFirefly() {
