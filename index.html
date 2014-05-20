@@ -64,6 +64,8 @@
             var company = false;
 
             function toogleCity() {
+                $("#map-bloc").toogle();
+                /*
                 city= !city;
                 if (city){
                     $("#map-bloc").animate({
@@ -81,10 +83,11 @@
                         duration: 1000,
                         easing: "swing"
                     });
-                }
+                }*/
             }
             function toogleCompany() {
-                company= !company
+                $("#company-bloc").toogle();
+                /*company= !company
                 if (company){
                     $("#company-bloc").animate({
                        "height": "0px",
@@ -101,7 +104,7 @@
                         duration: 1000,
                         easing: "swing"
                     });
-                }
+                }*/
             }
             $(".company").click(function() {
                 toogleCompany();
