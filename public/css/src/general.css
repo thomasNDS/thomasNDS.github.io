@@ -21,12 +21,13 @@ body,html{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
      max-width: 100%;  
      min-width: 50%;  
-     margin: 1em;
+     margin: 0;
      display:inline-block;
 }
 #container-extra{
     text-align: center;
     width: 100%;
+    line-height:0;
 }
 
 div.conteneur { 
@@ -48,6 +49,7 @@ div.bloc {
 
 #header-part3{
     opacity: 1;
+    margin-top: -0.7em;
 }
 #header-part1{
     opacity: 1;
@@ -60,10 +62,9 @@ div.bloc {
     opacity: 1;
     font-size: 1.2em;
 }
+/* TODO : add after start animation */
 @media(min-height:512px){
     #header-part3{
-
-        margin-top: 0.7em;
         opacity: 0;
     }
     #header-part1{
