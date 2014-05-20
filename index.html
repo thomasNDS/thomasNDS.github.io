@@ -109,8 +109,18 @@
             $(".city").click(function() {
                 toogleCity();
             });
-            $( document ).load(function() {
-                    $('#overlay').toggle();
+            
+            if (window.addEventListener) { // Mozilla, Netscape, Firefox
+    window.addEventListener('load', WindowLoad, false);
+} else if (window.attachEvent) { // IE
+    window.attachEvent('onload', WindowLoad);
+}
+
+function WindowLoad(event) {
+    alert("Another onload script");
+    $('#overlay').toggle();
+}
+                    
             }
 
             $(document).ready(function() {
