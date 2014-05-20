@@ -20,7 +20,7 @@ body,html{
 #map-bloc, #company-bloc{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
      max-width: 500px;  
-     margin-bottom: 1em;
+     margin: 1em;
 }
 #container-extra{
     text-align: center;
