@@ -64,22 +64,44 @@
             var company = false;
 
             function toogleCity() {
-                $("#map-bloc").animate({
-                    "height": "100px",
-                   "opacity": 1
-                }, {
-                    duration: 1000,
-                    easing: "swing"
-                });
+                city= !city;
+                if (city){
+                    $("#map-bloc").animate({
+                        "height": "0px",
+                       "opacity": 0
+                    }, {
+                        duration: 1000,
+                        easing: "swing"
+                    });     
+                }else{
+                    $("#map-bloc").animate({
+                        "height": "100px",
+                       "opacity": 1
+                    }, {
+                        duration: 1000,
+                        easing: "swing"
+                    });
+                }
             }
             function toogleCompany() {
-                $("#company-bloc").animate({
-                   "height": "100px",
-                   "opacity": 1
-                }, {
-                    duration: 1000,
-                    easing: "swing"
-                });
+                company= !company
+                if (company){
+                    $("#company-bloc").animate({
+                       "height": "0px",
+                       "opacity": 0
+                    }, {
+                        duration: 1000,
+                        easing: "swing"
+                    });
+                }else{
+                    $("#company-bloc").animate({
+                       "height": "100px",
+                       "opacity": 1
+                    }, {
+                        duration: 1000,
+                        easing: "swing"
+                    });
+                }
             }
             $(".company").click(function() {
                 toogleCompany();
