@@ -39,6 +39,7 @@ div.conteneur {
 }
 
 div.bloc { 
+    z-index: 15;
     position: absolute;
     top:0;
     bottom: 0;
