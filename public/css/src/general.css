@@ -19,8 +19,10 @@ body,html{
 }
 #map-bloc, #company-bloc{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
-     max-width: 500px;  
+     max-width: 100%;  
+     min-width: 50%;  
      margin: 1em;
+     display:inline-block;
 }
 #container-extra{
     text-align: center;
