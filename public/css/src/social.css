@@ -8,6 +8,7 @@ social related styles
 **********************************************/
 .social-icons{
     font-size: 3em;
+    text-shadow: 0px 2px 4px rgba(150, 150, 150, 0.8);
 }
 .social-icons>a{
     color: rgba(235, 221, 221, 0.56);
