@@ -6,11 +6,11 @@ licence MIT
 
 General styles
 **********************************************/
+
 body,html{
     height:100%;
     min-height:100%;
     background: url(../../img/background/5.jpg) center no-repeat fixed;
-
     webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -42,7 +42,7 @@ body,html{
     border: dashed rgba(221, 221, 221, 0.24) 1px;
     max-width: 100%;  
     min-width: 50%;  
-    margin: 0;
+    margin: 2em 0 1em 0;
     display:inline-block;
     padding: 1em;
 }
@@ -92,8 +92,7 @@ div.bloc * {
     font-size: 1.2em;
 }
 
-/* TODO : add after start animation 
-*/@media(min-height:512px){
+@media(min-height:512px){
     #header-part3{
         opacity: 0;
     }
@@ -120,34 +119,6 @@ div.bloc * {
     }  
 }
 
-/*Contact form*/
-#contactForm {
-    background: #1291d1 url(../img/texture/trianglepattern.png) repeat fixed;
-    box-shadow: inset 1px 1px 10px rgba(0,0,0,0.4);
-    text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
-    color: #FFF;
-    padding: 35px;
-}
-
-.sendContainer{
-    text-align: center;
-}
-
-.sendContact{
-    padding: 10px 40px 10px 40px;
-}
-
-#contactForm h1{
-    text-align: center;
-}
-
-/*standard groups*/ 
-.element-date{
-    font-weight: 700;
-    color: #656D78;
-    padding-bottom: 32px;
-}
-
 .dark-img{
     filter: grayscale(100%); /* Current draft standard */
     -webkit-filter: grayscale(100%); /* New WebKit */
@@ -166,7 +137,98 @@ div.bloc * {
     -o-filter: grayscale(20%); /* Not yet supported in Gecko, Opera or IE */ 
     -webkit-filter: grayscale(0.2); /* Old WebKit */
 }
-
+.leaflet-control-attribution{
+    display: none;
+}
 #popup{
     color: #656D78;
 }
+
+.flag-group{
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+}
+
+.about-dialog {
+    max-width: 25em;
+}
+
+.about-button {
+    margin: 0.5em;
+    opacity: 0.45;
+    font-size: 2em;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.about-button:hover {
+    opacity: 0.90;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+@media(max-width:767px){
+    .about-button, .flag-group{
+        margin: 5px;
+    }
+
+    #header-part1{
+        padding: 0;   
+    }
+}
+.pull-right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.logo{
+    opacity: 0.8;
+    margin-bottom: 1em;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.logo:hover{
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.text-description {
+    opacity: 1;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active{
+    background: whitesmoke;
+    color: #080808;
+}
+.plus-button {
+    color: #AAA;
+    font-size: 0.8em;
+    margin-left: 0.6em;
+    opacity: 0.4;
+}
+
+.dark-link {
+    color:  #4A89DC;
+}
+/******** Fixs ********/
+/*hack scroll modal*/
+.modal{
+    overflow-y: auto;
+}
+/*fix pull right dropdown button*/
+.pull-right .dropdown-menu:after {
+    left: auto;
+    right: 13px;
+}
+.close{
+    font-size: 2.5em;
+}
+
+

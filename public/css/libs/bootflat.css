@@ -180,7 +180,7 @@ blockquote {
 }
 .open .dropdown-toggle.btn-default {
   border-color: #ccd1d9;
-  background-color: #ccd1d9;
+  /* background-color: #ccd1d9; */
 }
 .btn-primary, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
   border-color: #3bafda;
@@ -257,7 +257,7 @@ blockquote {
   border-left-color: #96a0ad;
 }
 .btn-group.open .btn-default.dropdown-toggle, .btn-group .btn-default:focus, .btn-group .btn-default:active, .btn-group .btn-default.active {
-  color: white;
+  /* color: white; */
 }
 .btn-group .btn-primary, .btn-group .btn-primary:focus, .btn-group .btn-primary:active, .btn-group .btn-primary.active {
   border-left-color: #269ecb;

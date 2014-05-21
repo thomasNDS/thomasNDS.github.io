@@ -12,9 +12,17 @@ social related styles
 }
 .social-icons>a{
     color: rgba(235, 221, 221, 0.56);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .social-icons>a:hover{
     color: rgba(255, 255, 255, 0.78);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 @font-face {
