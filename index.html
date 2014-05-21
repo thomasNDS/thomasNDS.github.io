@@ -161,12 +161,15 @@
                         height2set = 600;
                         break;
                     case "text":
-                        height2set = 500;
+                        height2set = 512
                         break;
                 }
-                $(".bloc").animate({
-                    height: height2set,
-                }, 500);
+                if ($(window).height() >=height2set) {
+height2set=$(window).height();
+                }
+                                    $(".bloc").animate({
+                        height: height2set,
+                    }, 500);
             }
 
             function WindowLoad(event) {
