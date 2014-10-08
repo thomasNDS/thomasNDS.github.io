@@ -1,8 +1,8 @@
-##PERSONAL WEBSITE
+#PERSONAL WEBSITE
 
 very simple and short personnal static website hosted with Github.
 
-#Technologies
+##Technologies
 
 Javascript 
 ----------------
@@ -22,7 +22,7 @@ Design
 - BootFlat
 
 
-#Licencing
+##Licencing
 
 The MIT License (MIT)
 
