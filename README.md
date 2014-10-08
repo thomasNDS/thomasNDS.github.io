@@ -4,19 +4,16 @@ very simple and short personnal static website hosted with Github.
 
 ##Technologies
 
-Javascript 
-----------------
+###Javascript
 
 - Jquery
 
-Maps
-----------------
+###Maps
 
 - Leaflet
 - mapbox
 
-Design
-------------------
+###Design
 
 - Bootstrap
 - BootFlat
