@@ -2,8 +2,8 @@
 <html lang="fr">
     <head>
         <!--    ThomasNDS.github.io
-                Thomas Nunes All right reserved 2014 
-                @MIT licence -- Take a look on Github !-->
+Thomas Nunes All right reserved 2014
+@MIT licence -- Take a look on Github !-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -11,11 +11,11 @@
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAEBAAAAAAABAQEBAQEBAQABAQABAQEBAQEBAQEBAQEAAQEAAQEBAQEBAQEAAAAAAAEBAAEBAQEBAQEBAAEBAQABAQAAAAAAAQEBAQABAQEBAQEBAQEBAAEBAQEAAQEBAQEBAQEBAQABAQEBAAEBAQEBAQEBAQEAAQEBAQABAQEBAQEAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
         <meta name="description" content="Personnal website of Thomas Nunes. thomasNDS"><title>Thomas Nunes website</title><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />   
-        <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />  
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-        <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" /> 
-        <link rel="stylesheet" type="text/css" href="public/css/src/social.css" media="all" /> 
+        <link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="public/css/libs/bootflat.css" media="all" />
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+        <link rel="stylesheet" type="text/css" href="public/css/src/general.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="public/css/src/social.css" media="all" />
         <style>#loading{top: 30%;position: absolute; width: 100%;text-align: center; font-size: 2em;}
             #overlay{z-index: 1000;background: whitesmoke; color: black; position: fixed; width: 100%; height: 100%;top: 0;left: 0;}</style>
     </head>
@@ -31,7 +31,7 @@
                         <h4 class="modal-title" id="myModalLabel">Thomas Nunes</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Site hébergé par Github 
+                        <p>Site hébergé par Github
                             <a href="https://github.com/thomasNDS/thomasNDS.github.io/" target="_blank" class="dark-link"><span class="socicon socicon-github"></span> </a>
                         </p>
                         <h6>Technologies utilisées :</h6>
@@ -40,9 +40,8 @@
                             <li>Bootflat <a  href="http://bootflat.github.io/documentation.html" target="_blank" class="glyphicon glyphicon-plus plus-button"></a></li>
                             <li>Leaflet for maps <a  href="http://leafletjs.com/" target="_blank" class="glyphicon glyphicon-plus plus-button"></a></li>
                             <li>Jquery <a  href="http://jquery.com/" target="_blank" class="glyphicon glyphicon-plus plus-button"></a></li>
-                            <li>Google Fonts <a  href="https://www.google.com/fonts" target="_blank" class="glyphicon glyphicon-plus plus-button"></a></li>
                         </ul>
-                        <p>Site sous <a href="https://github.com/thomasNDS/thomasNDS.github.io/blob/master/LICENSE.md" target="_blank" class="dark-link">licence MIT </a></p>
+                        <p>Site sous <a href="https://github.com/thomasNDS/thomasNDS.github.io/blob/master/LICENSE.md" target="_blank" class="dark-link">licence MIT </a> <a href="https://github.com/thomasNDS/thomasNDS.github.io/">Voir code source</a></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn " data-dismiss="modal">Fermer</button>
@@ -79,14 +78,17 @@
         <!--end loading-->
         <header>
             <div class="conteneur">
-                <div class=" bloc">
-                    <h1 id='header-part1'>Hello !</h1> 
+                <div class=" bloc container">
+                    <h1 id='header-part1'>Hello !</h1>
                     <div id="header-part2">
                         <p>Je suis Thomas Nunes, <br/>
                             Un ingénieur informatique français et voici ma page web.<br/>
-                           Je travaille actuellement à
-                            <a class="company">Orange Business Service</a> à 
-                            <a class="city">Grenoble (France)</a> en tant que développeur. 
+                            Je viens de terminé mon stage au sein d'
+                            <a class="link-pop company">Orange Business Service</a> à
+                            <a class="link-pop city">Grenoble (France)</a> en tant que développeur sur le BPM.
+                            <br/>
+                            J 'effectue actuelement un double cursus à <a class="link-pop descr">l'IAE de Grenoble</a> en management des entreprises. <br/> Je termine ma formation en Avril 2015 et reste à l'écoute de toutes propositions.
+                            <br/>N'hésitez pas à me contacter via les réseaux sociaux.
                         </p>
                     </div> <!--text description-->
                     <div id="container-extra" class="container" style="display:none;">
@@ -96,12 +98,27 @@
                                     <img src="public/img/exps/obs.png" class="logo dark-img" alt="OBS"/>
                                 </div>
                                 <div class="col-md-9 text-description">
-Orange Business Services est une identité commerciale du groupe Orange qui a été constituée le 1er juin 2006 afin d'offrir à travers une marque unique des services de télécommunication et informatiques pour les entreprises, en France et dans le monde.
-Orange Business Services est présent dans 166 pays et couvre 220 pays et territoires. Il fournit un million d’entreprises en services, 3750 multinationales en réseaux et services IP et 400 000 petites, moyennes et grandes entreprises nationales. 
+                                    Orange Business Services est une identité commerciale du groupe Orange qui a été constituée le 1er juin 2006 afin d'offrir à travers une marque unique des services de télécommunication et informatiques pour les entreprises, en France et dans le monde.
+                                    Orange Business Services est présent dans 166 pays et couvre 220 pays et territoires. Il fournit un million d’entreprises en services, 3750 multinationales en réseaux et services IP et 400 000 petites, moyennes et grandes entreprises nationales.
                                     <a href="http://fr.wikipedia.org/wiki/Orange_Business_Services" target="_blank" class="">Wikipedia</a></div>
                             </div>
                         </div>
                     </div><!--container extra-->
+<!--                    iae-->
+                    <div id="descr-container" class="container" style="display:none;">
+                        <div id="company-bloc" class=" center-block">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="public/img/exps/iae.png" class="logo dark-img" alt="OBS" style="width=150px; height:150px"/>
+                                </div>
+                                <div class="col-md-9 text-description">
+                                    Les instituts d’administration des entreprises (IAE) sont des composantes des universités françaises. Ils ont pour mission le développement de la recherche et de la formation supérieure en gestion au sein des universités. Les IAE constituent un modèle qui s'inspire de celui des Business schools anglo-saxonnes.
+
+                                    En 2012, il existe 34 IAE répartis sur le territoire français, dont 32 sont regroupés à travers IAE FRANCE (appelé précédemment Association nationale des IAE puis "Réseau IAE") où les membres les plus anciens sont les tout premiers acteurs du développement de la gestion en France. Il s'agit du premier réseau français de formation au management qui réunit environ 45 000 étudiants et 425 000 diplômés
+                                    <a href="http://fr.wikipedia.org/wiki/Institut_d'administration_des_entreprises" target="_blank" class="">Wikipedia</a></div>
+                            </div>
+                        </div>
+                    </div><!--iae-->
                     <div id="map-container">
                         <div id="map-bloc">
                         </div>
@@ -116,38 +133,40 @@ Orange Business Services est présent dans 166 pays et couvre 220 pays et territ
                 </div><!--bloc-->
             </div><!--conteneur-->
         </header>
-
+        <div id="map" style="height:200px; width:200px;"></div>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript" src="public/js/libs/bootstrap-min.js"></script>
         <script type="text/javascript" src="public/js/libs/stellar-min.js"></script>
         <script type="text/javascript" src="public/js/libs/firefly-min.js"></script>
         <script type="text/javascript" src="public/js/src/script.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
         <script>
-//            map
-            var map = L.map('map-bloc').setView([45.16, 5.71], 7);
+            L.mapbox.accessToken = 'pk.eyJ1IjoidGhvbWFzbmRzIiwiYSI6IjNCN0Zyb28ifQ.HHhXNc1ug4QoCer2wzzPEQ';
+            var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png', {
+                attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+            });
 
-            L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                id: 'examples.map-i86knfo3'
-            }).addTo(map);
+            var map = L.map('map-bloc')
+            .addLayer(mapboxTiles)
+            .setView([45.1666700, 5.716670], 5)
 
 
             L.marker([45.1666700, 5.7166700]).addTo(map)
-                    .bindPopup(["<p id='popup'><b>Grenoble </b><br/>",
-"Grenoble est une commune française, située dans le Sud-Est de la France, chef-lieu du département de l'Isère, ancienne capitale du Dauphiné.",
-"Grenoble est la plus grande métropole alpine, ce qui lui vaut le surnom de « capitale des Alpes ».",
-    "<a href='http://fr.wikipedia.org/wiki/Grenoble' target='_blank' class=''>Wikipedia</a></p> "].join() ).openPopup();
+            .bindPopup(["<p id='popup'><b>Grenoble </b><br/>",
+                        "Grenoble est une commune française, située dans le Sud-Est de la France, chef-lieu du département de l'Isère, ancienne capitale du Dauphiné.",
+                        "Grenoble est la plus grande métropole alpine, ce qui lui vaut le surnom de « capitale des Alpes ».",
+                        "<a href='http://fr.wikipedia.org/wiki/Grenoble' target='_blank' class=''>Wikipedia</a></p> "].join() ).openPopup();
         </script>
+
         <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-45167224-1', 'thomasnds.github.io');
-  ga('send', 'pageview');
+            ga('create', 'UA-45167224-1', 'thomasnds.github.io');
+            ga('send', 'pageview');
 
-</script>
+        </script>
     </body>
 </html>

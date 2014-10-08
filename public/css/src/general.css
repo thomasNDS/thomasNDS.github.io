@@ -18,14 +18,11 @@ body,html{
     max-width: 100%;
 }
 
-.company, .city{
-    border-bottom: 1px dashed rgba(221, 221, 221, 0.24);
-    color: rgba(235, 221, 221, 0.68);
+.link-pop{
+    border-bottom: 1px dashed rgba(221, 221, 221, 0.14);
+    color: rgb(144, 156, 190);
 }
-.company:hover, .city:hover{
-    color: rgba(235, 221, 221, 0.90);
-    cursor: pointer;
-}
+
 
 #map-bloc{
     width: 100%;
@@ -120,13 +117,13 @@ div.bloc * {
 }
 
 .dark-img{
-    filter: grayscale(100%); /* Current draft standard */
-    -webkit-filter: grayscale(100%); /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
+    filter: grayscale(70%); /* Current draft standard */
+    -webkit-filter: grayscale(70%); /* New WebKit */
+    -moz-filter: grayscale(70%);
+    -ms-filter: grayscale(70%);
+    -o-filter: grayscale(70%); /* Not yet supported in Gecko, Opera or IE */
     filter: gray; /* IE */
-    -webkit-filter: grayscale(1); /* Old WebKit */
+    -webkit-filter: grayscale(0.7); /* Old WebKit */
 }
 
 .dark-img:hover{
