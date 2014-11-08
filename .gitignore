@@ -1,55 +1,39 @@
-/nbproject/private/
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
+# .gitignore for Yeoman-Jekyll projects
 
-# C extensions
-*.so
+# Ignore hidden folders #
+# This takes care of .tmp, .sass-cache, and many others #
+.*/
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+# Ignore OS generated files #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# Rope
-.ropeproject
-
-# Django stuff:
+# Always-ignore files and folders #
+*.diff
+*.err
 *.log
-*.pot
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+._*
+*~
 
-# Sphinx documentation
-docs/_build/
+# Ignore packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-/V1/nbproject/private/
+# Ignore for Yeoman-Jekyll projects #
+app/_bower_components
+dist
+node_modules
+.tmp
