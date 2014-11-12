@@ -19,7 +19,6 @@ include: ['.htaccess']
 future: true
 show_drafts: true
 
-permalink: pretty
 paginate: 15
 paginate_path: 'page:num'
 
@@ -27,4 +26,21 @@ paginate_path: 'page:num'
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
+defaults:
+  -
+    scope:
+      path: _posts/en
+    values:
+      layout: default
+      lang: en
+  -
+    scope:
+      path: _posts/fr
+    values:
+      layout: default
+      lang: fr
+
 pygments: true
+
+permalink: /:title/
+

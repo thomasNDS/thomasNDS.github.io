@@ -1,0 +1,42 @@
+// Material colors palette
+$red: #F44336 !default;
+$pink: #E91E63 !default;
+$purple: #9C27B0 !default;
+$deeppurple: #673AB7 !default;
+$indigo: #3F51B5 !default;
+$lightblue: #03A9F4 !default;
+$cyan: #00BCD4 !default;
+$teal: #009688 !default;
+$lightgreen: #8BC34A !default;
+$lime: #CDDC39 !default;
+$lightyellow: #FFEB3B !default;
+$orange: #FF9800 !default;
+$deeporange: #FF5722 !default;
+$grey: #9E9E9E !default;
+$bluegrey: #607D8B !default;
+$brown: #795548 !default;
+$lightgrey: #ECECEC !default;
+
+.footer-list{
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+.footer-list>li{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+.footer-icon{
+    font-size: 1.5em;
+    color: rgba(199, 103, 98, 0.6);
+}
+.footer-icon:hover{
+    color: rgb(199, 103, 98);
+}
+#about-footer:hover{
+    text-decoration: none;
+}
+
+#about-footer{
+    font-size: 0.95em;
+}

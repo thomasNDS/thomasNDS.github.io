@@ -10,11 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-
         <!-- build:css({app,.tmp}) /css/main.css -->
-        <link rel="stylesheet" href="/_bower_components/bootstrap-material-design/dist/css/material.min.css">
         <link rel="stylesheet" href="/css/syntax.css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/_bower_components/bootstrap-material-design/dist/css/material-wfont.min.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <link async rel="stylesheet" href="/css/social.css">
         <!-- endbuild -->
 
         <!-- build:js(app) /js/head-scripts.js -->
@@ -27,8 +28,26 @@
         <!--[if lt IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+        <div id="wrap">
+            {% include navbar.html %}
 
-        {{ content }}
+            <div class="container">
+                {% assign postsSelected=site.posts | where:"name", page.name | sort: 'path' %}
+                <ul>
+                    {% for post in postsSelected %}
+                    {% if post.name == page.name %}
+                    {% if post.lang != page.lang %}
+                    <li class="lang">
+                        <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {{ content }}
+            </div>
+        </div>
+        {% include footer.html %}
 
         {% include scripts.html %}
         {% include googleanalytics.html %}
