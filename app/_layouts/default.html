@@ -32,18 +32,6 @@
             {% include navbar.html %}
 
             <div class="container">
-                {% assign postsSelected=site.posts | where:"name", page.name | sort: 'path' %}
-                <ul>
-                    {% for post in postsSelected %}
-                    {% if post.name == page.name %}
-                    {% if post.lang != page.lang %}
-                    <li class="lang">
-                        <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
-                    </li>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-                </ul>
                 {{ content }}
             </div>
         </div>

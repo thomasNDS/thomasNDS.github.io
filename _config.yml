@@ -44,3 +44,28 @@ pygments: true
 
 permalink: /:title/
 
+t:
+  English:
+    blog:
+      name: "Blog"
+      url: "/"
+    about:
+      name: "About"
+      url: "/about/"
+    more:
+      name: "About this website"
+      url: "/about-this-website/"
+  Français:
+    blog:
+      name: "Blog"
+      url: "/journal/"
+    about:
+      name: "À propos"
+      url: "/a-propos/"
+    more:
+      name: "Plus d'information sur ce site"
+      url: "/plus-d-info-sur-le-site/"
+
+
+
+

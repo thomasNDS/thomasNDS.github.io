@@ -3,7 +3,8 @@ layout: post
 title:  "Yo Jekyll!"
 categories: jekyll update
 name: tech
-lang: en
+lang: English
+cat: Blog
 ---
 
 # 'Allo, 'Allo!

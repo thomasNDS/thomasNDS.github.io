@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-danger">
 
     <div id="cont-logo" class="navbar-header active">
@@ -6,41 +7,76 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
+        {% if  "Français" == page.lang %}
+            {% assign linkMain = "journal" %}
+        {% endif %}
+        <a class="navbar-brand" href="/{{linkMain}}">
             <img src="/img/tn.svg" alt="Thomas Nunes" class="logo"/>
         </a>
     </div>
     <div class="container">
         <!--Content navbar-->
         <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <!--left menu-->
             <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:void(0)" class=" withripple">Blog<div class="ripple-wrapper"></div></a></li>
 
-                <li><a href="javascript:void(0)" class=" withripple">About<div class="ripple-wrapper"></div></a></li>
+                {% if  "about" == page.cat %}
+                    {% assign activeAbout = "active" %}
+                    {% else %}
+                        {% if  "more" != page.cat %}
+                            {% assign activeBlog = "active" %}
+                        {% endif %}
+                {% endif %}
+
+                <li class="{{activeBlog}}"><a href="{{site.t[page.lang].blog.url}}" class=" withripple">
+                    {{site.t[page.lang].blog.name}}<div class="ripple-wrapper"></div>
+                    </a>
+                </li>
+                <li class="{{activeAbout}}"><a href="{{site.t[page.lang].about.url}}" class=" withripple">
+                    {{site.t[page.lang].about.name}}<div class="ripple-wrapper"></div>
+                    </a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="dropdown ">
+                <li class="dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle withripple li-bar-icon" data-toggle="dropdown"> <i class="mdi-social-person-add bar-icon"></i>
                         <div class="ripple-wrapper"></div></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank">
+                        <li><a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank" class="btn btn-flat btn-link">
                             <span class="socicon socicon-linkedin"></span> Linked In</a></li>
-                        <li><a href="https://github.com/thomasNDS/" target="_blank">
+                        <li><a href="https://github.com/thomasNDS/" target="_blank" class="btn btn-flat btn-link">
                             <span class="socicon socicon-github"></span> Github</a></li>
-                        <li><a href="http://fr.viadeo.com/fr/profile/thomas.nunes1" target="_blank">
+                        <li><a href="http://fr.viadeo.com/fr/profile/thomas.nunes1" target="_blank" class="btn btn-flat btn-link">
                             <span class="socicon socicon-viadeo"></span> Viadeo</a></li>
-                        <li><a href="https://twitter.com/ThomasNDS" target="_blank">
+                        <li><a href="https://twitter.com/ThomasNDS" target="_blank" class="btn btn-flat btn-link">
                             <span class="socicon socicon-twitter"></span> Twitter</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle withripple" data-toggle="dropdown">English <b class="caret"></b><div class="ripple-wrapper"></div></a>
+                    <a href="javascript:void(0)" class="dropdown-toggle withripple" data-toggle="dropdown">{{page.lang}}<b class="caret"></b><div class="ripple-wrapper"></div></a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">English</a></li>
-                        <li><a href="javascript:void(0)">Français</a></li>
+                        {% assign postsSelected=site.posts | where:"name", page.name | sort: 'path' %}
+                        {% for post in postsSelected %}
+                            {% if post.name == page.name %}
+                                {% if post.lang != page.lang %}
+                                    <li class="">
+                                        <a href="{{ post.url }}" class="btn btn-flat btn-link">{{ post.lang }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="">
+                                        <a href="{{ post.url }}" class="btn btn-flat btn-link disabled">{{ post.lang }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if page.cat == 'main' %}
+                                    <li class="">
+                                        <a href="/" class="btn btn-flat btn-link">English</a>
+                                    </li>
+                        {% endif %}
                     </ul>
                 </li>
             </ul>

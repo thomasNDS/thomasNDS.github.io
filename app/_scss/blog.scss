@@ -40,3 +40,21 @@ $lightgrey: #ECECEC !default;
 #about-footer{
     font-size: 0.95em;
 }
+
+//hack
+.navbar .btn-link, .navbar .btn-link:focus, .navbar .navbar-link{
+    color: #333 !important;
+    text-transform: none !important;
+}
+.navbar .btn-link:hover, .navbar .navbar-link:hover{
+    color: $brown !important;
+}
+
+.btn-well{
+    bottom: 24px;
+    right: -12px;
+}
+
+
+
+

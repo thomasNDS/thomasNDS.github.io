@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Journal"
+categories: main
+name: journal
+lang: Français
+cat: main
+---
+    {% assign postsArt =site.posts | where:"lang", page.lang %}
+    {% for post in postsArt %}
+    {% if (post.lang == page.lang) %}
+        {% if  (post.cat == "Blog") %}
+            <article class="well">
+                <h3>{{ post.title }}</h3>
+                {{ post.categories }}
+                <time>{{ post.date | date_to_string }}</time>
+                <p><a class="btn btn-danger pull-right btn-well" href="{{ post.url }}">
+                    Learn more
+                </a></p>
+            </article>
+            {% endif %}
+        {% endif %}
+    {% endfor %}

@@ -1,13 +1,14 @@
 ---
 layout: default
-title: Your New Jekyll Site
-lang : en
-name: articles
+title: Thomas Nunes dev blog
+lang : English
+name: journal
+cat: main
+categories:
 ---
 
 <section class="home posts">
 
-    page {{page.lang}}
     {% assign posts=site.posts |  where:"lang", page.lang %}
     <h1>Blog</h1>
     {% for post in posts %}

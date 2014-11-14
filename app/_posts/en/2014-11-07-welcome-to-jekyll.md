@@ -4,7 +4,8 @@ title:  "Welcome to Jekyll!"
 date:   2014-11-07 23:12:08
 categories: jekyll update
 name: hello
-lang: en
+lang: English
+cat: Blog
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
