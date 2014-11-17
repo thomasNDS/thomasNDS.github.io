@@ -1,23 +1,48 @@
 ---
-layout: post
+layout: default
 title:  "Journal"
 categories: main
 name: journal
 lang: Français
 cat: main
 ---
-    {% assign postsArt =site.posts | where:"lang", page.lang %}
-    {% for post in postsArt %}
-    {% if (post.lang == page.lang) %}
+<section class="well">
+    <div class="list-group" style="margin-bottom: 0;">
+        {% assign postsArt =site.posts | where:"lang", page.lang %}
+        {% assign first = true %}
+        {% for post in postsArt %}
+        {% assign d = post.date | date: "%-d" %}
+        {% assign m = post.date | date: "%-m" %}
+        {% if (post.lang == page.lang) %}
         {% if  (post.cat == "Blog") %}
-            <article class="well">
-                <h3>{{ post.title }}</h3>
-                {{ post.categories }}
-                <time>{{ post.date | date_to_string }}</time>
-                <p><a class="btn btn-danger pull-right btn-well" href="{{ post.url }}">
-                    Learn more
-                </a></p>
-            </article>
-            {% endif %}
+        {% if  first %}
+        {% assign first = false %}
+        {% else %}
+        <div class="list-group-separator"></div>
         {% endif %}
-    {% endfor %}
+        <article class="list-group-item">
+            <div class="row-picture">
+                <a href="{{post.url}}">
+                    <img class="circle circle-hover" src="http://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="icon">
+                </a>
+            </div>
+            <div class="row-content">
+                <div class="least-content">
+                    <time class="time-blog">
+                        {% include date.html %}
+                    </time>
+                </div>
+                <a href="{{post.url}}"><h4 class="list-group-item-heading">{{ post.title }}</h4></a>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.</p>
+                <div class="pull-right">
+                    {% for cat in  post.categories %}
+                    <span class="label label-default {{cat}}">{{cat}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

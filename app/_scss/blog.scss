@@ -37,10 +37,6 @@ $lightgrey: #ECECEC !default;
     text-decoration: none;
 }
 
-#about-footer{
-    font-size: 0.95em;
-}
-
 //hack
 .navbar .btn-link, .navbar .btn-link:focus, .navbar .navbar-link{
     color: #333 !important;
@@ -55,6 +51,44 @@ $lightgrey: #ECECEC !default;
     right: -12px;
 }
 
+.well a:hover, .well a:focus{
+    text-decoration: none !important;
+}
+.well a:hover>*, .well a:focus>* {
+    color: $brown !important;
+}
+
+
+.list-group .list-group-item .row-picture img.circle-hover{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.list-group .list-group-item .row-picture:before {
+    pointer-events: none;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    top: 10px;
+    left: 16px;
+
+    box-shadow: 0 0 0 2px #999;
+    transition: all 0.3s;
+}
+.list-group .list-group-item .row-picture:hover:before {
+    box-shadow: 0 0 0 2px $grey, 0 0 0 5px white, 0 0 0 9px $lightgrey;
+}
+
+.time-blog{
+    font-size:0.75em;
+    color: $grey;
+}
 
 
 
