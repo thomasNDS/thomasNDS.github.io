@@ -9,13 +9,19 @@
         <meta name="description" content="Personnal website of Thomas Nunes. thomasNDS">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <style>
+        .logo{width: 52px;}
+        </style>
         <!-- build:css({app,.tmp}) /css/main.css -->
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/_bower_components/bootstrap-material-design/dist/css/material-wfont.css">
+        <link rel="stylesheet" href="/css/material-include.css">
+        <link async rel="stylesheet" href="/css/social.css">
+
         <link rel="stylesheet" href="/css/syntax.css">
         <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/_bower_components/bootstrap-material-design/dist/css/material-wfont.min.css">
         <link rel="stylesheet" href="/css/blog.css">
-        <link async rel="stylesheet" href="/css/social.css">
+        <link rel="stylesheet" href="/css/socialshare.css">
         <!-- endbuild -->
 
         <!-- build:js(app) /js/head-scripts.js -->
@@ -31,7 +37,7 @@
         <div id="wrap">
             {% include navbar.html %}
 
-            <div class="container">
+            <div >
                 {{ content }}
             </div>
         </div>

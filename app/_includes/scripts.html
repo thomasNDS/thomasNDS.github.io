@@ -2,13 +2,30 @@
 
 <script>window.jQuery || document.write('<script src="/_bower_components/jquery.js"><\/script>')</script>
 <!-- build:js(app) /js/script.js -->
-<script src="/js/plugins.js"></script>
-<script src="/js/main.js"></script>
-
-<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
 <script src="/_bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
 <script src="/_bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
 <script src="/_bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/share.min.js"></script>
+
+
+<script>
+    var share = new Share(".social-bar", {
+        ui: {
+            flyout: "top left",
+            button_text: "{{site.t[page.lang].share}}",
+            icon_font: true
+        },
+        networks: {
+            facebook: {
+                app_id: "abc123"
+            }
+        }
+    });
+    $(".social-bar [class*=entypo]").addClass("btn btn-social");
+</script>
 
 <script>
     $(document).ready(function() {

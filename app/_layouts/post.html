@@ -1,7 +1,59 @@
 ---
 layout: default
 ---
-je suis un post
+{% assign d = page.date | date: "%-d" %}
+{% assign m = page.date | date: "%-m" %}
+
 <article class="post">
-{{ content }}
+    <div class="front">
+        <div class="container">
+            <div class="col-xs-2 col-md-1" style="padding-left:3px">
+                <img class="circle-img" src="http://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="icon">
+            </div>
+
+            <ul id="breadcrumb" class="breadcrumb col-xs-6 col-md-4" style="margin-bottom:0">
+                <li><a href="/">Blog</a></li>
+                <li class="active">{{page.title}}</li>
+            </ul>
+
+            <time class="time-blog col-xs-4  col-md-offset-3">
+                <span class="mdi-action-today"></span>
+                {% include date.html %}
+                {{ page.date | date: "%Y" }}
+            </time>
+        </div><!--End container-->
+    </div><!--End header-->
+
+
+    <div class="container">
+
+        <div class="well">
+            <div class="pull-right">
+                <a href="#social-bar" onclick="share.toggle()"><span class="mdi-social-share corner-icons withripple"></span></a>
+            </div>
+            <h1>title bla bla bla title</h1>
+            {{ content }}
+        </div>
+        <!--End content-->
+
+        <!-- socials buttons-->
+        <div id="social-bar">
+            <div class="pull-right" style="margin-right:8px">
+                <div class="social-bar" style="display:block"></div>
+            </div>
+        </div><!--End social buttons-->
+
+        <!--Return button-->
+        {% if  "Français" == page.lang %}
+        {% assign linkMain = "journal" %}
+        {% endif %}
+        <a href="/{{linkMain}}" class="btn btn-primary no-border-radius" style="margin-top:0">
+            <span id="return">
+                {{site.t[page.lang].return}}
+            </span>
+        </a>
+        <!--End retourn button-->
+
+        <hr/>
+    </div>
 </article>

@@ -1,0 +1,35 @@
+///////////////////////////////////////////////////
+// Customisation of social bar
+// @code https://github.com/carrot/share-button
+// Licence MIT
+///////////////////////////////////////////////////
+
+//HACK////////////
+.social-bar.sharer-0 .entypo-export:before {
+    font-family: Material-Design-Icons !important;
+    content: "\e8df" !important;
+}
+
+.social-bar.sharer-0 label {
+    border-radius: 0px !important;
+    background: #000000 !important;
+    color: #FFF !important;
+    min-width: 100px;
+}
+.social-bar.sharer-0 {
+    text-align: right;
+    text-align: right !important;
+}
+.social-bar.sharer-0 label span {
+    text-transform: none !important;
+    font-weight: 500 !important;
+}
+.networks-5{
+    margin-top: -70px !important;
+    margin-left: -200px !important;
+}
+
+.social-bar .btn-social{
+    border-radius: 0;
+    color: white;
+}

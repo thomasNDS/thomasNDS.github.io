@@ -6,43 +6,46 @@ name: journal
 lang: Français
 cat: main
 ---
-<section class="well">
-    <div class="list-group" style="margin-bottom: 0;">
-        {% assign postsArt =site.posts | where:"lang", page.lang %}
-        {% assign first = true %}
-        {% for post in postsArt %}
-        {% assign d = post.date | date: "%-d" %}
-        {% assign m = post.date | date: "%-m" %}
-        {% if (post.lang == page.lang) %}
-        {% if  (post.cat == "Blog") %}
-        {% if  first %}
-        {% assign first = false %}
-        {% else %}
-        <div class="list-group-separator"></div>
-        {% endif %}
-        <article class="list-group-item">
-            <div class="row-picture">
-                <a href="{{post.url}}">
-                    <img class="circle circle-hover" src="http://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="icon">
-                </a>
-            </div>
-            <div class="row-content">
-                <div class="least-content">
-                    <time class="time-blog">
-                        {% include date.html %}
-                    </time>
+<div class="container">
+    <br/>
+    <section class="well">
+        <div class="list-group" style="margin-bottom: 0;">
+            {% assign postsArt =site.posts | where:"lang", page.lang %}
+            {% assign first = true %}
+            {% for post in postsArt %}
+            {% assign d = post.date | date: "%-d" %}
+            {% assign m = post.date | date: "%-m" %}
+            {% if (post.lang == page.lang) %}
+            {% if  (post.cat == "Blog") %}
+            {% if  first %}
+            {% assign first = false %}
+            {% else %}
+            <div class="list-group-separator"></div>
+            {% endif %}
+            <article class="list-group-item">
+                <div class="row-picture" style="padding-right: 22px">
+                    <a href="{{post.url}}">
+                        <img class="circle circle-hover" src="http://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="icon">
+                    </a>
                 </div>
-                <a href="{{post.url}}"><h4 class="list-group-item-heading">{{ post.title }}</h4></a>
-                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.</p>
-                <div class="pull-right">
-                    {% for cat in  post.categories %}
-                    <span class="label label-default {{cat}}">{{cat}}</span>
-                    {% endfor %}
+                <div class="row-content">
+                    <div class="least-content">
+                        <time class="time-blog">
+                            {% include date.html %}
+                        </time>
+                    </div>
+                    <a href="{{post.url}}"><h4 class="list-group-item-heading">{{ post.title }}</h4></a>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.Donec id elit non mi porta gravida at eget metus.</p>
+                    <div class="pull-right">
+                        {% for cat in  post.categories %}
+                        <span class="label label-default {{cat}}">{{cat}}</span>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-        </article>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-    </div>
-</section>
+            </article>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</div>

@@ -55,6 +55,8 @@ t:
     more:
       name: "About this website"
       url: "/about-this-website/"
+    share: "Share"
+    return: "Return"
   Français:
     blog:
       name: "Blog"
@@ -65,6 +67,8 @@ t:
     more:
       name: "Plus d'information sur ce site"
       url: "/plus-d-info-sur-le-site/"
+    share: "Partager"
+    return: "Retour"
 
 
 

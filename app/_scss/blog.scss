@@ -54,7 +54,7 @@ $lightgrey: #ECECEC !default;
 .well a:hover, .well a:focus{
     text-decoration: none !important;
 }
-.well a:hover>*, .well a:focus>* {
+.well .list-group a:hover>*, .well .list-group a:focus>* {
     color: $brown !important;
 }
 
@@ -85,10 +85,51 @@ $lightgrey: #ECECEC !default;
     box-shadow: 0 0 0 2px $grey, 0 0 0 5px white, 0 0 0 9px $lightgrey;
 }
 
+$breadcrumb-grey: #f5f5f5;
+
 .time-blog{
     font-size:0.75em;
     color: $grey;
+    text-align: right;
+    padding-top: 9px;
 }
 
+.circle-img{
+    position: absolute;
+    top: 4px;
+    left: 14px;
+    z-index: 2;
+    border-radius: 100%;
+    box-shadow: 0 0 0 2px #999, 0 0 0 10px $breadcrumb-grey;
+    height: 32px;
+    width: 32px;
+}
+#breadcrumb{
+    font-size: 0.85em;
+}
 
+.front{
+    background: $breadcrumb-grey;
+    margin-bottom: 22px;
+}
 
+.navbar{
+    z-index: 5;
+}
+
+.share-bar{
+    background: black;
+}
+
+.corner-icons{
+    color: $grey;
+    border-radius: 50%;
+    transition: all 0.3s;
+    padding: 4px;
+}
+
+$dark: #333;
+.corner-icons:hover{
+    color: white;
+    background: $dark;
+}

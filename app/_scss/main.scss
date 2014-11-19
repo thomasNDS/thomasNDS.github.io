@@ -18,19 +18,13 @@ $brown: #795548 !default;
 $lightgrey: #ECECEC !default;
 
 // Bootstrap shades
-$primary: #4285F4 !default;
+$primary: #999 !default;
 $success: #0F9D58 !default;
-$info: $lightblue !default;
+$info: #bf7171 !default;
 $warning: $deeporange !default;
 $danger: $red !default;
 
-.en:lang(en), .fr:lang(fr), .zh:lang(zh){
-    font-weight: bold;
-}
 $brand-primary: #b93b3b !default;
-
-@import "_bootstrap.scss";
-@import "ripples.scss";
 
 .logo{
     width: 52px;
@@ -49,22 +43,25 @@ body {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height */
-  margin-bottom:  -$footer;
-  /* Pad bottom by footer height */
-  padding: 0 0 $footer;
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin-bottom:  -$footer;
+    /* Pad bottom by footer height */
+    padding: 0 0 $footer;
 }
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: $footer;
-//  background-color: $grey;
+    height: $footer;
+    //  background-color: $grey;
     text-align: center;
 }
 
 
 .dropdown-menu li a:hover, .dropdown-menu-default li a:hover, .dropdown-menu-primary li a:hover{
     color: $brown !important;
+}
+.no-border-radius{
+    border-radius: 0px;
 }
