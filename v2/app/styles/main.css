@@ -1,0 +1,65 @@
+body {
+  background-color: rgba(255, 204, 128, 0.7);
+}
+a {
+  color: #bf360c;
+}
+a:hover {
+  color: #e65100;
+}
+.right {
+  text-align: right;
+}
+.social-icons {
+  text-align: center;
+  font-size: 2.8em;
+  margin-top: 32px;
+}
+.social-icons > a {
+  padding: 10px;
+  color: #ff8a65;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.social-icons > a:hover {
+  color: #f4511e;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.menu-corner {
+  margin-left: 5px;
+  display: inline-block;
+  text-align: left;
+  color: black;
+}
+ul.dropdown li {
+  padding: 6px;
+}
+.dropit ul.dropdown {
+  padding: 5px;
+  background: #fafafa;
+  -webkit-border-radius: 0 0 2px 2px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 85px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.big-icons {
+  color: #ff8a65;
+}
+.big-icons:hover {
+  color: #f4511e;
+}
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 60%;
+  }
+}
