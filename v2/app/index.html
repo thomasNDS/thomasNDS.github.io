@@ -26,53 +26,14 @@ Thomas Nunes All right reserved 2014
         <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-        <div ng-controller="MainCtrl as mc">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 right">
-                        <a href="#">
-                            <i class="big-icons mdi-action-info-outline medium"></i>
-                        </a>
-                        <!-- Dropdown Trigger -->
-                        <div class="menu menu-corner">
-                            <li>
-                                <a class="big-icons" data-activates="dropdown1">
-                                    <i class="mdi-content-flag medium"></i> EN
-                                </a>
-                                <ul class="dropdown">
-                                    <li class="waves-effect waves-light" ><a href="#">English</a></li>
-                                    <li class="waves-effect waves-light" ><a  href="#">Français</a></li>
-                                </ul>
-                            </li>
-                        </div>
-                    </div><!--End col-->
-                </div><!--End row-->
-                
-                <h1>Thomas Nunes {{1 + 1}} </h1> 
-                <p>I am a french engineer and this is my personal website.<br/>
-                    I just finished my final intership at
-                    <a class="link-pop company">Orange Business Service</a> in
-                    <a class="link-pop city">Grenoble (France)</a> as a software engineer working on BPM (Business Process Management).
-                    <br/>
-                    I currently study business management at 
-                    <a class="link-pop descr">Grenoble IAE</a> and will be available to work in May 2015 <br/>
-                    Please contact me throw socials networks.
-                </p>
-
-                <div id="footer" class="social-icons valign-wrapper">
-                    <a href="https://github.com/thomasNDS/" target="_blank"> <span class="socicon socicon-github"></span></a>
-                    <a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank"><span class="socicon socicon-linkedin"></span></a>
-                    <a href="http://fr.viadeo.com/fr/profile/thomas.nunes1" target="_blank"><span class="socicon socicon-viadeo"></span></a>
-                    <a href="https://twitter.com/ThomasNDS" target="_blank"><span class="socicon socicon-twitter"></span></a>
-                </div>
-
-            </div><!--End container -->
-        </div><!--End controller-->
+        <div ng-view>
+        </div><!--End view-->
 
         <!-- build:js(.) scripts/vendor.js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
@@ -93,8 +54,9 @@ Thomas Nunes All right reserved 2014
         </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
+        <script src="scripts/app.js"></script>
         <script src="scripts/materialise.js"></script>
         <!-- endbuild -->
+                
     </body>
 </html>

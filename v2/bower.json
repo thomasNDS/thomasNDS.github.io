@@ -3,5 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery": "~1.11.1"
+  },
+  "devDependencies": {
+    "angular-route": "~1.3.9"
   }
 }
