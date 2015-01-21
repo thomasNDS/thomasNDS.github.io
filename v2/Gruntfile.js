@@ -291,7 +291,8 @@ module.exports = function (grunt) {
                         '{,*/}*.html',
                         'bower_components',
                         'views/{,*/}*.*',
-                        'font/{,*/}*.*'
+                        'font/{,*/}*.*',
+                        'script/dropit.min.js'
                     ]
                 }, {
                     src: 'node_modules/apache-server-configs/dist/.htaccess',
