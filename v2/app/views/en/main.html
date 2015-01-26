@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row">
             <div class="col s12 right">
-                <a href="#/about">
+                <a href="#/{{'en' | translate}}/about">
                     <i class="big-icons mdi-action-info-outline medium waves-effect waves-base"></i>
                 </a>
-                <ng-include  src="'views/lang.html'"> </ng-include>
+                <ng-include  src="'views/partials/lang.html'"> </ng-include>
             </div><!--End col-->
         </div><!--End row-->
 
@@ -20,7 +20,7 @@
             <a class="link-pop descr">Grenoble IAE</a> and will be available to work in May 2015 <br/>
             Please contact me throw socials networks. {{1 + 1 }}
         </p>
-
+        {{'languages' | translate}}
         <div id="footer" class="social-icons valign-wrapper">
             <a href="http://fr.linkedin.com/in/thomasnunesdasilva/en" target="_blank" class="waves-effect waves-base">
                 <span class="socicon socicon-linkedin"></span>
@@ -35,6 +35,5 @@
                 <span class="socicon socicon-github"></span>
             </a>
         </div>
-
     </div><!--End container -->
 </div><!--End controller-->
