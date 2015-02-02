@@ -15,7 +15,6 @@ module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
-
     // Configurable paths
     var config = {
         app: 'app',
@@ -51,6 +50,10 @@ module.exports = function (grunt) {
             styles: {
                 files: ['<%= config.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
+            },
+            less: {
+                files: ['<%= config.app %>/styles/{,*/}*.less'],
+                tasks: ['less']
             },
             livereload: {
                 options: {
@@ -120,7 +123,17 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-
+        less: {
+            development: {
+                options: {
+                    paths: ['<%= config.app %>/styles/less/{,*/}*.less'],
+                    yuicompress: true
+                },
+                files: {
+                    "<%= config.app %>/styles/main.css" : "<%= config.app %>/styles/less/main.less"
+                }
+            }
+        },
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
             options: {
@@ -375,6 +388,10 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('css', [
+        'less'
     ]);
 
     grunt.registerTask('default', [

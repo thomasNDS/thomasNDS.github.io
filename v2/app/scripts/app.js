@@ -1,22 +1,5 @@
 'use strict'
 
-//////////////////////////////////////TRANSLATIONS///////////////////////////////
-var translationsEN = {
-    en: 'en',
-    languages: 'Languages',
-    Settings: 'Settings',
-    addYourWeight: 'Add your weight',
-    validWeight: 'You need to a valid weight.',
-}
-
-var translationsFR = {
-    en : 'fr',
-    languages : 'Langues',
-    Settings : 'Paramètres',
-    addYourWeight : 'Ajouter son poids',
-    validWeight: 'Vous devez rentrer un poids valide.',
-}
-
 //////////////////////////////////////CONTROLLER///////////////////////////////
 function MainCtrl () {
     this.someObject = 'azerty'
@@ -26,7 +9,12 @@ function MainCtrl () {
 
 function LangCtrl ($translate) {
     this.lang = $translate.storage()
-  console.log(this.lang)
+    console.log(this.lang)
+
+    this.switchLang = function(lang){
+        $translate.use(lang)
+        window.localStorage['lang'] = lang
+    }
 }
 
 //////////////////////////////////////APP DEFINITION///////////////////////////////
@@ -39,14 +27,12 @@ angular
     $routeProvider
     .when('/', {
         templateUrl: function(attr){
-            if (attr.lang !== 'fr') attr.lang = 'en'
-            return 'views/' + attr.lang + '/main.html'
+            return 'views/main.html'
         }
     })
-    .when('/:lang/about/', {
+    .when('/about', {
         templateUrl: function(attr){
-            if (attr.lang !== 'fr') attr.lang = 'en'
-            return 'views/' + attr.lang + '/about.html'
+            return 'views/about.html'
         }
     })
     .otherwise({redirectTo: '/'});
