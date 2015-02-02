@@ -9,15 +9,15 @@ function MainCtrl () {
 
 function LangCtrl ($translate) {
     this.lang = $translate.storage()
-    console.log(this.lang)
 
     this.switchLang = function(lang){
         $translate.use(lang)
         window.localStorage['lang'] = lang
     }
 }
+LangCtrl.$inject = ['$translate']
 
-//////////////////////////////////////APP DEFINITION///////////////////////////////
+////////////////////////////////// APP DEFINITION ///////////////////////////////
 angular
 .module('MyPage', ['ngRoute', 'pascalprecht.translate'])
 .controller('MainCtrl', MainCtrl)
