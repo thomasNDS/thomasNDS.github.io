@@ -1,0 +1,23 @@
+
+<div class="menu menu-corner" ng-controller="LangCtrl as lc">
+    <li>
+        <a class="big-icons waves-effect waves-base" data-activates="dropdown1">
+            <div>
+                <i class="mdi-content-flag medium"></i> 
+                <span class="lang" translate="EN">EN</span>
+            </div>
+        </a>
+        <ul class="dropdown">
+            <li class="waves-effect waves-light" ><a ng-click="lc.switchLang('en')">English</a></li>
+            <li class="waves-effect waves-light" ><a ng-click="lc.switchLang('fr')">Français</a></li>
+        </ul>
+    </li>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('.menu').dropit();
+        Waves.displayEffect();
+    });
+</script>

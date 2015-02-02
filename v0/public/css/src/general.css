@@ -1,0 +1,232 @@
+/********************************************
+ThomasNDS.github.io
+licence MIT
+@Author : thomasNDS
+2014
+
+General styles
+**********************************************/
+
+body,html{
+    height:100%;
+    min-height:100%;
+    background: url(../../img/background/5.jpg) center no-repeat fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+}
+
+.link-pop{
+    border-bottom: 1px dashed rgba(221, 221, 221, 0.14);
+    color: rgb(144, 156, 190);
+}
+
+
+#map-bloc{
+    width: 100%;
+    min-height: 350px;
+    height: 25%;
+    margin-top: 2em;
+}
+
+#company-bloc{
+    margin-top: 2em;
+}
+
+#map-bloc, #company-bloc{
+    border: dashed rgba(221, 221, 221, 0.24) 1px;
+    max-width: 100%;  
+    min-width: 50%;  
+    margin: 2em 0 1em 0;
+    display:inline-block;
+    padding: 1em;
+}
+
+#container-extra{
+    text-align: center;
+}
+
+div.conteneur { 
+    text-align:center; /* centrage horizontal */
+    color: rgba(235, 221, 221, 0.68);
+    opacity: 1;
+}
+
+div.bloc { 
+    z-index: 105;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* width: 100%; */
+    height: 300px;
+}
+
+div.bloc * {
+    z-index: 102 ;
+}
+
+#header-part3{
+    opacity: 1;
+    margin-top: 0.3em;
+}
+
+#header-part1{
+    opacity: 1;
+    font-size: 3.3em;
+    font-family: 'Sonsie One', cursive;
+    letter-spacing: 0.1em;
+    padding-left: 1em;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, 0.5);
+}
+
+#header-part2{
+    opacity: 1;
+    font-size: 1.2em;
+}
+
+@media(min-height:512px){
+    #header-part3{
+        opacity: 0;
+    }
+    #header-part1{
+        margin-top: -3em;
+        opacity: 0;
+    }
+    #header-part2{
+        margin-top: -3em;
+        opacity: 0;
+    }
+}
+
+/*mobile*/
+@media(max-width:767px){
+    #header-part3{
+        font-size: 3em;
+    }
+    #header-part1{
+        font-size: 2em;
+    }
+    #header-part2{
+        font-size: 1em;
+    }  
+}
+
+.dark-img{
+    filter: grayscale(70%); /* Current draft standard */
+    -webkit-filter: grayscale(70%); /* New WebKit */
+    -moz-filter: grayscale(70%);
+    -ms-filter: grayscale(70%);
+    -o-filter: grayscale(70%); /* Not yet supported in Gecko, Opera or IE */
+    filter: gray; /* IE */
+    -webkit-filter: grayscale(0.7); /* Old WebKit */
+}
+
+.dark-img:hover{
+    filter: grayscale(20%); /* Current draft standard */
+    -webkit-filter: grayscale(20%); /* New WebKit */
+    -moz-filter: grayscale(20%);
+    -ms-filter: grayscale(20%); 
+    -o-filter: grayscale(20%); /* Not yet supported in Gecko, Opera or IE */ 
+    -webkit-filter: grayscale(0.2); /* Old WebKit */
+}
+.leaflet-control-attribution{
+    display: none;
+}
+#popup{
+    color: #656D78;
+}
+
+.flag-group{
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+}
+
+.about-dialog {
+    max-width: 25em;
+}
+
+.about-button {
+    margin: 0.5em;
+    opacity: 0.45;
+    font-size: 2em;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.about-button:hover {
+    opacity: 0.90;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+@media(max-width:767px){
+    .about-button, .flag-group{
+        margin: 5px;
+    }
+
+    #header-part1{
+        padding: 0;   
+    }
+}
+.pull-right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.logo{
+    opacity: 0.8;
+    margin-bottom: 1em;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.logo:hover{
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.text-description {
+    opacity: 1;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active{
+    background: whitesmoke;
+    color: #080808;
+}
+.plus-button {
+    color: #AAA;
+    font-size: 0.8em;
+    margin-left: 0.6em;
+    opacity: 0.4;
+}
+
+.dark-link {
+    color:  #434a54;
+}
+
+/******** Fixs ********/
+/*hack scroll modal*/
+.modal{
+    overflow-y: auto;
+}
+/*fix pull right dropdown button*/
+.pull-right .dropdown-menu:after {
+    left: auto;
+    right: 13px;
+}
+.close{
+    font-size: 2.5em;
+}
+
+
