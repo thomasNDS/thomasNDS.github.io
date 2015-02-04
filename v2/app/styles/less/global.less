@@ -1,6 +1,18 @@
 
 body{
-    background-color: @md-clr-orange-150;
+    background-color: @md-clr-light-green-100;
+}
+body::after {
+    content: "";
+    //    background: url(http://subtlepatterns.com/patterns/subtle_white_mini_waves.png);
+    background: url(http://subtlepatterns.com/patterns/congruent_pentagon.png);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
 }
 
 .menu-corner{
@@ -29,11 +41,11 @@ ul.dropdown li{
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.big-icons{
-    color: @md-clr-deep-orange-200;
+a.big-icons{
+    color: @md-clr-teal-300;
 }
-.big-icons:hover{
-    color: @md-clr-deep-orange-400;
+a.big-icons:hover{
+    color: @md-clr-green-300;
 }
 
 @media only screen and (min-width: 993px){
@@ -58,7 +70,7 @@ a.dotted {
     -webkit-align-items: center;
     align-items: center;
 }
-@color-ripple : rgba(255, 204, 128, 0.45);
+@color-ripple : rgba(123, 229, 167, 0.43);
 .waves-effect.waves-base .waves-ripple{
     background-color: @color-ripple;
 }
