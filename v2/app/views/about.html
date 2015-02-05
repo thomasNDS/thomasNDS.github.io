@@ -4,18 +4,17 @@
             <div class="col s8 left-wrap">
                 <a ng-href="#/{{'en' |translate}}" class="waves-effect waves-base">
                     <div class="left-wrap">
-<!--                        <i class="back-icon mdi-hardware-keyboard-backspace medium"></i>-->
-                        <h1 translate="Home">Home</h1>
+                        <i class="mdi-hardware-keyboard-backspace mobile" style="font-size:3em;"></i> 
+                        <h1 translate="Home" class="tablet">Home</h1>
                     </div>
                 </a>
-                <i class="mdi-hardware-keyboard-arrow-right" style="font-size:3em;"></i>
+                <i class="mdi-hardware-keyboard-arrow-right tablet" style="font-size:3em;"></i>
                 <h1 translate="About">About</h1>
             </div>
             <div class="col s4 right">
                 <ng-include src="'views/partials/lang.html'"> </ng-include>
             </div><!--End col-->
         </div><!--End row-->
-
 
         <p  style="margin-top:40px;">
             <span translate="webOnMit">This website are Created by myself, and is totaly open-source under MIT licence</span>.</br>
