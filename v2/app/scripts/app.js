@@ -19,11 +19,10 @@ LangCtrl.$inject = ['$translate']
 
 ////////////////////////////////// APP DEFINITION ///////////////////////////////
 angular
-.module('MyPage', ['ngRoute', 'pascalprecht.translate'])
+.module('MyPage', ['ngRoute', 'pascalprecht.translate','ngAnimate'])
 .controller('MainCtrl', MainCtrl)
 .controller('LangCtrl', LangCtrl)
 .config(['$routeProvider','$translateProvider', function($routeProvider, $translateProvider) {
-    console.log($translateProvider)
     $routeProvider
     .when('/', {
         templateUrl: function(attr){
