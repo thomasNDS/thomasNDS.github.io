@@ -4,15 +4,11 @@
 var translationsEN = {
     en: 'en',
     EN: 'EN',
-    frenchEngineer: 'I am a french software engineer and this is short presentation of myself.',
-    myIntership: 'I just finished my final intership at',
-    in: 'in',
-    softwareEngineer: ' as a software engineer working on BPM (Business Process Management).',
-    iStudy: 'I currently study business management at ',
-    iae: 'Grenoble IAE',
-    availableToWork: 'I will be available to work in May 2015',
+    frenchEngineer: 'I am a french software engineer passionate about new technologies.',
+    myjob: 'I currently work at Norsys company on french national education projects since may 2015, as a web and mobile developer.',
     contactMe: 'Please contact me throw social networks.',
-    webOnMit: 'This website was created by myself, and is totally open-source, under MIT licence',
+    webOnMit: 'I personally created this website which is totally open-source, under',
+    mit: "MIT licence",
     codeIsOn: 'Code is available on',
     technologiesUsed: 'Technologies used on this website:',
     DescrAngular: 'javascript MVC framework, to structure the website',
@@ -21,13 +17,7 @@ var translationsEN = {
     colorsFrom: 'Colors from ',
     palette: 'palette',
     subtitle: 'Web and mobile development engineer',
-    moreOnWikipedia: 'More on Wikipedia',
-    moreOrange: 'http://en.wikipedia.org/wiki/Orange_S.A.',
-    descrOrange: 'Orange is a French multinational telecommunications corporation. It currently employs about 170,000 people, 105,000 of them in France, and has 230 million customers worldwide. In 2012, the group had revenue of €43.5 billion.Orange has been the company\'s main brand for mobile, landline, internet and IPTV services since 2006.',
-    moreGrenoble: 'http://en.wikipedia.org/wiki/Grenoble',
-    descrGrenoble: 'Grenoble is a city in southeastern France, at the foot of the French Alps. The proximity of the mountains, as well as its size, has led to the city being known as the "Capital of the Alps".</br>Grenoble grew in importance through its industrial development, in particulary during the post-World War II economic boom symbolized by the holding of the X Olympic Winter Games in 1968. The city is now a significant scientific centre in Europe.',
-    moreIAE: 'https://en.wikipedia.org/wiki/Institut_d%27Administration_des_Entreprises',
-    descrIAE: 'The French IAE are part of the French universities, except for the IAE of Paris which has a special status. They are academically selective, socially inclusive and very affordable Graduate School of Management within the French Public Research Universities. The model of the IAE is inspired of the Anglo-Saxon Business Schools.',
+    moreOnWikipedia: 'More on Wikipedia'
 }
 
 var translationsFR = {
