@@ -36,6 +36,7 @@ var translationsFR = {
     Home: 'Accueil',
     About: 'À-propos',
     webOnMit: 'J\'ai personnellement ce site dont l\'intégralité du site est open-source sous',
+
     mit: "licence MIT",
     codeIsOn: 'Le code source est disponible sur ',
     technologiesUsed: 'Technologies utilisées sur ce site :',
