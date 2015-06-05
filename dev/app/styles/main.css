@@ -175,3 +175,11 @@ a.dotted {
 .dont-fade {
   opacity: 1 !important;
 }
+.btn-flat-border {
+  border: 1px rgba(77, 161, 153, 0) solid;
+  padding-right: 3em;
+}
+.btn-flat-border:hover {
+  border: 1px #009688 solid;
+  color: #009688;
+}
