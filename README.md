@@ -1,6 +1,6 @@
 #My personnal website
 
-very simple and short personnal static website hosted with Github.
+Simple and short personnal static website hosted with Github page.
 
 ##Technologies
 
